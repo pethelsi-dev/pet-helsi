@@ -5,11 +5,9 @@ const authSlice = createSlice({
   name: "auth",
   initialState: {
     doctor: {
-      //   name: null,
       email: null,
     },
     owner: {
-      // name: null,
       email: null,
     },
     token: null,
