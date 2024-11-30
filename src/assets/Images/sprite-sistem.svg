@@ -123,6 +123,9 @@
 <path fill="none" stroke="#1e88e5" style="stroke: var(--color1, #1e88e5)" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="1.3333" d="M12 12h8"></path>
 <path fill="none" stroke="#1e88e5" style="stroke: var(--color1, #1e88e5)" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="1.3333" d="M12 17.333h4"></path>
 </symbol>
+<symbol id="icon-check-option" viewBox="0 0 32 32">
+<path fill="none" stroke="#1e88e5" style="stroke: var(--color1, #1e88e5)" stroke-linejoin="miter" stroke-linecap="round" stroke-miterlimit="4" stroke-width="1.3333" d="M6.667 18.667l4.311 3.233c0.572 0.429 1.38 0.331 1.832-0.222l11.191-13.677"></path>
+</symbol>
 <symbol id="icon-chec_-ring_filled" viewBox="0 0 32 32">
 <path fill="#1e88e5" style="fill: var(--color1, #1e88e5); stroke: var(--color1, #1e88e5)" stroke="#1e88e5" stroke-linejoin="miter" stroke-linecap="butt" stroke-miterlimit="4" stroke-width="1.6" d="M28 16c0 6.627-5.373 12-12 12s-12-5.373-12-12c0-6.627 5.373-12 12-12s12 5.373 12 12z"></path>
 <path fill="none" stroke="#fff" style="stroke: var(--color2, #fff)" stroke-linejoin="miter" stroke-linecap="butt" stroke-miterlimit="4" stroke-width="1.6" d="M10.667 16l4 4 6.667-8"></path>
@@ -419,6 +422,11 @@
 <symbol id="icon-Arrow" viewBox="0 0 18 32">
 <path fill="none" stroke="#333f5d" style="stroke: var(--color1, #333f5d)" stroke-linejoin="miter" stroke-linecap="round" stroke-miterlimit="4" stroke-width="0.4776" d="M0.3 0.477c6.693 2.021 12.319 4.227 15.589 9.674 2.107 3.51 2.278 7.957 0.889 11.662-1.162 3.1-4.562 4.667-7.475 6.46-1.101 0.678-2.854 1.001-3.762 1.747-0.247 0.203 2.672 1.24 3.217 1.463 0.179 0.074-2.352-0.616-3.118-0.651-4.173-0.191 2.24-3.637 1.337-5.12"></path>
 </symbol>
-
+<symbol id="icon-calendar" viewBox="0 0 31 32">
+<path fill="none" stroke="#1e88e5" style="stroke: var(--color1, #1e88e5)" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="1.28" d="M24.32 5.76h-17.92c-1.414 0-2.56 1.146-2.56 2.56v17.92c0 1.414 1.146 2.56 2.56 2.56h17.92c1.414 0 2.56-1.146 2.56-2.56v-17.92c0-1.414-1.146-2.56-2.56-2.56z"></path>
+<path fill="none" stroke="#1e88e5" style="stroke: var(--color1, #1e88e5)" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="1.28" d="M20.48 3.2v5.12"></path>
+<path fill="none" stroke="#1e88e5" style="stroke: var(--color1, #1e88e5)" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="1.28" d="M10.24 3.2v5.12"></path>
+<path fill="none" stroke="#1e88e5" style="stroke: var(--color1, #1e88e5)" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="1.28" d="M3.84 13.44h23.040"></path>
+</symbol>
 </defs>
 </svg>
