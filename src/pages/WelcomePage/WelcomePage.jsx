@@ -18,13 +18,7 @@ export default function WelcomePage(isDesktop) {
 
   return (
     <>
-      <Hero
-        isDesktop={isDesktop}
-        values={values}
-        setValues={setValues}
-        errors={errors}
-        setErrors={setErrors}
-      />
+      <Hero />
       <HeroImage />
       <AboutUs />
       <Features isDesktop={isDesktop} />
