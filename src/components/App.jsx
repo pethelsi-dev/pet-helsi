@@ -4,6 +4,7 @@ import { useSelector } from "react-redux";
 import { selectorIsLoggedIn } from "../redux/auth/selectors";
 import PrivateRoute from "../components/PrivateRoute/PrivateRoute";
 import PublicRoute from "../components/PublicRoute/PublicRoute";
+import Loader from "./Loader/Loader.jsx";
 import style from "./App.module.css";
 
 const HomePage = lazy(() => import("../pages/HomePage/HomePage"));
@@ -16,7 +17,7 @@ export default function App() {
 
   return (
     <div className={style.appContainer}>
-      <Suspense fallback={<div>Loading...</div>}>
+      <Suspense fallback={<Loader />}>
         <Routes>
           <Route element={<PublicRoute isAuthenticated={isAuthenticated} />}>
             <Route path="/" element={<HomePage />} />
