@@ -1,7 +1,6 @@
 import { useState } from "react";
 import Hero from "../../components/Hero/Hero";
 import HeroImage from "../../components/HeroImage/HeroImage";
-import AboutUs from "../../components/AboutUs/AboutUs";
 import Features from "../../components/Features/Features";
 import WorkingWithProblems from "../../components/WorkingWithProblems/WorkingWithProblems";
 import AppointmentProcess from "../../components/AppointmentProcess/AppointmentProcess";
@@ -20,8 +19,7 @@ export default function WelcomePage(isDesktop) {
     <>
       <Hero />
       <HeroImage />
-      <AboutUs />
-      <Features isDesktop={isDesktop} />
+      <Features />
       <WorkingWithProblems />
       <FormLanding
         values={values}

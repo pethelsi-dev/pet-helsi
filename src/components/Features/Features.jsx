@@ -2,7 +2,7 @@ import Icon from "../Icon/Icon";
 import spriteSistem from "../../assets/Images/sprite-sistem.svg";
 import style from "./Features.module.css";
 
-export default function Features({ isDesktop }) {
+export default function Features() {
   return (
     <ul id="features" className={style.featuresContainer}>
       <li className={style.featuresListItem}>
@@ -29,9 +29,8 @@ export default function Features({ isDesktop }) {
         />
         <h3 className={style.featuresListItemTitle}>швидкий запис</h3>
         <p className={style.featuresText}>
-          {isDesktop
-            ? "Запишіться до обраного ветеринара швидко та легко всього за кілька кліків, без жодних черг і зайвих очікувань."
-            : "Лише декілька кліків, і ви записані на прийом до обраного ветеринара, без зайвих очікувань."}
+          Лише декілька кліків, і ви записані на прийом до обраного ветеринара
+          без зайвих очікувань
         </p>
       </li>
       <li className={style.featuresListItem}>
