@@ -3,7 +3,7 @@ import consultationImg2x from "../../assets/Images/online-consultation@2x.png";
 import vector from "../../assets/Images/vector.png";
 import style from "./AppointmentProcess.module.css";
 
-export default function AppointmentProcess({ isDesktop }) {
+export default function AppointmentProcess() {
   return (
     <div id="appointment" className={style.appointmentContainer}>
       <div className={style.appointmentPicture}>
@@ -21,17 +21,16 @@ export default function AppointmentProcess({ isDesktop }) {
       </div>
       <div className={style.appointmentListWrapper}>
         <h2 className={style.appointmentTitle}>
-          Як проходитиме онлайн-консультація
+          Записуйтеся <br className={style.transfer} /> на консультацію легко!
         </h2>
         <ul className={style.appointmentList}>
           <li className={style.appointmentListItem}>
             <p className={style.number}>1</p>
             <div>
-              <h3 className={style.title}>Заповнення форми</h3>
+              <h3 className={style.title}>Заповніть форму</h3>
               <p className={style.text}>
-                {isDesktop
-                  ? "Після того, як ви внесете дані про тварину та оберете дату та час прийому, система автоматично підбере доступних ветеринарів"
-                  : "Оберіть: вид тварини, що її турбує та зручну дату прийому. Система автоматично підбере доступних ветеринарів"}
+                Оберіть: вид тварини і те, що її турбує та зручну дату прийому.
+                Система автоматично підбере доступних ветеринарів
               </p>
             </div>
           </li>
@@ -40,16 +39,17 @@ export default function AppointmentProcess({ isDesktop }) {
             <div>
               <h3 className={style.title}>Оберіть ветеринара</h3>
               <p className={style.text}>
-                {isDesktop
-                  ? "Серед запропонованих системою ветеринарів, ви зможете обрати того, який найбільше відповідає вашим вимогам"
-                  : "Визначте ветеринара, який ідеально вам підходить серед запропонованих системою"}
+                Визначте ветеринара, який ідеально вам підходить серед
+                запропонованих системою{" "}
               </p>
             </div>
           </li>
           <li className={style.appointmentListItem}>
             <p className={style.number}>3</p>
             <div>
-              <h3 className={style.title}>Сплатіть консультацію</h3>
+              <h3 className={style.title}>
+                Сплатіть для отримання консультації
+              </h3>
               <p className={style.textLast}>
                 Наша платформа підтримує різні платіжні системи. Здійсніть
                 оплату та проконсультуйтеся з ветеринаром
@@ -57,11 +57,7 @@ export default function AppointmentProcess({ isDesktop }) {
             </div>
           </li>
         </ul>
-        <img
-          src="https://s3-alpha-sig.figma.com/img/4122/54ed/be484b61795d7bf3cad2cdc8d23e5593?Expires=1732492800&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=qV~bi-EDBEfzz1foNgJbOnPOIYu0JSLRohzeI9CLFFne3rInNRyQwEohfH7goL652uZiES1Hw~yMb4ZK0jZEgWt9gysoeOfhT4We4NM0E4BjMrMvU1RrnnjTG5TiDl5RzTRT47DbeleihjtRf082yNXQXPzkL-Ly3AO1KKVjbcv5joL-b53F9k617KHwW4ap1r-NMDoeEh0l1t9gWUtrJ2-bV5eaF~4ab-Z0LXCvKB~w5QEAHYybIT4KysSngLc8hAZh3bKrFlONRydMf2rfAAJQsUcq7RxzQALaIqLuUEhpC9ycu~1kvY4TlxGX1gHG5xeLLHFnDa-8Mmr0wNj65Q__"
-          alt="Cat GIF"
-          className={style.appointmentCat}
-        />
+
         <img
           src={vector}
           alt=""
@@ -69,6 +65,11 @@ export default function AppointmentProcess({ isDesktop }) {
           className={style.appointmentVector}
         />
       </div>
+      <img
+        src="https://s3-alpha-sig.figma.com/img/4122/54ed/be484b61795d7bf3cad2cdc8d23e5593?Expires=1734307200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=M-VOJvs69Ay7xMZyZFwtEKrQbgMvlRtFQsUeILGqkydMdqB95A2PYtmL3xwebPdJMA8g09PFtFWkLsmSETjnPfhDi4I2xgCMWNwxR~4mqSG63O5L5wUFtMjVs3sm~vgTASFD6OVf0oPMWA2YofPUjbDWjVnLpXjeN9aJHNpfwyhNHxRhOXvEau0aNjXGUVi9CawGyweyfU7cTuweullNGtegG4PMhlF5m468SQaGeOBIQSUX33nq4bbZDXEAflpDJOkdud9nNeIKO4Iy3eSh46bVXUBR4nGap4yXIb~Pz258U4kOxeSfYyb4Yqdm0GINldeBpayh1ti-q9ND3XVAlA__"
+        alt="Cat GIF"
+        className={style.appointmentCat}
+      />
     </div>
   );
 }
