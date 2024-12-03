@@ -1,0 +1,108 @@
+.discountComponent {
+  width: 343px;
+  padding: 74px 16px 44px 16px;
+  background-color: var(--bg-color);
+}
+.discountContainer {
+  position: relative;
+  padding: 40px 32px 24px 32px;
+  border-radius: 12px;
+  background-color: var(--accent-color-dark);
+}
+.discountContent {
+  text-align: center;
+}
+.discountTitle {
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 25.2px;
+  text-align: center;
+  text-transform: uppercase;
+  color: var(--text-color-white);
+  margin-bottom: 24px;
+}
+.vectorArrowHeart {
+  display: none;
+}
+.discountRabbit {
+  display: block;
+  width: 81px;
+  height: 93px;
+}
+.linkRegister {
+  display: inline-block;
+  padding: 13px 74px;
+  border-radius: 8px;
+  background-color: var(--bg-color);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 22.4px;
+  color: var(--accent-color-dark);
+}
+.linkRegister:hover {
+  background-color: var(--button-hover-background);
+}
+.discountRabbit {
+  position: absolute;
+  right: -2px;
+  top: -65px;
+}
+.discountVector {
+  display: none;
+}
+.transfer {
+  display: none;
+}
+
+@media screen and (min-width: 1440px) {
+  .discountComponent {
+    width: 1296px;
+    padding: 64px 72px 129px 72px;
+  }
+  .discountContainer {
+    padding: 60px 34px 49px 111px;
+    border-radius: 32px;
+  }
+  .discountContent {
+    width: 604px;
+    text-align: left;
+    position: relative;
+  }
+  .discountTitle {
+    font-size: 32px;
+    line-height: 44.8px;
+    text-align: left;
+    margin-bottom: 40px;
+  }
+  .linkRegister {
+    padding: 13px 51px;
+  }
+  .vectorArrowHeart {
+    position: absolute;
+    right: 0;
+    bottom: -3px;
+    display: block;
+    width: 149px;
+    height: 94px;
+  }
+  .discountRabbit {
+    position: absolute;
+    top: -47px;
+    right: 45px;
+    width: 272px;
+    height: 309px;
+    z-index: 2;
+  }
+  .discountVector {
+    display: block;
+    position: absolute;
+    right: 34px;
+    bottom: 20px;
+    width: 289px;
+    height: 85px;
+    transform: rotate(7deg);
+  }
+  .transfer {
+    display: block;
+  }
+}
