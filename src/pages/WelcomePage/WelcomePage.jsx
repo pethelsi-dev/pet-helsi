@@ -2,6 +2,7 @@ import { useState } from "react";
 import Hero from "../../components/Hero/Hero";
 import HeroImage from "../../components/HeroImage/HeroImage";
 import Features from "../../components/Features/Features";
+import Discount from "../../components/Discount/Discount";
 import AppointmentProcess from "../../components/AppointmentProcess/AppointmentProcess";
 import FormLanding from "../../components/FormLanding/FormLanding";
 import Footer from "../../components/Footer/Footer";
@@ -20,6 +21,7 @@ export default function WelcomePage() {
       <HeroImage />
       <Features />
       <AppointmentProcess />
+      <Discount />
       <Benefits />
       <FormLanding
         values={values}
