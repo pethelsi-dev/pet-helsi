@@ -2,6 +2,7 @@
   width: 375px;
   background-color: var(--bg-color);
   margin: 0 auto;
+  overflow: hidden;
 }
 
 @media screen and (min-width: 1440px) {

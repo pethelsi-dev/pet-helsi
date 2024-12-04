@@ -1,0 +1,250 @@
+.veterinariansContainer {
+  width: 343px;
+  padding: 68px 0 75px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+  background-color: var(--bg-color);
+}
+.veterinariansTitle {
+  width: 300px;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 33.6px;
+  text-align: left;
+  text-transform: uppercase;
+  color: var(--text-color-dark);
+  margin-bottom: 12px;
+}
+.veterinariansText {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 18.9px;
+  text-align: left;
+  color: var(--text-color-gray);
+}
+.linkAllVeterinarians {
+  display: none;
+}
+.veterinariansList {
+  width: 359px;
+  display: flex;
+  gap: 13px;
+  list-style-type: none;
+  background-color: var(--bg-color) !important;
+}
+.veterinariansListitem {
+  position: relative;
+  width: 272px;
+  height: 468px;
+  border-radius: 16px;
+}
+.imageVeterinarian {
+  display: block;
+  width: 272px;
+  height: 468px;
+  object-fit: cover;
+  border-radius: 16px;
+}
+.veterinariansDescrWrapper {
+  width: 224px;
+  position: absolute;
+  left: 8px;
+  bottom: 8px;
+  padding: 16px;
+  border-radius: 12px;
+  background-color: var(--bg-color);
+  cursor: pointer;
+}
+.name {
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 25.2px;
+  text-align: left;
+  color: var(--text-color-dark);
+}
+.name:not(:first-child) {
+  margin-bottom: 6px;
+}
+.veterinariansExperience {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 19.6px;
+  text-align: left;
+  color: var(--text-color-ligth-gray);
+  margin-bottom: 12px;
+}
+.reviewsWrapper {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 19.6px;
+  text-align: left;
+  color: var(--text-color-dark);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.iconStar {
+  width: 16px;
+  height: 16px;
+  fill: var(--accent-color-dark);
+}
+.reviewsCount {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 19.6px;
+  text-align: left;
+  color: var(--text-color-ligth-gray);
+}
+.buttonsNav {
+  display: none;
+}
+.swiper-scrollbar {
+  display: none !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  height: 0 !important;
+  pointer-events: none !important;
+}
+
+@media screen and (min-width: 1440px) {
+  .veterinariansContainer {
+    width: 1368px;
+    padding: 128px 0 56px 72px;
+    flex-direction: row;
+  }
+  .veterinariansTextWrapper {
+    width: 526px;
+  }
+  .veterinariansTitle {
+    width: 425px;
+    font-size: 40px;
+    line-height: 56px;
+    margin-bottom: 16px;
+  }
+  .veterinariansText {
+    font-size: 16px;
+    line-height: 22.4px;
+    margin-bottom: 32px;
+  }
+  .linkAllVeterinarians {
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 25.2px;
+    text-align: left;
+    color: var(--accent-color-dark);
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    cursor: pointer;
+    transition: color 0.3s ease;
+  }
+  .veterinariansList {
+    width: 818px;
+    gap: 24px;
+    margin-bottom: 40px;
+  }
+  .veterinariansListitem {
+    width: 344px;
+    height: 528px;
+    border-radius: 24px;
+    overflow: hidden;
+  }
+  .imageVeterinarian {
+    width: 344px;
+    height: 528px;
+    border-radius: 24px;
+  }
+  .veterinariansDescrWrapper {
+    width: 271px;
+    padding: 24px 33px 24px 24px;
+    border-radius: 20px;
+  }
+  .name {
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 36px;
+  }
+  .name:not(:first-child) {
+    margin-bottom: 8px;
+  }
+  .veterinariansExperience {
+    font-size: 16px;
+    line-height: 22.4px;
+    margin-bottom: 16px;
+  }
+  .reviewsWrapper {
+    font-size: 16px;
+    line-height: 22.4px;
+    align-items: start;
+    gap: 4px;
+  }
+  .iconStar {
+    width: 20px;
+    height: 20px;
+  }
+  .reviewsCount {
+    font-size: 16px;
+    line-height: 22.4px;
+  }
+  .iconStar {
+    width: 20px;
+    height: 20px;
+  }
+  .iconArrowleft {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    fill: var(--accent-color-dark);
+    transition: fill 0.3s ease;
+  }
+  .iconArrow {
+    width: 24px;
+    height: 24px;
+    fill: var(--accent-color-dark);
+    transition: fill 0.3s ease;
+  }
+  .linkAllVeterinarians:hover,
+  .linkAllVeterinarians:active {
+    text-decoration: underline;
+    color: var(--accent-color-light);
+    cursor: pointer;
+  }
+  .linkAllVeterinarians:hover .iconArrowleft {
+    fill: var(--accent-color-light);
+    cursor: pointer;
+  }
+  .buttonsNav {
+    display: flex;
+    margin-left: 520px;
+    align-items: center;
+    gap: 15px;
+    width: 223px;
+  }
+  .buttonSlide {
+    padding: 8px 40px;
+    border-radius: 100px;
+    border: 1px solid var(--accent-color-dark);
+    background-color: var(--bg-color);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    transition: border 0.3s ease;
+  }
+  .buttonSlide.disabled {
+    opacity: 0, 1;
+    pointer-events: none;
+    border: 1px solid var(--input-disabled);
+  }
+  .buttonSlide.disabled .iconArrow {
+    fill: var(--input-disabled);
+  }
+  .buttonSlide:active,
+  .buttonSlide:hover {
+    border: 1px solid var(--accent-color-light);
+  }
+  .buttonSlide:active,
+  .buttonSlide:hover .iconArrow {
+    fill: var(--accent-color-light);
+  }
+}
