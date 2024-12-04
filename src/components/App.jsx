@@ -27,6 +27,7 @@ export default function App() {
 
           <Route element={<PrivateRoute isAuthenticated={isAuthenticated} />}>
             {/* <Route path="/profile" element={<ProfilePage />} /> */}
+            {/* <Route path="/veterinarians" element={<AllVeterinarians />} /> */}
           </Route>
         </Routes>
       </Suspense>

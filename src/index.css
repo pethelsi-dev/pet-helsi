@@ -5,6 +5,7 @@
   --text-color-dark: #333f5d;
   --text-color-gray: #5f6981;
   --text-color-white: #fff;
+  --text-color-ligth-gray: #757e93;
   --accent-color-dark: #1e88e5;
   --accent-color-light: #80bcf0;
   --error-color: #f11c0e;
@@ -14,9 +15,9 @@
   --input-disabled: #ced2da;
   --bg-color-list: #f5f9fe;
   --button-hover: #1376cc;
-  --button-hover-background: #E2EFFB;
+  --button-hover-background: #e2effb;
 
-
+  background-color: var(--bg-color);
   scroll-behavior: smooth;
 }
 

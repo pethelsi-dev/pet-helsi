@@ -1,0 +1,129 @@
+import { Link } from "react-router-dom";
+import { useState } from "react";
+import { nanoid } from "nanoid";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Pagination, A11y } from "swiper/modules";
+import { useRef } from "react";
+import "swiper/css";
+import "swiper/css/pagination";
+import allVeterinarians from "../../../allVeterinarians.json";
+import Icon from "../Icon/Icon";
+import sprateSistem from "../../assets/Images/sprite-sistem.svg";
+import style from "./VeterinariansList.module.css";
+
+export default function VeterinariansList({ isDesktop }) {
+  const [isBeginning, setIsBeginning] = useState(true);
+  const [isEnd, setIsEnd] = useState(false);
+  const swiperRef = useRef(null);
+
+  const handleSwiperInit = swiper => {
+    setIsBeginning(swiper.isBeginning);
+    setIsEnd(swiper.isEnd);
+  };
+
+  const handleSlideChange = swiper => {
+    setIsBeginning(swiper.isBeginning);
+    setIsEnd(swiper.isEnd);
+  };
+
+  return (
+    <div className={style.veterinariansContainer}>
+      <div className={style.veterinariansTextWrapper}>
+        <h3 className={style.veterinariansTitle}>
+          Ветеринари, доступні у найближчий час
+        </h3>
+        <p className={style.veterinariansText}>
+          Кожен із ветеринарів — експерт у своїй справі.
+          <br />
+          Тільки найкращі фахівці для вашого улюбленця.
+        </p>
+        <Link className={style.linkAllVeterinarians} to={"/veterinarians"}>
+          Переглянути усіх ветеринарів{" "}
+          <Icon
+            sprite={sprateSistem}
+            id={"icon-arrow_right_light"}
+            width="24px"
+            height="24px"
+            className={style.iconArrowleft}
+          />
+        </Link>
+      </div>
+
+      <div>
+        <Swiper
+          modules={[Pagination, A11y]}
+          spaceBetween={isDesktop ? 24 : 13}
+          slidesPerView={isDesktop ? 2.3 : 1.3}
+          scrollbar={{ hide: true }}
+          onSwiper={swiper => {
+            swiperRef.current = swiper;
+            handleSwiperInit(swiper);
+          }}
+          onResize={swiper => swiper.update()}
+          onSlideChange={handleSlideChange}
+          className={style.veterinariansList}>
+          {allVeterinarians.map(elem => (
+            <SwiperSlide key={nanoid()} className={style.veterinariansListitem}>
+              <img
+                src={elem.photo_url}
+                alt=""
+                className={style.imageVeterinarian}
+              />
+              <div className={style.veterinariansDescrWrapper}>
+                <p className={style.name}>{elem.last_name}</p>
+                <p className={style.name}>
+                  {elem.first_name} {elem.middle_name}
+                </p>
+                <p className={style.veterinariansExperience}>
+                  Стаж: {elem.experience} років
+                </p>
+                <div className={style.reviewsWrapper}>
+                  <Icon
+                    sprite={sprateSistem}
+                    id={"icon-star_fill"}
+                    width="16px"
+                    height="16px"
+                    className={style.iconStar}
+                  />
+                  {elem.rating}{" "}
+                  <span className={style.reviewsCount}>
+                    ({elem.reviews_count} відгуки)
+                  </span>
+                </div>
+              </div>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+
+        <div className={style.buttonsNav}>
+          <button
+            onClick={() => swiperRef.current?.slidePrev()}
+            className={`${style.buttonSlide} ${
+              isBeginning ? style.disabled : ""
+            }`}
+            disabled={isBeginning}>
+            <Icon
+              sprite={sprateSistem}
+              id={"icon-back_arrow"}
+              width="24px"
+              height="24px"
+              className={style.iconArrow}
+            />
+          </button>
+          <button
+            onClick={() => swiperRef.current?.slideNext()}
+            className={`${style.buttonSlide} ${isEnd ? style.disabled : ""}`}
+            disabled={isEnd}>
+            <Icon
+              sprite={sprateSistem}
+              id={"icon-arrow_right_light"}
+              width="24px"
+              height="24px"
+              className={style.iconArrow}
+            />
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+}
