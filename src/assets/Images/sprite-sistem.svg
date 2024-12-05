@@ -428,5 +428,8 @@
 <path fill="none" stroke="#1e88e5" style="stroke: var(--color1, #1e88e5)" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="1.28" d="M10.24 3.2v5.12"></path>
 <path fill="none" stroke="#1e88e5" style="stroke: var(--color1, #1e88e5)" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="1.28" d="M3.84 13.44h23.040"></path>
 </symbol>
+<symbol id="icon-dash" viewBox="0 0 32 32">
+<path fill="none" stroke="#1e88e5" style="stroke: var(--color1, #1e88e5)" stroke-linejoin="miter" stroke-linecap="round" stroke-miterlimit="4" stroke-width="1.3333" d="M24 16h-16"></path>
+</symbol>
 </defs>
 </svg>

@@ -1,0 +1,184 @@
+.faqContainer {
+  width: 343px;
+  padding: 44px 16px 88px 16px;
+  background-color: var(--bg-color);
+}
+.faqWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  background-color: var(--bg-color);
+}
+.faqImageWrapper {
+  display: none;
+}
+.faqTitleWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+.faqTitleWrapper::after {
+  position: absolute;
+  bottom: -12px;
+  left: 0;
+  display: block;
+  content: "";
+  width: 343px;
+  height: 1px;
+  background-color: var(--input-def);
+}
+.faqTitle {
+  font-size: 26px;
+  font-weight: 600;
+  line-height: 36.4px;
+  text-align: center;
+  color: var(--text-color-dark);
+}
+.imageContainer {
+  width: 251px;
+  height: 40px;
+  overflow: hidden;
+  border-radius: 24px;
+  background-image: url("../../assets/Images/faq-girl-dog-mob@1x.png");
+  background-position: 50% 52%;
+  background-size: 100%;
+}
+.faqAccordionItem {
+  position: relative;
+  padding: 25px 0;
+}
+.faqAccordionItem::after {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: block;
+  content: "";
+  width: 343px;
+  height: 1px;
+  background-color: var(--input-def);
+}
+.faqAccordionItemDescr {
+  padding: 25px 0 0 0;
+  transition: max-height 0.3s ease;
+}
+ol {
+  padding-left: 16px;
+}
+.accordionButton {
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+}
+.accordionButtonTitle {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 22.4px;
+  text-align: left;
+  color: var(--text-color-dark);
+}
+.iconPanelAccordion {
+  width: 24px;
+  height: 24px;
+  fill: var(--accent-color-dark);
+}
+.accordionText {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 19.6px;
+  text-align: left;
+  color: var(--text-color-gray);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.accordionTextItem {
+  padding-left: 3px;
+}
+
+@media screen and (min-resolution: 192dpi) and (min-width: 320px),
+  screen and (min-resolution: 2dppx) and (min-width: 320px),
+  screen and (min-device-pixel-ratio: 2) {
+  .imageContainer {
+    background-image: url("../../assets/Images/fag-girl-dog-mob@2x.png");
+  }
+}
+@media screen and (min-width: 1440px) {
+  .faqContainer {
+    width: 1296px;
+    padding: 24px 72px 148px 72px;
+    display: flex;
+    gap: 40px;
+    align-items: center;
+  }
+  .faqImageWrapper {
+    display: block;
+    width: 526px;
+    height: 704px;
+    border-radius: 40px;
+    overflow: hidden;
+  }
+  .faqPictureDesk,
+  .imageFaq {
+    display: block;
+    width: 526px;
+    height: 704px;
+  }
+  .faqWrapper {
+    width: 730px;
+    display: block;
+    padding-top: 24px;
+  }
+  .faqTitleWrapper {
+    position: relative;
+    display: block;
+  }
+  .faqTitleWrapper::after {
+    bottom: -40px;
+    width: 100%;
+  }
+  .faqTitle {
+    font-size: 40px;
+    font-weight: 600;
+    line-height: 56px;
+    text-align: left;
+    color: var(--text-color-dark);
+    margin-bottom: 40px;
+  }
+  .imageContainer {
+    display: none;
+  }
+  .faqAccordionItem {
+    position: relative;
+    padding: 40px 24px;
+  }
+  .faqAccordionItem::after {
+    width: 100%;
+  }
+  .faqAccordionItemDescr {
+    padding: 24px 0 0 0;
+    transition: max-height 0.3s ease;
+  }
+  .accordionButton {
+    align-items: center;
+  }
+  .accordionButtonTitle {
+    font-size: 24px;
+    line-height: 36px;
+    text-align: left;
+    color: var(--text-color-dark);
+  }
+  .iconPanelAccordion {
+    width: 32px;
+    height: 32px;
+  }
+  .accordionText {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 22.4px;
+    gap: 8px;
+  }
+  .accordionTextItem {
+    padding-left: 4px;
+  }
+}

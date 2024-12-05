@@ -5,9 +5,8 @@ import Features from "../../components/Features/Features";
 import Discount from "../../components/Discount/Discount";
 import VeterinariansList from "../../components/VeterinariansList/VeterinariansList";
 import AppointmentProcess from "../../components/AppointmentProcess/AppointmentProcess";
-import FormLanding from "../../components/FormLanding/FormLanding";
+import Faq from "../../components/Faq/Faq";
 import Footer from "../../components/Footer/Footer";
-import Benefits from "../../components/Benefits/Benefits";
 
 export default function WelcomePage({ isDesktop }) {
   const [values, setValues] = useState({
@@ -24,13 +23,7 @@ export default function WelcomePage({ isDesktop }) {
       <AppointmentProcess />
       <VeterinariansList isDesktop={isDesktop} />
       <Discount />
-      <Benefits />
-      <FormLanding
-        values={values}
-        setValues={setValues}
-        errors={errors}
-        setErrors={setErrors}
-      />
+      <Faq />
       <Footer />
     </>
   );
