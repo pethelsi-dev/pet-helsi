@@ -1,95 +1,234 @@
+.footerWrapper {
+  background-color: var(--bg-color);
+}
 .footerContainer {
+  position: relative;
   background-color: var(--accent-color-dark);
-  width: 125px;
-  padding: 40px 125px 0 125px;
+  width: 343px;
+  display: flex;
+  flex-direction: column;
+  padding: 40px 16px 54px 16px;
   border-radius: 24px 24px 0 0;
 }
-.icon {
-  width: 112px;
-  height: 32px;
-  fill: var(--text-color-white);
-  stroke: var(--text-color-white);
-  margin-bottom: 24px;
+.footerFormWrapper {
+  margin-bottom: 40px;
+  order: 0;
+}
+.footerTitleForm {
+  width: 240px;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 19.6px;
+  text-align: left;
+  text-transform: uppercase;
+  color: var(--text-color-white);
+  margin-bottom: 16px;
 }
 .textForLogo {
   display: none;
 }
-.footerNavList {
-  list-style-type: none;
+.footerForm {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 12px;
-  padding: 0;
-  margin-bottom: 48px;
 }
-.footerNavListLink {
+.footerInputEmail {
+  display: block;
+  width: 169px;
+  outline: none;
+  padding: 10.5px 16px;
+  background-color: var(--accent-color-dark);
+  border: 1px solid var(--input-hover);
+  border-radius: 8px 0 0 8px;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 22.4px;
+  text-align: left;
+  color: var(--text-color-white);
+  z-index: 1;
+}
+.footerInputEmail:focus,
+.footerInputEmail::after {
+  background-color: var(--accent-color-dark);
+  border: 1px solid var(--text-color-white);
+}
+.footerInputEmail::placeholder {
   font-size: 14px;
   font-weight: 500;
-  line-height: 16.8px;
-  text-align: center;
-  color: var(--text-color-white);
-  text-decoration: none;
-  transition: color 0.3s ease;
+  line-height: 22.4px;
+  text-align: left;
+  color: var(--input-hover);
 }
-.footerNavListLink:hover {
+.footerFormButton {
+  padding: 10.5px 24px;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 16.8px;
+  color: var(--accent-color-dark);
+  margin-left: -6px;
+  border: none;
+  border-radius: 8px;
+  z-index: 2;
+  background-color: var(--bg-color);
+}
+.footerFormButton:hover,
+.footerFormButton:focus {
+  background-color: var(--button-hover-background);
+  cursor: pointer;
+}
+.footerNavWrapper {
+  order: 1;
+  display: flex;
+  gap: 79px;
+  margin-bottom: 32px;
+}
+.footerServiseTitle {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16.8px;
+  text-align: left;
+  text-transform: uppercase;
+  color: var(--text-color-white);
+  margin-bottom: 12px;
+}
+.footerNavList {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.footerNavListLink {
+  font-size: 12px;
+  font-weight: 500;
+  text-align: left;
+  color: var(--text-color-white);
+  line-height: 1.4;
+}
+.footerNavListLink:hover,
+.footerNavListLink:active {
   color: var(--accent-color-light);
   cursor: pointer;
 }
-.footerFish {
-  width: 65px;
-  height: 59px;
+.footerLogo {
+  width: 112px;
+  order: 3;
   display: block;
-  margin: 0 auto;
+  margin-bottom: 22px;
+}
+.icon {
+  width: 112px;
+  height: 19px;
+  fill: var(--text-color-white);
+}
+.footerImgWrapper {
+  order: 3;
+}
+.footerImgWrapper {
+  position: absolute;
+  bottom: 54px;
+  right: 16px;
 }
 .imgFish {
   display: block;
-  margin: 0 auto;
+  width: 72px;
+  height: 65px;
 }
 @media screen and (min-width: 1440px) {
   .footerWrapper {
-    padding: 102px 73px 0 73px;
-    background-color: var(--bg-color);
+    padding: 0 72px;
   }
   .footerContainer {
-    width: 1214px;
-    padding: 10px 62px 13px 40px;
+    width: 1235px;
+    padding: 40px 23px 82px 38px;
     border-radius: 40px 40px 0 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 210px;
+    flex-direction: row;
+    align-items: start;
+    gap: 131px;
+  }
+  .textForLogo {
+    display: block;
+  }
+  .footerLogo {
+    width: 196px;
+    order: 0;
+    display: block;
+    margin: 0;
   }
   .icon {
     width: 148px;
     height: 23px;
-    margin-bottom: 8px;
+    fill: var(--text-color-white);
+    margin-bottom: 14px;
   }
   .textForLogo {
-    display: inline-block;
-    font-size: 10px;
+    font-size: 11px;
     font-weight: 400;
-    line-height: 14px;
+    line-height: 16px;
     letter-spacing: -0.02em;
     text-align: left;
     color: var(--text-color-white);
   }
-  .footerNavList {
-    flex-direction: row;
-    align-items: start;
-    gap: 72px;
+  .footerNavWrapper {
+    order: 1;
+    display: flex;
+    gap: 131px;
     margin: 0;
   }
-  .footerNavListLink {
+  .footerServiseTitle {
     font-size: 16px;
-    line-height: 22.4px;
-    text-align: left;
+    font-weight: 600;
+    line-height: 18.8px;
+    margin-bottom: 16px;
   }
-  .footerFish {
-    width: 149px;
-    height: 136px;
+  .footerNavList {
+    gap: 10px;
   }
-  .footerLogo {
-    width: 196px;
+  .footerNavListLink {
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 1.6;
+  }
+  .footerFormWrapper {
+    margin: 0;
+    order: 3;
+    width: 308px;
+  }
+  .footerTitleForm {
+    width: 168px;
+    font-size: 12px;
+    line-height: 16.8px;
+  }
+  .footerForm {
+    flex-direction: column;
+    gap: 4px;
+  }
+  .footerInputEmail {
+    width: 150px;
+    padding: 8px 0 8px 16px;
+    border-radius: 8px;
+    font-size: 12px;
+    line-height: 14px;
+    z-index: 0;
+  }
+  .footerInputEmail::placeholder {
+    font-size: 10px;
+    line-height: 14px;
+  }
+  .footerFormButton {
+    width: 168px;
+    padding: 8px 42px;
+    font-size: 10px;
+    font-weight: 400;
+    line-height: 16.8px;
+    text-align: center;
+    margin: 0;
+    z-index: 0;
+  }
+  .footerImgWrapper {
+    position: absolute;
+    bottom: 12px;
+    right: 23px;
+  }
+  .imgFish {
+    display: block;
+    width: 140px;
+    height: 140px;
   }
 }
