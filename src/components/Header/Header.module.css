@@ -1,12 +1,16 @@
 .headerContainer {
   width: 343px;
+  height: 36.5px;
   padding: 16px;
   background-color: var(--bg-color);
   display: flex;
   justify-content: space-between;
-  position: relative;
+  position: fixed;
+  top: 0;
+  z-index: 9999;
+  /* border-bottom: 0.5px solid var(--accent-color-light); */
 }
-.icon{
+.icon {
   fill: var(--accent-color-dark);
   stroke: var(--accent-color-dark);
 }
@@ -20,19 +24,15 @@
   transition: stroke 0.3s ease;
 }
 .buttonMenu:hover .iconBurger {
-  stroke: var(--accent-color-light); 
+  stroke: var(--accent-color-light);
 }
 .navigationList {
   display: none;
 }
-/* .headerUser {
-  display: flex;
-  gap: 16px;
-} */
 
 @media screen and (min-width: 1440px) {
   .headerContainer {
-    width: 1294px;
+    width: 1296px;
     padding: 32px 72px;
   }
   .icon {
@@ -51,12 +51,10 @@
     color: var(--text-color-dark);
     font-weight: 600;
     line-height: 22px;
-    cursor: pointer;transition: color 0.3s ease;
+    cursor: pointer;
+    transition: color 0.3s ease;
   }
   .navListItem:hover {
     color: var(--accent-color-dark);
   }
-  /* .headerUser {
-    display: none;
-  } */
 }

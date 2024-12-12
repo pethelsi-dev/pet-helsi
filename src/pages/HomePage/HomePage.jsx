@@ -1,14 +1,19 @@
 import { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
 import { selectorIsLoggedIn } from "../../redux/auth/selectors";
-import Layout from "../../components/Layout/Layout";
-import WelcomePage from "../WelcomePage/WelcomePage";
+import Hero from "../../components/Hero/Hero";
+import HeroImage from "../../components/HeroImage/HeroImage";
+import Features from "../../components/Features/Features";
+import Discount from "../../components/Discount/Discount";
+import VeterinariansList from "../../components/VeterinariansList/VeterinariansList";
+import AppointmentProcess from "../../components/AppointmentProcess/AppointmentProcess";
+import Faq from "../../components/Faq/Faq";
+import Footer from "../../components/Footer/Footer";
 
 export default function HomePage() {
   const [isDesktop, setIsDesktop] = useState(
     () => typeof window !== "undefined" && window.innerWidth >= 1440
   );
-  const [modalIsOpen, setIsOpen] = useState(false);
   const isLoggedIn = useSelector(selectorIsLoggedIn);
 
   useEffect(() => {
@@ -23,8 +28,14 @@ export default function HomePage() {
 
   return (
     <>
-      <Layout modalIsOpen={modalIsOpen} setIsOpen={setIsOpen} />
-      {!isLoggedIn && <WelcomePage isDesktop={isDesktop} />}
+      <Hero />
+      <HeroImage />
+      <Features />
+      <AppointmentProcess />
+      <VeterinariansList isDesktop={isDesktop} />
+      <Discount />
+      <Faq />
+      <Footer />
     </>
   );
 }
