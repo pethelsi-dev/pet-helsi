@@ -126,9 +126,21 @@
   right: 16px;
 }
 .imgFish {
-  display: block;
-  width: 72px;
+  position: absolute;
+  bottom: 4px;
+  right: -6px;
+  width: 71.61px;
   height: 65px;
+  z-index: 2;
+}
+.footerVector {
+  display: block;
+  position: absolute;
+  width: 70.59px;
+  height: 17.59px;
+  bottom: 10px;
+  right: -6px;
+  transform: rotate(2deg);
 }
 @media screen and (min-width: 1440px) {
   .footerWrapper {
@@ -227,8 +239,20 @@
     right: 23px;
   }
   .imgFish {
-    display: block;
+    position: absolute;
+    bottom: 24px;
+    right: -12px;
     width: 140px;
-    height: 140px;
+    height: 136.36px;
+    z-index: 2;
+  }
+  .footerVector {
+    display: block;
+    position: absolute;
+    width: 148.59px;
+    height: 37.03px;
+    bottom: 36px;
+    right: -10px;
+    transform: rotate(2deg);
   }
 }

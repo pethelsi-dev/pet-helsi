@@ -1,6 +1,7 @@
 import consultationImg1x from "../../assets/Images/online-consultation@1x.png";
 import consultationImg2x from "../../assets/Images/online-consultation@2x.png";
 import vector from "../../assets/Images/vector.png";
+import cat from "../../assets/Images/cat.gif"
 import style from "./AppointmentProcess.module.css";
 
 export default function AppointmentProcess() {
@@ -66,7 +67,7 @@ export default function AppointmentProcess() {
         />
       </div>
       <img
-        src="https://s3-alpha-sig.figma.com/img/4122/54ed/be484b61795d7bf3cad2cdc8d23e5593?Expires=1734307200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=M-VOJvs69Ay7xMZyZFwtEKrQbgMvlRtFQsUeILGqkydMdqB95A2PYtmL3xwebPdJMA8g09PFtFWkLsmSETjnPfhDi4I2xgCMWNwxR~4mqSG63O5L5wUFtMjVs3sm~vgTASFD6OVf0oPMWA2YofPUjbDWjVnLpXjeN9aJHNpfwyhNHxRhOXvEau0aNjXGUVi9CawGyweyfU7cTuweullNGtegG4PMhlF5m468SQaGeOBIQSUX33nq4bbZDXEAflpDJOkdud9nNeIKO4Iy3eSh46bVXUBR4nGap4yXIb~Pz258U4kOxeSfYyb4Yqdm0GINldeBpayh1ti-q9ND3XVAlA__"
+        src={cat}
         alt="Cat GIF"
         className={style.appointmentCat}
       />
