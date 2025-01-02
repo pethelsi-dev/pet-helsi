@@ -9,6 +9,7 @@ import VeterinariansList from "../../components/VeterinariansList/VeterinariansL
 import AppointmentProcess from "../../components/AppointmentProcess/AppointmentProcess";
 import Faq from "../../components/Faq/Faq";
 import Footer from "../../components/Footer/Footer";
+import Registration from '..//Registration/Registration'
 
 export default function HomePage() {
   const [isDesktop, setIsDesktop] = useState(
@@ -28,6 +29,7 @@ export default function HomePage() {
 
   return (
     <>
+    {/* <Registration/> */}
       <Hero />
       <HeroImage />
       <Features />

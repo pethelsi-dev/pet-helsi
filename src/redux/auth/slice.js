@@ -5,6 +5,7 @@ const authSlice = createSlice({
   name: "auth",
   initialState: {
     doctor: {
+      name:null,
       email: null,
     },
     owner: {
@@ -13,8 +14,8 @@ const authSlice = createSlice({
     token: null,
     isLoggedIn: false,
     isRefreshing: false,
-    isDoctor: false,
-    isOwner: false,
+    // isDoctor: false,
+    // isOwner: false,
   },
   //   extraReducers: builder =>
   //     builder

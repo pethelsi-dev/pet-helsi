@@ -71,6 +71,9 @@ ol {
   align-items: center;
   cursor: pointer;
 }
+/* .accordionButton:focus{
+  background-color: #fff !important;
+} */
 .accordionButtonTitle {
   font-size: 16px;
   font-weight: 500;
