@@ -2,6 +2,7 @@ import { configureStore } from "@reduxjs/toolkit";
 import authSliceReducer from "./auth/slice";
 import doctorsSliseReducer from "./doctor/slice";
 import ownersSliceReducer from "./owner/slice";
+import appSliseReducer from "../redux/appSlice/slice";
 import {
   persistStore,
   persistReducer,
@@ -38,11 +39,18 @@ const persistConfigOwners = {
 };
 const pOwnersReducer = persistReducer(persistConfigOwners, ownersSliceReducer);
 
+// const persistConfigApp = {
+//   key: "app",
+//   storage,
+//   whitelist: [],
+// };
+
 export const store = configureStore({
   reducer: {
     auth: pAuthReducer,
     doctor: pDoctorsReducer,
     owner: pOwnersReducer,
+    app: appSliseReducer,
   },
   middleware: getDefaultMiddleware =>
     getDefaultMiddleware({

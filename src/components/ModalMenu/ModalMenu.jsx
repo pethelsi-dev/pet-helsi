@@ -1,4 +1,8 @@
-import { useEffect } from "react";
+import { Link } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
+import { selectorIsOpenMenu } from "../../redux/appSlice/selectors";
+import { setIsOpenMenu } from "../../redux/appSlice/slice";
+import { selectorIsLoggedIn } from "../../redux/auth/selectors";
 import Modal from "react-modal";
 import Icon from "../Icon/Icon";
 import sprateSistem from "../../assets/Images/sprite-sistem.svg";
@@ -6,59 +10,84 @@ import style from "./ModalMenu.module.css";
 
 Modal.setAppElement("#root");
 
-export default function ModalMenu({ setIsOpen }) {
-  useEffect(() => {
-    const handleResize = () => {
-      if (window.innerWidth > 1439) {
-        setIsOpen(false);
-      }
-    };
-    window.addEventListener("resize", handleResize);
-    handleResize();
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, [setIsOpen]);
+export default function ModalMenu() {
+  const dispatch = useDispatch();
+  const isOpenMenu = useSelector(selectorIsOpenMenu);
+  const isAuthenticated = useSelector(selectorIsLoggedIn);
 
   function closeModal() {
-    setIsOpen(false);
+    dispatch(setIsOpenMenu(false));
   }
   return (
-    <div className={style.modalMenuContainer}>
-      <button type="button" onClick={closeModal} className={style.buttonClose}>
-        <Icon
-          sprite={sprateSistem}
-          id={"icon-close"}
-          width="32px"
-          height="32px"
-          className={style.iconClose}
-        />
-      </button>
+    isOpenMenu && (
+      <div className={style.modalMenuContainer}>
+        <div>
+          <div className={style.modalMenuLogo}>
+            {" "}
+            <Icon
+              sprite={sprateSistem}
+              id={"icon-pet-helsi-logo"}
+              width="112px"
+              height="19px"
+              className={style.iconLogo}
+            />
+            <button
+              type="button"
+              onClick={closeModal}
+              className={style.buttonClose}>
+              <Icon
+                sprite={sprateSistem}
+                id={"icon-close"}
+                width="32px"
+                height="32px"
+                className={style.iconClose}
+              />
+            </button>
+          </div>
 
-      <nav>
-        <ul className={style.navigationList}>
-          <li onClick={closeModal}>
-            <a href="#aboutUs" className={style.navListItem}>
-              Про нас
-            </a>
-          </li>
-          <li onClick={closeModal}>
-            <a href="#features" className={style.navListItem}>
-              Власникам тварин
-            </a>
-          </li>
-          <li onClick={closeModal}>
-            <a href="#benefits" className={style.navListItem}>
-              Ветеринарам
-            </a>
-          </li>
-          <li onClick={closeModal}>
-            <a href="#appointment" className={style.navListItem}>
-              FAQ
-            </a>
-          </li>
-        </ul>
-      </nav>
-    </div>
+          <nav className={style.headerNavigationWrapper}>
+            <ul className={style.navigationList}>
+              <li>
+                <a
+                  href="#features"
+                  onClick={closeModal}
+                  className={style.navListItem}>
+                  Про нас
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#veterinarians"
+                  onClick={closeModal}
+                  className={style.navListItem}>
+                  База лікарів
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#faq"
+                  onClick={closeModal}
+                  className={style.navListItem}>
+                  FAQ
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+
+        <div>
+          {!isAuthenticated && (
+            <div className={style.headerAuthLinks}>
+              <Link className={style.linkAuth} to={"/login"}>
+                Увійти
+              </Link>
+              <Link className={style.linkAuth} to={"/register"}>
+                Зареєструватися
+              </Link>
+            </div>
+          )}
+        </div>
+      </div>
+    )
   );
 }

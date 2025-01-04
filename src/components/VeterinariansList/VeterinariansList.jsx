@@ -1,20 +1,25 @@
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { nanoid } from "nanoid";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, A11y } from "swiper/modules";
-import { useRef } from "react";
-import "swiper/css";
-import "swiper/css/pagination";
 import allVeterinarians from "../../../allVeterinarians.json";
 import Icon from "../Icon/Icon";
 import sprateSistem from "../../assets/Images/sprite-sistem.svg";
+import "swiper/css";
+import "swiper/css/pagination";
 import style from "./VeterinariansList.module.css";
 
 export default function VeterinariansList({ isDesktop }) {
   const [isBeginning, setIsBeginning] = useState(true);
   const [isEnd, setIsEnd] = useState(false);
   const swiperRef = useRef(null);
+
+  useEffect(() => {
+    if (swiperRef.current) {
+      swiperRef.current.update();
+    }
+  }, [isDesktop]);
 
   const handleSwiperInit = swiper => {
     setIsBeginning(swiper.isBeginning);
@@ -27,7 +32,7 @@ export default function VeterinariansList({ isDesktop }) {
   };
 
   return (
-    <div className={style.veterinariansContainer}>
+    <div id="veterinarians" className={style.veterinariansContainer}>
       <div className={style.veterinariansTextWrapper}>
         <h3 className={style.veterinariansTitle}>
           Ветеринари, доступні у найближчий час

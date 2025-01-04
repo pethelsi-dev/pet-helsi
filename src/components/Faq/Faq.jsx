@@ -22,7 +22,7 @@ export default function Faq() {
   };
 
   return (
-    <div className={style.faqContainer}>
+    <div id="faq" className={style.faqContainer}>
       <div className={style.faqImageWrapper}>
         <picture className={style.faqPictureDesk}>
           <source

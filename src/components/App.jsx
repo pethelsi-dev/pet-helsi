@@ -1,5 +1,5 @@
 import { Routes, Route } from "react-router-dom";
-import { useState, lazy, Suspense } from "react";
+import { lazy, Suspense } from "react";
 import { useSelector } from "react-redux";
 import { selectorIsLoggedIn } from "../redux/auth/selectors";
 import Layout from "../components/Layout/Layout.jsx";
@@ -7,9 +7,10 @@ import PrivateRoute from "../components/PrivateRoute/PrivateRoute";
 import PublicRoute from "../components/PublicRoute/PublicRoute";
 import Loader from "./Loader/Loader.jsx";
 import style from "./App.module.css";
+
 const HomePage = lazy(() => import("../pages/HomePage/HomePage"));
 const LoginPage = lazy(() => import("../pages/LoginPage/LoginPage"));
-// const ProfilePage = lazy(() => import("../pages/ProfilePage"));
+const ProfilePage = lazy(() => import("../pages/ProfilePage/ProfilePage.jsx"));
 const RegisterPage = lazy(() => import("../pages/RegisterPage/RegisterPage"));
 const PrivacyPolicy = lazy(() =>
   import("../pages/PrivacyPolicy/PrivacyPolicy.jsx")
@@ -22,16 +23,16 @@ const VeterinarianListPage = lazy(() =>
 );
 
 export default function App() {
-  const [modalIsOpen, setIsOpen] = useState(false);
   const isAuthenticated = useSelector(selectorIsLoggedIn);
 
   return (
     <div className={style.appContainer}>
-      <Layout modalIsOpen={modalIsOpen} setIsOpen={setIsOpen}>
+      <Layout>
         <Suspense fallback={<Loader />}>
           <Routes>
+            <Route path="/" element={<HomePage />} />
+
             <Route element={<PublicRoute isAuthenticated={isAuthenticated} />}>
-              <Route path="/" element={<HomePage />} />
               <Route path="/login" element={<LoginPage />} />
               <Route path="/register" element={<RegisterPage />} />
               <Route path="/veterinarians" element={<VeterinarianListPage />} />
@@ -43,7 +44,7 @@ export default function App() {
             </Route>
 
             <Route element={<PrivateRoute isAuthenticated={isAuthenticated} />}>
-              {/* <Route path="/profile" element={<ProfilePage />} /> */}
+              <Route path="/profile" element={<ProfilePage />} />
             </Route>
           </Routes>
         </Suspense>

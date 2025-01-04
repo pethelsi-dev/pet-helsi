@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
-import { useSelector } from "react-redux";
-import { selectorIsLoggedIn } from "../../redux/auth/selectors";
+import { useDispatch } from "react-redux";
+import { setIsOpenMenu } from "../../redux/appSlice/slice";
 import Hero from "../../components/Hero/Hero";
 import HeroImage from "../../components/HeroImage/HeroImage";
 import Features from "../../components/Features/Features";
@@ -9,27 +9,27 @@ import VeterinariansList from "../../components/VeterinariansList/VeterinariansL
 import AppointmentProcess from "../../components/AppointmentProcess/AppointmentProcess";
 import Faq from "../../components/Faq/Faq";
 import Footer from "../../components/Footer/Footer";
-import Registration from '..//Registration/Registration'
 
 export default function HomePage() {
+  const dispatch = useDispatch();
   const [isDesktop, setIsDesktop] = useState(
     () => typeof window !== "undefined" && window.innerWidth >= 1440
   );
-  const isLoggedIn = useSelector(selectorIsLoggedIn);
 
   useEffect(() => {
     const handleResize = () => {
       setIsDesktop(window.innerWidth >= 1440);
+      if (window.innerWidth >= 1440) {
+        dispatch(setIsOpenMenu(false));
+      }
     };
+
     window.addEventListener("resize", handleResize);
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
+    return () => window.removeEventListener("resize", handleResize);
+  }, [dispatch]);
 
   return (
     <>
-    {/* <Registration/> */}
       <Hero />
       <HeroImage />
       <Features />

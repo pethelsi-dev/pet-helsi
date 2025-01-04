@@ -4,24 +4,43 @@
   padding: 16px;
   background-color: var(--bg-color);
   display: flex;
+  align-items: center;
   justify-content: space-between;
   position: fixed;
   top: 0;
   z-index: 9999;
-  /* border-bottom: 0.5px solid var(--accent-color-light); */
 }
-.icon {
-  fill: var(--accent-color-dark);
-  stroke: var(--accent-color-dark);
+
+.logoWrapper {
+  display: flex;
+  align-items: center;
+  gap: 16px;
 }
+
 .buttonMenu {
   background-color: transparent;
   border: none;
   cursor: pointer;
 }
+.iconLogo {
+  display: block;
+  width: 112px;
+  height: 19px;
+  fill: var(--accent-color-dark);
+  stroke: var(--accent-color-dark);
+  transition: fill 0.3s ease, transform 0.3s ease;
+}
+.iconLogo:hover {
+  fill: var(--logo-hover);
+  transform: scale(1.02);
+}
 .iconBurger {
+  width: 32px;
+  height: 32px;
+  display: block;
   stroke: var(--accent-color-dark);
   transition: stroke 0.3s ease;
+  cursor: pointer;
 }
 .buttonMenu:hover .iconBurger {
   stroke: var(--accent-color-light);
@@ -29,32 +48,106 @@
 .navigationList {
   display: none;
 }
+.headerAuthLinks {
+  display: none;
+}
+.headerUserWrapper {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.headerUserButton {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+.headerIconUser {
+  display: block;
+  width: 32px;
+  height: 32px;
+  stroke: var(--accent-color-dark);
+}
 
 @media screen and (min-width: 1440px) {
   .headerContainer {
     width: 1296px;
-    padding: 32px 72px;
+    padding: 24px 72px;
+    justify-content: flex-start;
   }
-  .icon {
-    width: 196px;
-    height: 38px;
+  .headerContainer > :last-child {
+    margin-left: auto;
+  }
+  .iconLogo {
+    width: 152px;
+    height: 26px;
+    margin-right: 517px;
   }
   .buttonMenu {
     display: none;
   }
+  .headerNavContainer {
+    margin-right: 72px;
+  }
   .navigationList {
     display: flex;
-    gap: 72px;
+    align-items: center;
+    gap: 48px;
   }
   .navListItem {
     font-size: 16px;
+    font-weight: 500;
+    line-height: 22.4px;
+    text-align: left;
     color: var(--text-color-dark);
-    font-weight: 600;
-    line-height: 22px;
     cursor: pointer;
     transition: color 0.3s ease;
   }
   .navListItem:hover {
     color: var(--accent-color-dark);
+  }
+
+  .headerAuthLinks {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  .iconLogin {
+    width: 24px;
+    height: 24px;
+    stroke: var(--accent-color-dark);
+  }
+  .linkAllVeterinarians {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 22.4px;
+    color: var(--accent-color-dark);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    cursor: pointer;
+    border: 1px solid transparent;
+    transition: color 0.3s ease, background-color 0.3s ease, border 0.3s ease;
+  }
+  .linkLogin {
+    padding: 8px 6px;
+    border-radius: 8px;
+  }
+  .linkRegister {
+    padding: 8px 19px;
+    border-radius: 8px;
+    border: 1px solid var(--accent-color-dark);
+  }
+  .linkAllVeterinarians:hover {
+    border: 1px solid var(--button-hover);
+    background-color: var(--button-hover-background);
+  }
+  .linkAllVeterinarians:focus {
+    color: var(--bg-color);
+    border: 1px solid transparent;
+    background-color: var(--button-hover);
+  }
+  .linkAllVeterinarians:focus .iconLogin {
+    stroke: var(--bg-color);
   }
 }
