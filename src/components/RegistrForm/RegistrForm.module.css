@@ -6,6 +6,9 @@
     margin-right: 16px;
     margin-top: 14px;
     margin-bottom: 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
 }
 
 .title {    
@@ -22,6 +25,67 @@
     color: var(--accent-color-dark);
 }
 
+.buttonContainer {
+    display: flex;
+    gap: 4px;
+}
+
+.switchButton {
+    width: 169.5px;
+    height: 36px;
+    border-radius: 6px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-right: 12px;
+    padding-left: 12px;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 140%;
+    outline: 1px;
+    border: none;
+    border-color: var(--accent-color-dark);
+}
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.fieldContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.label {
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 140%;
+    color: var(--text-color-gray);
+}
+
+.input {
+    width: 327.5px;
+    height: 44px;
+    padding-left: 12px;
+    border-radius: 8px;
+    outline: none;
+    border: 1px solid var(--input-def);
+}
+
+.input::placeholder {
+    color: var(--text-default);
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 140%;
+}
+
+.button {
+    width: 343px;
+    height: 48px;
+    color: var(--bg-color);
+    background-color: var(--accent-color-dark);
+}
 @media screen and (min-width: 1440px) {
     .formContainer {
         width: 437px;

@@ -32,23 +32,23 @@ export default function RegistrForm() {
                 validationSchema={validationSchema}
                 onSubmit={handleSubmit}>
                     {({isSubmitting}) =>(
-                        <Form>
+                        <Form className={css.form}>
                         <div className={css.fieldContainer}>
-                            <label htmlFor='email'>E-mail</label>
-                            <Field type = 'email' name = 'email' placeholder = 'Введіть E-mail'/>
+                            <label className={css.label} htmlFor='email'>E-mail</label>
+                            <Field className={css.input} type = 'email' name = 'email' placeholder = 'Введіть E-mail'/>
                             <ErrorMessage name='email' component='span'/>
                         </div>
                         <div className={css.fieldContainer}>
-                            <label htmlFor='password'>Пароль</label>
-                            <Field type = 'password' name = 'password' placeholder = 'Введіть пароль'/>
+                            <label className={css.label} htmlFor='password'>Пароль</label>
+                            <Field className={css.input} type = 'password' name = 'password' placeholder = 'Введіть пароль'/>
                             <ErrorMessage name='password' component='span'/>
                         </div>
                         <div className={css.fieldContainer}>
-                            <label htmlFor='confirmPassword'>Повторіть пароль</label>
-                            <Field type = 'password' name = 'confirmPassword' placeholder = 'Повторіть пароль'/>
+                            <label className={css.label} htmlFor='confirmPassword'>Повторіть пароль</label>
+                            <Field className={css.input} type = 'password' name = 'confirmPassword' placeholder = 'Повторіть пароль'/>
                             <ErrorMessage name='confirmPassword' component='span'/>
                         </div>
-                        <button type='submit' disabled= {isSubmitting}>Зареєструватися</button>
+                        <button className={css.button} type='submit' disabled= {isSubmitting}>Зареєструватися</button>
                     </Form>
 
                     )}
