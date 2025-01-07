@@ -7,6 +7,7 @@ import PrivateRoute from "../components/PrivateRoute/PrivateRoute";
 import PublicRoute from "../components/PublicRoute/PublicRoute";
 import Loader from "./Loader/Loader.jsx";
 import style from "./App.module.css";
+import { GoogleOAuthProvider } from '@react-oauth/google';
 
 const HomePage = lazy(() => import("../pages/HomePage/HomePage"));
 const LoginPage = lazy(() => import("../pages/LoginPage/LoginPage"));
@@ -26,7 +27,8 @@ export default function App() {
   const isAuthenticated = useSelector(selectorIsLoggedIn);
 
   return (
-    <div className={style.appContainer}>
+    <GoogleOAuthProvider>
+      <div className={style.appContainer}>
       <Layout>
         <Suspense fallback={<Loader />}>
           <Routes>
@@ -50,5 +52,7 @@ export default function App() {
         </Suspense>
       </Layout>
     </div>
+    </GoogleOAuthProvider>
+    
   );
 }

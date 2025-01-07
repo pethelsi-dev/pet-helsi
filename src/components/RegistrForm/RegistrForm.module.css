@@ -1,6 +1,6 @@
 .formContainer {
     width: 343px;
-    height: 588px;
+    /* height: 588px; */
     background-color: var(--bg-color);
     margin-left: 16px;
     margin-right: 16px;
@@ -41,9 +41,16 @@
     font-size: 14px;
     font-weight: 400;
     line-height: 140%;
-    outline: 1px;
+    outline: none;
     border: none;
-    border-color: var(--accent-color-dark);
+    background-color: var(--bg-color);
+    color: var(--text-color-dark);
+}
+
+.activeButton {
+    border: 1px solid var(--accent-color-dark);
+    color: var(--accent-color-dark);
+    
 }
 .form {
     display: flex;
@@ -83,8 +90,42 @@
 .button {
     width: 343px;
     height: 48px;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 140%;
     color: var(--bg-color);
     background-color: var(--accent-color-dark);
+    outline: none;
+    border: none;
+    border-radius: 8px;
+}
+
+.privacyPolicy {
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 140%;
+    color: var(--text-color-dark);
+    text-align: center;
+
+}
+
+.link {
+    color: var(--accent-color-dark);
+}
+
+.text {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 140%;
+    text-align: center;
+    color: var(--text-color-dark);
+}
+
+.enterNow {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 140%;
+    text-align: center;
 }
 @media screen and (min-width: 1440px) {
     .formContainer {
