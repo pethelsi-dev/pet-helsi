@@ -105,11 +105,6 @@
     stroke-width: 1px;
 }
 
-.activeIcon {
-    stroke: var(--text-default);
-    stroke-width: 1px;
-}
-
 .button {
     width: 343px;
     height: 48px;

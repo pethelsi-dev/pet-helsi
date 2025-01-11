@@ -1,9 +1,19 @@
 .layoutContainer {
-  padding-top: 68px;
+  display: flex;
+  flex-direction: column;
   position: relative;
 }
+
+.content {
+  padding-top: 68px; /* відступ для сторінок з хедером */
+}
+
+.noHeader {
+  padding-top: 0; /* без відступу на сторінках, де хедер не відображається */
+}
+
 @media screen and (min-width: 1440px) {
-  .layoutContainer {
-    padding-top: 86px;
+  .content {
+    padding-top: 86px; /* більший відступ для великих екранів */
   }
 }

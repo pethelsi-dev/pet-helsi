@@ -1,7 +1,7 @@
-import react, {useState} from 'react';
+import react, {useState, useRef, Suspense} from 'react';
 import SvgIcon from '../Icon/Icon'
 import sprite from '../../assets/Images/sprite-sistem.svg'
-import { Link } from 'react-router-dom';
+import { Link, useLocation, NavLink, Outlet } from 'react-router-dom';
 import { GoogleLogin } from '@react-oauth/google'
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
@@ -11,7 +11,6 @@ export default function RegistrForm() {
 
     const [passwordVisible, setPasswordVisible] = useState(false);
     const [confirmPasswordVisible, setConfirmPasswordVisible] = useState(false);
-
     const [userType, setUserType] = useState('owner');
 
     const validationSchema = Yup.object({});
@@ -42,6 +41,10 @@ export default function RegistrForm() {
     const setConfirmPasswordVisibleToggler = () => {
         setConfirmPasswordVisible(!confirmPasswordVisible);
       };
+
+    const location = useLocation();
+    const backLinkUrlRef = useRef(location.state ?? '/register')
+  
 
     return (
         <div className={css.formContainer}>
@@ -74,7 +77,7 @@ export default function RegistrForm() {
                                        iconName={`${passwordVisible ? "icon-eye_open" : "icon-view_hide"}`} 
                                        width="20px" 
                                        height="20px" 
-                                       className={`${css.icon} ${passwordVisible ? css.activeIcon : ''}`}
+                                       className={css.icon}
                                      />
                             </button>
                             <ErrorMessage name='password' component='span'/>
@@ -84,7 +87,7 @@ export default function RegistrForm() {
                             <Field className={css.input} type={confirmPasswordVisible ? 'text' : 'password'} name = 'confirmPassword' placeholder = 'Повторіть пароль'/>
                             <button
                                     type="button"
-                                    className={`${css.toggleButton} ${passwordVisible ? css.active : ''}`}
+                                    className={css.toggleButton}
                                     onClick={setConfirmPasswordVisibleToggler}
                                 >
                                     <SvgIcon 
@@ -92,7 +95,7 @@ export default function RegistrForm() {
                                        iconName={`${confirmPasswordVisible ? "icon-eye_open" : "icon-view_hide"}`} 
                                        width="20px" 
                                        height="20px" 
-                                       className={`${css.icon} ${passwordVisible ? css.activeIcon : ''}`}
+                                       className={css.icon}
                                      />
                             </button>
                             <ErrorMessage name='confirmPassword' component='span'/>
@@ -116,7 +119,10 @@ export default function RegistrForm() {
                     onError={handleGoogleFailure}
                 />
             </div>
-            <p className={css.enterNow}>Вже зареєстровані? <Link to="/login" className={css.link}>Увійти</Link>.</p>
+            <p className={css.enterNow}>Вже зареєстровані? <NavLink to="login" className={css.link}>Увійти</NavLink>.</p>
+            <Suspense fallback={<div><p>Please wait loading page...</p></div>}>
+             <Outlet/>
+          </Suspense>
         </div>
     )
 }
