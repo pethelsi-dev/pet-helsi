@@ -1,4 +1,6 @@
 import react, {useState} from 'react';
+import SvgIcon from '../Icon/Icon'
+import sprite from '../../assets/Images/sprite-sistem.svg'
 import { Link } from 'react-router-dom';
 import { GoogleLogin } from '@react-oauth/google'
 import { Formik, Form, Field, ErrorMessage } from 'formik';
@@ -8,6 +10,7 @@ import css from './RegistrForm.module.css';
 export default function RegistrForm() {
 
     const [passwordVisible, setPasswordVisible] = useState(false);
+    const [confirmPasswordVisible, setConfirmPasswordVisible] = useState(false);
 
     const [userType, setUserType] = useState('owner');
 
@@ -32,6 +35,13 @@ export default function RegistrForm() {
         console.error('Помилка входу через Google:', error);
     };
     
+    const setPasswordVisibleToggler = () => {
+        setPasswordVisible(!passwordVisible);
+      };
+
+    const setConfirmPasswordVisibleToggler = () => {
+        setConfirmPasswordVisible(!confirmPasswordVisible);
+      };
 
     return (
         <div className={css.formContainer}>
@@ -53,12 +63,38 @@ export default function RegistrForm() {
                         </div>
                         <div className={css.fieldContainer}>
                             <label className={css.label} htmlFor='password'>Пароль</label>
-                            <Field className={css.input} type = 'password' name = 'password' placeholder = 'Введіть пароль'/>
+                            <Field className={css.input} type={passwordVisible ? 'text' : 'password'} name = 'password' placeholder = 'Введіть пароль'/>
+                            <button
+                                    type="button"
+                                    className={css.toggleButton}
+                                    onClick={setPasswordVisibleToggler}
+                                >
+                                    <SvgIcon 
+                                       sprite={sprite} 
+                                       iconName={`${passwordVisible ? "icon-eye_open" : "icon-view_hide"}`} 
+                                       width="20px" 
+                                       height="20px" 
+                                       className={`${css.icon} ${passwordVisible ? css.activeIcon : ''}`}
+                                     />
+                            </button>
                             <ErrorMessage name='password' component='span'/>
                         </div>
                         <div className={css.fieldContainer}>
                             <label className={css.label} htmlFor='confirmPassword'>Повторіть пароль</label>
-                            <Field className={css.input} type = 'password' name = 'confirmPassword' placeholder = 'Повторіть пароль'/>
+                            <Field className={css.input} type={confirmPasswordVisible ? 'text' : 'password'} name = 'confirmPassword' placeholder = 'Повторіть пароль'/>
+                            <button
+                                    type="button"
+                                    className={`${css.toggleButton} ${passwordVisible ? css.active : ''}`}
+                                    onClick={setConfirmPasswordVisibleToggler}
+                                >
+                                    <SvgIcon 
+                                       sprite={sprite} 
+                                       iconName={`${confirmPasswordVisible ? "icon-eye_open" : "icon-view_hide"}`} 
+                                       width="20px" 
+                                       height="20px" 
+                                       className={`${css.icon} ${passwordVisible ? css.activeIcon : ''}`}
+                                     />
+                            </button>
                             <ErrorMessage name='confirmPassword' component='span'/>
                         </div>
                         <button className={css.button} type='submit' disabled= {isSubmitting}>Зареєструватися</button>

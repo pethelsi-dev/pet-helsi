@@ -59,6 +59,7 @@
 }
 
 .fieldContainer {
+    position: relative;
     display: flex;
     flex-direction: column;
     gap: 4px;
@@ -85,6 +86,28 @@
     font-size: 14px;
     font-weight: 400;
     line-height: 140%;
+}
+
+.toggleButton {
+    position: absolute;
+    top: 50%;
+    right: 5%;
+    width: 20px;
+    height: 20px;
+    display: block;
+    background-color: transparent;
+    outline: none;
+    border: none;
+  }
+
+.icon {
+    stroke: var(--text-default);
+    stroke-width: 1px;
+}
+
+.activeIcon {
+    stroke: var(--text-default);
+    stroke-width: 1px;
 }
 
 .button {
