@@ -5,15 +5,19 @@
 }
 
 .content {
-  padding-top: 68px; /* відступ для сторінок з хедером */
+  padding-top: 68px; 
 }
 
 .noHeader {
-  padding-top: 0; /* без відступу на сторінках, де хедер не відображається */
+  padding-top: 0; 
 }
 
 @media screen and (min-width: 1440px) {
   .content {
-    padding-top: 86px; /* більший відступ для великих екранів */
+    padding-top: 86px; 
+  }
+
+  .noHeader {
+    padding-top: 0;
   }
 }

@@ -1,10 +1,11 @@
-import react, {useState, useRef, Suspense} from 'react';
+import react, {useState,} from 'react';
 import SvgIcon from '../Icon/Icon'
 import sprite from '../../assets/Images/sprite-sistem.svg'
-import { Link, useLocation, NavLink, Outlet } from 'react-router-dom';
-import { GoogleLogin } from '@react-oauth/google'
+import { Link, NavLink} from 'react-router-dom';
+// import { GoogleLogin } from '@react-oauth/google'
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
+import GoogleAuthorization from '../GoogleAuthorization/GoogleAuthorization'
 import css from './RegistrForm.module.css';
 
 export default function RegistrForm() {
@@ -26,14 +27,6 @@ export default function RegistrForm() {
         // Виклик API для реєстрації
       };
 
-    const handleGoogleSuccess = (response) => {
-        console.log('Успішний вхід через Google:', response);
-    };
-    
-    const handleGoogleFailure = (error) => {
-        console.error('Помилка входу через Google:', error);
-    };
-    
     const setPasswordVisibleToggler = () => {
         setPasswordVisible(!passwordVisible);
       };
@@ -41,9 +34,6 @@ export default function RegistrForm() {
     const setConfirmPasswordVisibleToggler = () => {
         setConfirmPasswordVisible(!confirmPasswordVisible);
       };
-
-    const location = useLocation();
-    const backLinkUrlRef = useRef(location.state ?? '/register')
   
 
     return (
@@ -114,15 +104,13 @@ export default function RegistrForm() {
             </Formik>
             <p className={css.text}>або увійти за допомогою</p>
             <div className={css.googleLoginContainer}>
-                <GoogleLogin
+                {/* <GoogleLogin
                     onSuccess={handleGoogleSuccess}
                     onError={handleGoogleFailure}
-                />
+                /> */}
+            <GoogleAuthorization/>
             </div>
-            <p className={css.enterNow}>Вже зареєстровані? <NavLink to="login" className={css.link}>Увійти</NavLink>.</p>
-            <Suspense fallback={<div><p>Please wait loading page...</p></div>}>
-             <Outlet/>
-          </Suspense>
+            <p className={css.enterNow}>Вже зареєстровані? <Link to="/login" className={css.link}>Увійти</Link></p>
         </div>
     )
 }
