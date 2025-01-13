@@ -37,8 +37,9 @@ export default function RegistrForm() {
   
 
     return (
-        <div className={css.formContainer}>
+        <div className={css.container}>
             <h1 className={css.title}>Реєстрація в <span className={css.span}>PetHelsi</span></h1>
+          <div className={css.formContainer}>
             <div className={css.buttonContainer}>
                 <button className={`${css.switchButton} ${userType === 'owner' ? css.activeButton : ''}`} type='button' onClick={() => setUserType('owner')}>Я - власник тварини</button>
                 <button className={`${css.switchButton} ${userType === 'doctor' ? css.activeButton : ''}`} type='button' onClick={() => setUserType('doctor')}>Я - ветеринар</button>
@@ -110,7 +111,8 @@ export default function RegistrForm() {
                 /> */}
             <GoogleAuthorization/>
             </div>
-            <p className={css.enterNow}>Вже зареєстровані? <Link to="/login" className={css.link}>Увійти</Link></p>
+            <p className={css.enterNow}>Вже зареєстровані? <Link to="/login" className={css.link}>Увійти</Link></p> 
+          </div>
         </div>
     )
 }

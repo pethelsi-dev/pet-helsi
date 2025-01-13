@@ -12,3 +12,9 @@
     line-height: 140%;
     color: var(--accent-color-dark);
 }
+
+@media screen and (min-width: 1440px) {
+    .googleLink {
+        width: 304px;
+    }
+}

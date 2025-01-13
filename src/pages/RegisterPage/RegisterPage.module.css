@@ -18,7 +18,7 @@
 
       .form {
         position: absolute;
-        top: 40px;
+        /* top: 40px; */
         right: 64px;
       }
 }
