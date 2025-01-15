@@ -2,7 +2,6 @@ import react, {useState,} from 'react';
 import SvgIcon from '../Icon/Icon'
 import sprite from '../../assets/Images/sprite-sistem.svg'
 import { Link, NavLink} from 'react-router-dom';
-// import { GoogleLogin } from '@react-oauth/google'
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import GoogleAuthorization from '../GoogleAuthorization/GoogleAuthorization'
