@@ -1,24 +1,26 @@
 .container {
     width: 343px;
-    /* height: 588px; */
+    height: 588px;
     background-color: var(--bg-color);
     margin-left: 16px;
     margin-right: 16px;
-    margin-top: 14px;
+    margin-top: 16px;
     margin-bottom: 14px;
     display: flex;
     flex-direction: column;
     gap: 24px;
 }
 
+.formContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
 .title {    
     font-size: 28px;
     font-weight: 500;
     line-height: 140%;
     text-align: center;
-    text-underline-position: from-font;
-    text-decoration-skip-ink: none;
-
 }
 
 .span {
@@ -54,6 +56,12 @@
 }
 
 .form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.fields {
     display: flex;
     flex-direction: column;
     gap: 16px;
@@ -104,6 +112,14 @@
 .icon {
     stroke: var(--text-default);
     stroke-width: 1px;
+}
+
+.emailError {
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 120%;
+    color: var(--error-color);
+
 }
 
 .button {
@@ -158,18 +174,20 @@
 @media screen and (min-width: 1440px) {
     .container {
         width: 437px;
-        /* height: 745px; */
+        height: 705px;
         border-radius: 18px;
         margin-top: 41px;
+        margin-bottom: 39px;
+        margin-left: 0;
+        margin-right: 0;
         padding-top: 40px;
-        padding-bottom: 32px;
+        /* padding-bottom: 32px; */
         gap: 40px;
     }
 
     .title {    
         width: 309px;
         font-size: 32px;
-        font-weight: 500;
         line-height: 150%;
         margin-left: auto;
         margin-right: auto;
@@ -179,14 +197,13 @@
         display: flex;
         flex-direction: column;
         width: 304px;
-        height: 585px;
-        gap: 40px;
+        /* height: 585px; */
         margin-left: auto;
         margin-right: auto;
+        gap: 24px;
     }
 
     .buttonContainer {
-       width: 304px;
        height: 36px;
     }
 
@@ -197,8 +214,11 @@
     }
 
     .form {
-        width: 304px;
         gap: 24px;
+    }
+
+    .fields {
+        gap: 16px;
     }
     
     .fieldContainer {
@@ -216,8 +236,17 @@
         height: 24px;
       }
 
+      .registrButton {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+      }
       .button {
         width: 304px;
+    }
+
+    .enterNow {
+        margin-bottom: 32px;
     }
     
 }
