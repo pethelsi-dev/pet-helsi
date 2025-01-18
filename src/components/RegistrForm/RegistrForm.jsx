@@ -7,20 +7,26 @@ import * as Yup from "yup";
 import GoogleAuthorization from "../GoogleAuthorization/GoogleAuthorization";
 import css from "./RegistrForm.module.css";
 
-export default function RegistrForm() {
+export default function RegistrForm({onUserTypeChange}) {
   const [passwordVisible, setPasswordVisible] = useState(false);
   const [confirmPasswordVisible, setConfirmPasswordVisible] = useState(false);
   const [userType, setUserType] = useState("owner");
 
+  const handleUserTypeChange = (type) => {
+    setUserType(type);
+    onUserTypeChange(type); // Оновлюємо стан у батьківському компоненті
+  };
+
   const validationSchema = Yup.object({
     email: Yup.string()
       .email("Невірний формат E-mail")
-      .required("E-mail є обов'язковим"),
+      .required("Введіть е-mail"),
     password: Yup.string()
-      .min(6, "Пароль має містити не менше 8 символів - цифри і букви")
-      .required("Пароль є обов'язковим"),
+      .min(8, "Пароль має містити не менше 8 символів - цифри і букви")
+      .matches(/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/, "Пароль має містити мінімум одну літеру та одну цифру")
+      .required("Введіть пароль"),
     confirmPassword: Yup.string()
-      .oneOf([Yup.ref('password'), null], "Паролі мають співпадати")
+      .oneOf([Yup.ref('password'), null], "Паролі повинні співпадати")
       .required("Повтор пароля є обов'язковим"),
   });
 
@@ -55,7 +61,7 @@ export default function RegistrForm() {
               userType === "owner" ? css.activeButton : ""
             }`}
             type="button"
-            onClick={() => setUserType("owner")}
+            onClick={() => handleUserTypeChange("owner")}
           >
             Я - власник тварини
           </button>
@@ -64,7 +70,7 @@ export default function RegistrForm() {
               userType === "doctor" ? css.activeButton : ""
             }`}
             type="button"
-            onClick={() => setUserType("doctor")}
+            onClick={() => handleUserTypeChange("doctor")}
           >
             Я - ветеринар
           </button>
@@ -73,8 +79,9 @@ export default function RegistrForm() {
           initialValues={initialValues}
           validationSchema={validationSchema}
           onSubmit={handleSubmit}
+          validateOnBlur={true}
         >
-          {({ isSubmitting }) => (
+          {({ isSubmitting, errors, touched}) => (
             <Form className={css.form}>
               <div className={css.fields}>
                 <div className={css.fieldContainer}>
@@ -82,7 +89,7 @@ export default function RegistrForm() {
                     E-mail
                   </label>
                   <Field
-                    className={css.input}
+                    className={`${css.input} ${errors.email && touched.email ? css.inputError : ""}`}
                     type="email"
                     name="email"
                     placeholder="Введіть E-mail"
@@ -94,7 +101,7 @@ export default function RegistrForm() {
                     Пароль
                   </label>
                   <Field
-                    className={css.input}
+                    className={`${css.input} ${errors.password && touched.password ? css.inputError : ""}`}
                     type={passwordVisible ? "text" : "password"}
                     name="password"
                     placeholder="Введіть пароль"
@@ -121,7 +128,7 @@ export default function RegistrForm() {
                     Повторіть пароль
                   </label>
                   <Field
-                    className={css.input}
+                    className={`${css.input} ${errors.confirmPassword && touched.confirmPassword ? css.inputError : ""}`}
                     type={confirmPasswordVisible ? "text" : "password"}
                     name="confirmPassword"
                     placeholder="Повторіть пароль"
@@ -143,7 +150,7 @@ export default function RegistrForm() {
                       className={css.icon}
                     />
                   </button>
-                  <ErrorMessage name="confirmPassword" component="span" className={css.passwordError}/>
+                  <ErrorMessage name="confirmPassword" component="span" className={css.confirmPasswordError}/>
                 </div>
               </div>
               <div className={css.registrButton}>
