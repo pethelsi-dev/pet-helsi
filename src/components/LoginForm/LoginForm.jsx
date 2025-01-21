@@ -7,9 +7,14 @@ import * as Yup from "yup";
 import GoogleAuthorization from "../GoogleAuthorization/GoogleAuthorization";
 import css from "./LoginForm.module.css";
 
-export default function LoginForm() {
+export default function LoginForm({onUserTypeChange}) {
   const [passwordVisible, setPasswordVisible] = useState(false);
-  const [userType, setUserType] = useState("owner"); // Встановлюємо початковий тип користувача
+  const [userType, setUserType] = useState("owner"); 
+
+  const handleUserTypeChange = (type) => {
+    setUserType(type);
+    onUserTypeChange(type);
+  }
 
   const validationSchema = Yup.object({
     email: Yup.string()
@@ -32,10 +37,6 @@ export default function LoginForm() {
 
   const setPasswordVisibleToggler = () => {
     setPasswordVisible(!passwordVisible);
-  };
-
-  const handleUserTypeChange = (type) => {
-    setUserType(type); // Змінюємо тип користувача
   };
 
   return (
@@ -100,9 +101,14 @@ export default function LoginForm() {
                   </button>
                   <ErrorMessage name="password" component="span" className={css.passwordError} />
                 </div>
-                <div className={css.rememberMeContainer}>
-                  <Field type="checkbox" name="rememberMe" id="rememberMe" />
-                  <label htmlFor="rememberMe" className={css.rememberMeLabel}>Запам'ятати мене</label>
+                <div className={css.checkBoxContainer}>
+                  <div className={css.rememberMeContainer}>
+                    <Field type="checkbox" name="rememberMe" id="rememberMe" />
+                    <label htmlFor="rememberMe" className={css.rememberMeLabel}>Запам'ятати мене</label>
+                  </div>
+                  <div className={css.forgotPassword}>
+                    <Link to="/forgot-password" className={css.forgotPasswordLink}>Забули пароль?</Link>
+                  </div>
                 </div>
               </div>
               <div className={css.loginButtonContainer}>
@@ -113,9 +119,6 @@ export default function LoginForm() {
                 >
                   Увійти
                 </button>
-                <div className={css.forgotPassword}>
-                  <Link to="/forgot-password" className={css.link}>Забули пароль?</Link>
-                </div>
               </div>
             </Form>
           )}
@@ -125,7 +128,7 @@ export default function LoginForm() {
           <GoogleAuthorization />
         </div>
       </div>
-      <p className={css.registerNow}>Немає аккаунта? <Link to="/register" className={css.link}>Зареєструватися</Link></p>
+      <p className={css.registerNow}>Немає аккаунта? <Link to="/register" className={css.link}>Зареєструйтесь</Link></p>
     </div>
   );
 }

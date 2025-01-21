@@ -141,7 +141,78 @@
     color: var(--error-color);
 
 }
+.rememberMeLabel,
+.forgotPassword .forgotPasswordLink {
+    display: inline-flex;
+    align-items: center; 
+    font-size: 12px;
+    line-height: 1; 
+}
 
+.checkBoxContainer {
+    display: flex;
+    gap: 10px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.rememberMeContainer {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+
+}
+
+.rememberMeContainer input[type="checkbox"] {
+    display: none;
+}
+
+.rememberMeContainer label {
+    cursor: pointer;
+    display: flex;
+    position: relative;
+    padding-left: 30px; 
+}
+
+.rememberMeContainer label::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 16px;
+    height: 16px;
+    border: 1px solid var(--accent-color-dark);
+    border-radius: 3px;
+    background-color: #fff;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+.rememberMeContainer input[type="checkbox"]:checked + label::before {
+    background-color: var(--accent-color-dark);
+    border-color: var(--accent-color-dark);
+}
+
+.rememberMeContainer input[type="checkbox"]:checked + label::after {
+    content: "🗸";
+    position: absolute;
+    left: 5px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #fff;
+    font-size: 12px;
+  }
+  
+.forgotPassword {
+    display: flex;
+    align-items: center;
+}
+
+.forgotPasswordLink {
+    color: var(--accent-color-dark);
+    font-size: 12px;
+    text-decoration: underline;
+}
 .button {
     width: 343px;
     height: 48px;
@@ -155,17 +226,16 @@
     border-radius: 8px;
 }
 
-.privacyPolicy {
+.rememberMeLabel {
     font-size: 12px;
     font-weight: 500;
     line-height: 140%;
     color: var(--text-color-dark);
-    text-align: center;
-
 }
-
 .link {
     color: var(--accent-color-dark);
+    font-size: 14px;
+    text-decoration: underline;
 }
 
 .text {
@@ -176,19 +246,18 @@
     color: var(--text-color-dark);
 }
 
-.enterNow {
+.googleLoginContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.registerNow {
     font-size: 14px;
     font-weight: 400;
     line-height: 140%;
     text-align: center;
 }
-
-.link {
-    text-decoration: underline;
-}
-
-
-
 
 
 @media screen and (min-width: 1440px) {
