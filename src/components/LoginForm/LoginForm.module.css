@@ -1,0 +1,346 @@
+.container {
+    width: 343px;
+    height: 588px;
+    background-color: var(--bg-color);
+    margin-left: 16px;
+    margin-right: 16px;
+    margin-top: 16px;
+    margin-bottom: 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.formContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.title {    
+    font-size: 28px;
+    font-weight: 500;
+    line-height: 140%;
+    text-align: center;
+}
+
+.span {
+    color: var(--accent-color-dark);
+}
+
+.buttonContainer {
+    display: flex;
+    gap: 4px;
+}
+
+.switchButton {
+    width: 169.5px;
+    height: 36px;
+    border-radius: 6px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-right: 12px;
+    padding-left: 12px;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 140%;
+    outline: none;
+    border: none;
+    background-color: var(--bg-color);
+    color: var(--text-color-dark);
+}
+
+.activeButton {
+    border: 1px solid var(--accent-color-dark);
+    color: var(--accent-color-dark);
+    
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.fields {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.fieldContainer {
+    /* position: relative; */
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.label {
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 140%;
+    color: var(--text-color-gray);
+}
+
+.inputWrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.input {
+    width: 100%;
+    height: 44px;
+    padding-left: 12px;
+    border-radius: 8px;
+    outline: none;
+    border: 1px solid var(--input-def);
+}
+
+.input::placeholder {
+    color: var(--text-default);
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 140%;
+}
+
+.inputError {
+    border: 1px solid var(--error-color);
+    outline: none;
+}
+
+.toggleButton {
+    position: absolute;
+    top: 50%;
+    right: 12px;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    display: block;
+    background-color: transparent;
+    outline: none;
+    border: none;
+  }
+
+.icon {
+    stroke: var(--text-default);
+    stroke-width: 1px;
+}
+
+.emailError {
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 120%;
+    color: var(--error-color);
+
+}
+
+.passwordError {
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 120%;
+    color: var(--text-color-dark);
+}
+
+.confirmPasswordError {
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 120%;
+    color: var(--error-color);
+
+}
+.rememberMeLabel,
+.forgotPassword .forgotPasswordLink {
+    display: inline-flex;
+    align-items: center; 
+    font-size: 12px;
+    line-height: 1; 
+}
+
+.checkBoxContainer {
+    display: flex;
+    gap: 10px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.rememberMeContainer {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+
+}
+
+.rememberMeContainer input[type="checkbox"] {
+    display: none;
+}
+
+.rememberMeContainer label {
+    cursor: pointer;
+    display: flex;
+    position: relative;
+    padding-left: 30px; 
+}
+
+.rememberMeContainer label::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 16px;
+    height: 16px;
+    border: 1px solid var(--accent-color-dark);
+    border-radius: 3px;
+    background-color: #fff;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+.rememberMeContainer input[type="checkbox"]:checked + label::before {
+    background-color: var(--accent-color-dark);
+    border-color: var(--accent-color-dark);
+}
+
+.rememberMeContainer input[type="checkbox"]:checked + label::after {
+    content: "🗸";
+    position: absolute;
+    left: 5px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #fff;
+    font-size: 12px;
+  }
+  
+.forgotPassword {
+    display: flex;
+    align-items: center;
+}
+
+.forgotPasswordLink {
+    color: var(--accent-color-dark);
+    font-size: 12px;
+    text-decoration: underline;
+}
+.button {
+    width: 343px;
+    height: 48px;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 140%;
+    color: var(--bg-color);
+    background-color: var(--accent-color-dark);
+    outline: none;
+    border: none;
+    border-radius: 8px;
+}
+
+.rememberMeLabel {
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 140%;
+    color: var(--text-color-dark);
+}
+.link {
+    color: var(--accent-color-dark);
+    font-size: 14px;
+    text-decoration: underline;
+}
+
+.text {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 140%;
+    text-align: center;
+    color: var(--text-color-dark);
+}
+
+.googleLoginContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.registerNow {
+    display: flex;
+    justify-content: center;
+    gap: 4px;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 140%;
+    text-align: center;
+}
+
+
+@media screen and (min-width: 1440px) {
+    .container {
+        width: 437px;
+        height: 657px;
+        border-radius: 18px;
+        margin-top: 85px;
+        margin-bottom: 83px;
+        margin-left: 0;
+        margin-right: 0;
+        padding-top: 40px;
+        padding-bottom: 0px;
+        gap: 40px;
+    }
+
+    .title {    
+        width: 309px;
+        font-size: 32px;
+        line-height: 150%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .formContainer {
+        display: flex;
+        flex-direction: column;
+        width: 304px;
+        /* height: 585px; */
+        margin-left: auto;
+        margin-right: auto;
+        gap: 24px;
+    }
+
+    .buttonContainer {
+       height: 36px;
+    }
+
+    .switchButton {
+        width: 150px;
+        padding-right: 0;
+        padding-left: 0;
+    }
+
+    .form {
+        gap: 24px;
+    }
+
+    .fields {
+        gap: 16px;
+    }
+    
+    .fieldContainer {
+        width: 304px;
+    }
+    
+    .input {
+        position: relative;
+        width: 289px;
+        height: 44px;
+    }
+    
+    .toggleButton {
+        width: 24px;
+        height: 24px;
+      }
+
+      .button {
+        width: 304px;
+    }
+
+    .enterNow {
+        margin-bottom: 32px;
+    }
+    
+}

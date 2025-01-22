@@ -17,14 +17,3 @@
     );
   }
 
-  .doctorBackground {
-    background-image: -webkit-image-set(
-      url("../../assets/Images/doctor-background@1x.png") 1x,
-      url("../../assets/Images/doctor-background@2x.png") 2x
-    );
-    background-image: image-set(
-      url("../../assets/Images/doctor-background@1x.png") 1x,
-      url("../../assets/Images/doctor-background@2x.png") 2x
-    );
-  }
-}
