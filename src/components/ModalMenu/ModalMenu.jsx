@@ -23,7 +23,6 @@ export default function ModalMenu() {
       <div className={style.modalMenuContainer}>
         <div>
           <div className={style.modalMenuLogo}>
-            {" "}
             <Icon
               sprite={sprateSistem}
               id={"icon-pet-helsi-logo"}
@@ -78,10 +77,16 @@ export default function ModalMenu() {
         <div>
           {!isAuthenticated && (
             <div className={style.headerAuthLinks}>
-              <Link className={style.linkAuth} to={"/login"}>
+              <Link
+                className={style.linkAuth}
+                to={"/login"}
+                onClick={closeModal}>
                 Увійти
               </Link>
-              <Link className={style.linkAuth} to={"/register"}>
+              <Link
+                className={style.linkAuth}
+                to={"/register"}
+                onClick={closeModal}>
                 Зареєструватися
               </Link>
             </div>
