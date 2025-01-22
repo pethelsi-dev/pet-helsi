@@ -4,15 +4,17 @@ import css from "./RegisterPage.module.css";
 
 export default function RegisterPage() {
   const [background, setBackground] = useState("owner");
-  const handleBackgroundChange = type => {
+  const handleBackgroundChange = (type) => {
     setBackground(type);
   };
   return (
     <div
-      className={`${css.registerPagecontainer} ${
+      className={`${css.container} ${
         background === "doctor" ? css.doctorBackground : css.ownerBackground
       }`}>
-      <RegistrForm onUserTypeChange={handleBackgroundChange} />
+      <div className={css.form}>
+        <RegistrForm onUserTypeChange={handleBackgroundChange} />
+      </div>
     </div>
   );
 }

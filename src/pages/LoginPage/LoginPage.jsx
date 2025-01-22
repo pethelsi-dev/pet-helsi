@@ -2,7 +2,7 @@ import { useState } from 'react';
 import LoginForm from '../../components/LoginForm/LoginForm';
 import css from './LoginPage.module.css';
 
-export default function RegisterPage() {
+export default function LoginPage() {
 
     const [background, setBackground] = useState("owner");
     const handleBackgroundChange = (type) => {
