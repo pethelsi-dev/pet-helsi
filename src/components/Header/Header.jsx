@@ -25,31 +25,15 @@ export default function Header() {
   return (
     !isOpenMenu && (
       <header className={style.headerContainer}>
-        <div className={style.logoWrapper}>
-          {isAuthenticated && (
-            <button
-              type="button"
-              onClick={openModal}
-              className={style.buttonMenu}>
-              <Icon
-                sprite={sprateSistem}
-                id={"icon-burger-for-header-mobile"}
-                width="32px"
-                height="32px"
-                className={style.iconBurger}
-              />
-            </button>
-          )}
-          <Link to={"/"}>
-            <Icon
-              sprite={sprateSistem}
-              id={"icon-pet-helsi-logo"}
-              width="112px"
-              height="19px"
-              className={style.iconLogoHeader}
-            />
-          </Link>
-        </div>
+        <Link to={"/"}>
+          <Icon
+            sprite={sprateSistem}
+            id={"icon-pet-helsi-logo"}
+            width="112px"
+            height="19px"
+            className={style.iconLogoHeader}
+          />
+        </Link>
 
         {isOpenMenu && <ModalMenu setIsOpen={setIsOpenMenu} />}
 
@@ -81,19 +65,16 @@ export default function Header() {
                 id={"icon-bell"}
                 width="32px"
                 height="32px"
-                className={style.headerIconUser}
+                className={style.headerIconBell}
               />
             </button>
 
-            <Link to={"/profile"} className={style.headerUserButton}>
-              <Icon
-                sprite={sprateSistem}
-                id={"icon-user"}
-                width="32px"
-                height="32px"
-                className={style.headerIconUser}
-              />
-            </Link>
+            <button
+              type="button"
+              className={style.headerUserPhotoButton}
+              onClick={openModal}>
+              K
+            </button>
           </div>
         )}
 

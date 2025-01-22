@@ -11,12 +11,6 @@
   z-index: 9999;
 }
 
-.logoWrapper {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-}
-
 .buttonMenu {
   background-color: transparent;
   border: none;
@@ -57,15 +51,49 @@
   gap: 16px;
 }
 .headerUserButton {
+  padding: 0;
   border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background-color: transparent;
   cursor: pointer;
 }
-.headerIconUser {
+.headerIconBell {
   display: block;
+  width: 24px;
+  height: 24px;
+  stroke: var(--text-color-dark);
+  fill: var(--bg-color);
+  transition: stroke 0.3s ease, transform 0.3s ease;
+}
+
+.headerUserButton:hover .headerIconBell,
+.headerUserButton:focus-visible .headerIconBell {
+  stroke: var(--accent-color-dark);
+}
+.headerUserPhotoButton {
+  border: none;
   width: 32px;
   height: 32px;
-  stroke: var(--accent-color-dark);
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 20px;
+  color: var(--bg-color);
+  display: flex;
+  text-align: left;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background-color: var(--user-background-gray);
+}
+
+.headerIconUser {
+  display: block;
+  width: 24px;
+  height: 24px;
+  stroke: var(--text-color-dark);
+  fill: var(--bg-color);
 }
 
 @media screen and (min-width: 1440px) {
@@ -81,6 +109,17 @@
     width: 152px;
     height: 26px;
     margin-right: 517px;
+  }
+
+  .headerUserPhotoButton {
+    width: 38px;
+    height: 38px;
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 26px;
+  }
+  .headerUserWrapper {
+    gap: 24px;
   }
   .buttonMenu {
     display: none;

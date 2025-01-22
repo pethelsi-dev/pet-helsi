@@ -18,6 +18,7 @@
   --button-hover: #1376cc;
   --button-hover-background: #e2effb;
   --logo-hover: #4fa2eb;
+  --user-background-gray: #b8bdc8;
 
   background-color: var(--bg-color);
   scroll-behavior: smooth;
