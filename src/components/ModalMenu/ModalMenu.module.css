@@ -5,13 +5,14 @@
   transform: translateX(-50%);
   width: 343px;
   padding: 16px 16px 32px 16px;
-  height: 100vh;
+  min-height: 95vh;
+  max-height: 662px;
   background-color: var(--bg-color);
-  z-index: 50;
+  z-index: 999;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  overflow-y: auto;
+  animation: fadeInRight 0.6s forwards;
 }
 .modalMenuLogo {
   display: flex;
@@ -70,6 +71,7 @@
   cursor: pointer;
   border-radius: 8px;
   border: 1px solid var(--accent-color-dark);
+
   transition: color 0.3s ease, background-color 0.3s ease, border 0.3s ease;
 }
 .linkAuthRegister {

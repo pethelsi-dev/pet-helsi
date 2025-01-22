@@ -22,7 +22,7 @@
   border: none;
   cursor: pointer;
 }
-.iconLogo {
+.iconLogoHeader {
   display: block;
   width: 112px;
   height: 19px;
@@ -38,9 +38,9 @@
   width: 32px;
   height: 32px;
   display: block;
-  stroke: var(--accent-color-dark);
   transition: stroke 0.3s ease;
   cursor: pointer;
+  stroke: #333f5d;
 }
 .buttonMenu:hover .iconBurger {
   stroke: var(--accent-color-light);
@@ -77,7 +77,7 @@
   .headerContainer > :last-child {
     margin-left: auto;
   }
-  .iconLogo {
+  .iconLogoHeader {
     width: 152px;
     height: 26px;
     margin-right: 517px;

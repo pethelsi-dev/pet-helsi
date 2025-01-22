@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import SvgIcon from "../Icon/Icon.jsx";
-import sprite from "../../assets/Images/sprite-social-media.svg";
+import Icon from "../Icon/Icon";
+import spriteSocialMedia from "../../assets/Images/sprite-social-media.svg";
 import css from "./GoogleAuthorization.module.css";
 
 export default function GoogleAuthorization() {
@@ -22,12 +22,12 @@ export default function GoogleAuthorization() {
 
   return (
     <a href={googleLink} className={css.googleLink}>
-      <SvgIcon
-        sprite={sprite}
-        iconName="icon-icon-logos_google-icon"
+      <Icon
+        sprite={spriteSocialMedia}
+        id={"icon-icon-logos_google-icon"}
         width="20px"
         height="20px"
-        className={css.icon}
+        className={css.iconGoogle}
       />
       Google
     </a>

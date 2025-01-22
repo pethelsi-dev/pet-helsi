@@ -1,11 +1,16 @@
-const Icon = ({ sprite, iconName, width = "28px", height = "28px", className }) => {
+const Icon = ({
+  sprite,
+  id,
+  width = "28px",
+  height = "28px",
+  className,
+  onClick,
+}) => {
   return (
-    <svg width={width} height={height} className={className}>
-      <use href={`${sprite}#${iconName}`} />
+    <svg width={width} height={height} className={className} onClick={onClick}>
+      <use href={`${sprite}#${id}`} />
     </svg>
   );
 };
 
 export default Icon;
-
-

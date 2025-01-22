@@ -18,6 +18,10 @@ export default function Header() {
     dispatch(setIsOpenMenu(true));
   }
 
+  const closeModal = () => {
+    setIsOpenMenu(false);
+  };
+
   return (
     !isOpenMenu && (
       <header className={style.headerContainer}>
@@ -42,8 +46,8 @@ export default function Header() {
               id={"icon-pet-helsi-logo"}
               width="112px"
               height="19px"
-              className={style.iconLogo}
-            />{" "}
+              className={style.iconLogoHeader}
+            />
           </Link>
         </div>
 
@@ -112,7 +116,8 @@ export default function Header() {
           <div className={style.headerAuthLinks}>
             <Link
               className={clsx(style.linkAllVeterinarians, style.linkLogin)}
-              to={"/login"}>
+              to={"/login"}
+              onClick={closeModal}>
               Увійти
               <Icon
                 sprite={sprateSistem}
@@ -124,7 +129,8 @@ export default function Header() {
             </Link>
             <Link
               className={clsx(style.linkAllVeterinarians, style.linkRegister)}
-              to={"/register"}>
+              to={"/register"}
+              onClick={closeModal}>
               Зареєструватися
             </Link>
           </div>

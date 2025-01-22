@@ -1,18 +1,18 @@
+import * as Yup from "yup";
 import { useState } from "react";
-import SvgIcon from "../Icon/Icon";
-import sprite from "../../assets/Images/sprite-sistem.svg";
 import { Link } from "react-router-dom";
 import { Formik, Form, Field, ErrorMessage } from "formik";
-import * as Yup from "yup";
+import sprateSistem from "../../assets/Images/sprite-sistem.svg";
+import Icon from "../Icon/Icon";
 import GoogleAuthorization from "../GoogleAuthorization/GoogleAuthorization";
 import css from "./RegistrForm.module.css";
 
-export default function RegistrForm({onUserTypeChange}) {
+export default function RegistrForm({ onUserTypeChange }) {
   const [passwordVisible, setPasswordVisible] = useState(false);
   const [confirmPasswordVisible, setConfirmPasswordVisible] = useState(false);
   const [userType, setUserType] = useState("owner");
 
-  const handleUserTypeChange = (type) => {
+  const handleUserTypeChange = type => {
     setUserType(type);
     onUserTypeChange(type); // Оновлюємо стан у батьківському компоненті
   };
@@ -23,10 +23,13 @@ export default function RegistrForm({onUserTypeChange}) {
       .required("Введіть е-mail"),
     password: Yup.string()
       .min(8, "Пароль має містити не менше 8 символів - цифри і букви")
-      .matches(/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/, "Пароль має містити мінімум одну літеру та одну цифру")
+      .matches(
+        /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/,
+        "Пароль має містити мінімум одну літеру та одну цифру"
+      )
       .required("Введіть пароль"),
     confirmPassword: Yup.string()
-      .oneOf([Yup.ref('password'), null], "Паролі повинні співпадати")
+      .oneOf([Yup.ref("password"), null], "Паролі повинні співпадати")
       .required("Повтор пароля є обов'язковим"),
   });
 
@@ -36,7 +39,7 @@ export default function RegistrForm({onUserTypeChange}) {
     confirmPassword: "",
   };
 
-  const handleSubmit = (values) => {
+  const handleSubmit = values => {
     console.log("Submitted values:", { ...values, userType });
     // Виклик API для реєстрації
   };
@@ -50,7 +53,7 @@ export default function RegistrForm({onUserTypeChange}) {
   };
 
   return (
-    <div className={css.container}>
+    <div className={css.registrFormContainer}>
       <h1 className={css.title}>
         Реєстрація в <span className={css.span}>PetHelsi</span>
       </h1>
@@ -61,8 +64,7 @@ export default function RegistrForm({onUserTypeChange}) {
               userType === "owner" ? css.activeButton : ""
             }`}
             type="button"
-            onClick={() => handleUserTypeChange("owner")}
-          >
+            onClick={() => handleUserTypeChange("owner")}>
             Я - власник тварини
           </button>
           <button
@@ -70,8 +72,7 @@ export default function RegistrForm({onUserTypeChange}) {
               userType === "doctor" ? css.activeButton : ""
             }`}
             type="button"
-            onClick={() => handleUserTypeChange("doctor")}
-          >
+            onClick={() => handleUserTypeChange("doctor")}>
             Я - ветеринар
           </button>
         </div>
@@ -79,9 +80,8 @@ export default function RegistrForm({onUserTypeChange}) {
           initialValues={initialValues}
           validationSchema={validationSchema}
           onSubmit={handleSubmit}
-          validateOnBlur={true}
-        >
-          {({ isSubmitting, errors, touched}) => (
+          validateOnBlur={true}>
+          {({ isSubmitting, errors, touched }) => (
             <Form className={css.form}>
               <div className={css.fields}>
                 <div className={css.fieldContainer}>
@@ -89,19 +89,27 @@ export default function RegistrForm({onUserTypeChange}) {
                     E-mail
                   </label>
                   <Field
-                    className={`${css.input} ${errors.email && touched.email ? css.inputError : ""}`}
+                    className={`${css.input} ${
+                      errors.email && touched.email ? css.inputError : ""
+                    }`}
                     type="email"
                     name="email"
                     placeholder="Введіть E-mail"
                   />
-                  <ErrorMessage name="email" component="span" className={css.emailError}/>
+                  <ErrorMessage
+                    name="email"
+                    component="span"
+                    className={css.emailError}
+                  />
                 </div>
                 <div className={css.fieldContainer}>
                   <label className={css.label} htmlFor="password">
                     Пароль
                   </label>
                   <Field
-                    className={`${css.input} ${errors.password && touched.password ? css.inputError : ""}`}
+                    className={`${css.input} ${
+                      errors.password && touched.password ? css.inputError : ""
+                    }`}
                     type={passwordVisible ? "text" : "password"}
                     name="password"
                     placeholder="Введіть пароль"
@@ -109,11 +117,10 @@ export default function RegistrForm({onUserTypeChange}) {
                   <button
                     type="button"
                     className={css.toggleButton}
-                    onClick={setPasswordVisibleToggler}
-                  >
-                    <SvgIcon
-                      sprite={sprite}
-                      iconName={`${
+                    onClick={setPasswordVisibleToggler}>
+                    <Icon
+                      sprite={sprateSistem}
+                      id={`${
                         passwordVisible ? "icon-eye_open" : "icon-view_hide"
                       }`}
                       width="20px"
@@ -121,14 +128,23 @@ export default function RegistrForm({onUserTypeChange}) {
                       className={css.icon}
                     />
                   </button>
-                  <ErrorMessage name="password" component="span" className={css.passwordError}/>
                 </div>
+                <ErrorMessage
+                  name="password"
+                  component="span"
+                  className={css.passwordError}
+                />
+
                 <div className={css.fieldContainer}>
                   <label className={css.label} htmlFor="confirmPassword">
                     Повторіть пароль
                   </label>
                   <Field
-                    className={`${css.input} ${errors.confirmPassword && touched.confirmPassword ? css.inputError : ""}`}
+                    className={`${css.input} ${
+                      errors.confirmPassword && touched.confirmPassword
+                        ? css.inputError
+                        : ""
+                    }`}
                     type={confirmPasswordVisible ? "text" : "password"}
                     name="confirmPassword"
                     placeholder="Повторіть пароль"
@@ -136,11 +152,10 @@ export default function RegistrForm({onUserTypeChange}) {
                   <button
                     type="button"
                     className={css.toggleButton}
-                    onClick={setConfirmPasswordVisibleToggler}
-                  >
-                    <SvgIcon
-                      sprite={sprite}
-                      iconName={`${
+                    onClick={setConfirmPasswordVisibleToggler}>
+                    <Icon
+                      sprite={sprateSistem}
+                      id={`${
                         confirmPasswordVisible
                           ? "icon-eye_open"
                           : "icon-view_hide"
@@ -150,15 +165,18 @@ export default function RegistrForm({onUserTypeChange}) {
                       className={css.icon}
                     />
                   </button>
-                  <ErrorMessage name="confirmPassword" component="span" className={css.confirmPasswordError}/>
                 </div>
+                <ErrorMessage
+                  name="confirmPassword"
+                  component="span"
+                  className={css.confirmPasswordError}
+                />
               </div>
               <div className={css.registrButton}>
                 <button
                   className={css.button}
                   type="submit"
-                  disabled={isSubmitting}
-                >
+                  disabled={isSubmitting}>
                   Зареєструватися
                 </button>
                 <div className={css.privacyPolicy}>
@@ -167,7 +185,6 @@ export default function RegistrForm({onUserTypeChange}) {
                     <Link to="/policy" className={css.link}>
                       політики конфіденційності
                     </Link>
-                    .
                   </p>
                 </div>
               </div>
