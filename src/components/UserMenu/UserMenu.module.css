@@ -1,0 +1,151 @@
+.modalMenuLogo {
+  padding-bottom: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 50px;
+  border-bottom: 1px solid var(--button-hover-background);
+}
+.iconLogo {
+  fill: var(--accent-color-dark);
+  stroke: var(--accent-color-dark);
+  margin-right: 151px;
+}
+.buttonClose {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.iconClose {
+  stroke: var(--text-color-dark);
+  transition: stroke 0.3s ease;
+}
+.buttonClose:hover .iconClose {
+  stroke: var(--accent-color-light);
+}
+
+.userMenuButtons {
+  display: flex;
+}
+.headerUserButton {
+  padding: 0;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  cursor: pointer;
+}
+.headerIconBell {
+  display: block;
+  width: 24px;
+  height: 24px;
+  stroke: var(--text-color-dark);
+  fill: var(--bg-color);
+  transition: stroke 0.3s ease, transform 0.3s ease;
+}
+
+.headerUserButton:hover .headerIconBell,
+.headerUserButton:focus-visible .headerIconBell {
+  stroke: var(--accent-color-dark);
+}
+
+.linkLogOut {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.iconLogOut {
+  width: 20px;
+  height: 20px;
+  stroke: var(--text-color-dark);
+}
+.exit {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 19.6px;
+  text-align: left;
+  color: var(--text-color-dark);
+}
+.userModalPhotoButton {
+  border: none;
+  width: 64px;
+  height: 64px;
+  font-size: 26px;
+  font-weight: 500;
+  line-height: 28px;
+  color: var(--bg-color);
+  display: flex;
+  text-align: left;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background-color: var(--user-background-gray);
+  margin: 0 auto;
+  margin-bottom: 12px;
+}
+.userModalName {
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 25.2px;
+  text-align: center;
+  color: var(--text-color-dark);
+  margin-bottom: 2px;
+}
+
+.userModalEmail {
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 16.8px;
+  text-align: center;
+  color: var(--text-color-dark);
+  margin-bottom: 24px;
+}
+
+.userModalList {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.userModalLink {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.userModalLinkText {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.userModalArrowLink {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.userModalLinkIcon {
+  width: 20px;
+  height: 20px;
+  stroke: var(--text-color-dark);
+  fill: var(--bg-color);
+}
+
+.userModalArrow {
+  width: 24px;
+  height: 24px;
+  stroke: var(--text-color-dark);
+  fill: var(--text-color-white);
+}
+
+.userModalTextPath {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 19.6px;
+  text-align: left;
+  color: var(--text-color-dark);
+}
