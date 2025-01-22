@@ -68,6 +68,7 @@
 }
 
 .fieldContainer {
+    position: relative;
     display: flex;
     flex-direction: column;
     gap: 4px;
@@ -80,13 +81,8 @@
     color: var(--text-color-gray);
 }
 
-.inputWrapper {
-    position: relative;
-    display: flex;
-    align-items: center;
-}
 .input {
-    width: 100%;
+    width: 327.5px;
     height: 44px;
     padding-left: 12px;
     border-radius: 8px;
@@ -109,8 +105,7 @@
 .toggleButton {
     position: absolute;
     top: 50%;
-    right: 12px;
-    transform: translateY(-50%);
+    right: 5%;
     width: 20px;
     height: 20px;
     display: block;

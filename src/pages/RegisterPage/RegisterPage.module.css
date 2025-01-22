@@ -1,39 +1,35 @@
-@media screen and (min-width: 1440px)  {
-  .container {
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    width: 1441px;
-    height: 825px;
-    position: relative;
-  }
-  
-  .ownerBackground {
-    background-image: -webkit-image-set(
-      url('../../assets/Images/owner-background@1x.png') 1x,
-      url('../../assets/Images/owner-background@2x.png') 2x
-    );
-    background-image: image-set(
-      url('../../assets/Images/owner-background@1x.png') 1x,
-      url('../../assets/Images/owner-background@2x.png') 2x
-    );
-  }
-  
-  .doctorBackground {
-    background-image: -webkit-image-set(
-      url('../../assets/Images/doctor-background@1x.png') 1x,
-      url('../../assets/Images/doctor-background@2x.png') 2x
-    );
-    background-image: image-set(
-      url('../../assets/Images/doctor-background@1x.png') 1x,
-      url('../../assets/Images/doctor-background@2x.png') 2x
-    );
-  }
-  
-  .form {
-    position: absolute;
-    right: 110px;
-  }
-  
+.container {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 1441px;
+  height: 825px;
+  position: relative;
 }
 
+.ownerBackground {
+  background-image: -webkit-image-set(
+    url('../../assets/Images/owner-background@1x.png') 1x,
+    url('../../assets/Images/owner-background@2x.png') 2x
+  );
+  background-image: image-set(
+    url('../../assets/Images/owner-background@1x.png') 1x,
+    url('../../assets/Images/owner-background@2x.png') 2x
+  );
+}
+
+.doctorBackground {
+  background-image: -webkit-image-set(
+    url('../../assets/Images/doctor-background@1x.png') 1x,
+    url('../../assets/Images/doctor-background@2x.png') 2x
+  );
+  background-image: image-set(
+    url('../../assets/Images/doctor-background@1x.png') 1x,
+    url('../../assets/Images/doctor-background@2x.png') 2x
+  );
+}
+
+.form {
+  position: absolute;
+  right: 110px;
+}
