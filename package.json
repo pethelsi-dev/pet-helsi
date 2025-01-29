@@ -7,11 +7,13 @@
     "dev": "vite",
     "build": "vite build/pet-helsi/",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "dev:server": "json-server --watch db.json --port 5000"
   },
   "dependencies": {
     "@react-oauth/google": "^0.12.1",
     "@reduxjs/toolkit": "^2.4.0",
+    "axios": "^1.7.9",
     "clsx": "^2.1.1",
     "formik": "^2.4.6",
     "nanoid": "^5.0.9",
@@ -39,6 +41,7 @@
     "eslint-plugin-react-hooks": "^5.0.0",
     "eslint-plugin-react-refresh": "^0.4.13",
     "globals": "^15.11.0",
+    "json-server": "^1.0.0-beta.3",
     "vite": "^5.4.9"
   }
 }

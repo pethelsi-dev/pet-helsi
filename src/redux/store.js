@@ -1,5 +1,5 @@
 import { configureStore } from "@reduxjs/toolkit";
-import authSliceReducer from "./auth/slice";
+import authReducer from "./auth/slice";
 import doctorsSliseReducer from "./doctor/slice";
 import ownersSliceReducer from "./owner/slice";
 import appSliseReducer from "../redux/appSlice/slice";
@@ -20,7 +20,7 @@ const persistConfigAuth = {
   storage,
   whitelist: ["token", "isDoctor", "isOwner"],
 };
-const pAuthReducer = persistReducer(persistConfigAuth, authSliceReducer);
+const pAuthReducer = persistReducer(persistConfigAuth, authReducer);
 
 const persistConfigDoctors = {
   key: "doctor",
