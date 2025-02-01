@@ -9,7 +9,7 @@ export default function RegisterPage() {
   };
   return (
     <div
-      className={`${css.container} ${
+      className={`${css.registerPageContainer} ${
         background === "doctor" ? css.doctorBackground : css.ownerBackground
       }`}>
       <div className={css.form}>

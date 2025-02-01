@@ -9,11 +9,9 @@ export default function LoginPage() {
         setBackground(type);
     }
     return (
-        <div className={`${css.container} ${
+        <div className={`${css.loginPageContainer} ${
             background === "doctor" ? css.doctorBackground : css.ownerBackground}`}>
-            <div  className= {css.form}>
-              <LoginForm onUserTypeChange ={handleBackgroundChange}/>
-            </div>
+            <LoginForm onUserTypeChange ={handleBackgroundChange}/>
         </div>
     )
 }
