@@ -7,8 +7,7 @@
     "dev": "vite",
     "build": "vite build/pet-helsi/",
     "lint": "eslint .",
-    "preview": "vite preview",
-    "dev:server": "json-server --watch db.json --port 5000"
+    "preview": "vite preview"
   },
   "dependencies": {
     "@react-oauth/google": "^0.12.1",
@@ -41,7 +40,6 @@
     "eslint-plugin-react-hooks": "^5.0.0",
     "eslint-plugin-react-refresh": "^0.4.13",
     "globals": "^15.11.0",
-    "json-server": "^1.0.0-beta.3",
     "vite": "^5.4.9"
   }
 }
