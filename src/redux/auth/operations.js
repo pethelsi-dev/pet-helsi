@@ -1,7 +1,7 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 import { setToken, setUserType } from './slice';
-
+//удалить из проекта JSON Server
 // настройка axios
 const apiInstance = axios.create({
     baseURL: 'http://localhost:5000',
@@ -28,7 +28,7 @@ export const signUp = createAsyncThunk(
     async (newUser, thunkAPI) => {
         try {
             const response = await apiInstance.post('/users/register', newUser);
-            
+
             // Сохранение полученного токена в хедеры для дальнейших запросов
             const token = response.data.token;
             setAuthHeader(token); // Сохраните токен в заголовки
