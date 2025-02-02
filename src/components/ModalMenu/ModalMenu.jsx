@@ -1,7 +1,9 @@
+import { useContext } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { selectorIsOpenMenu } from "../../redux/appSlice/selectors";
 import { setIsOpenMenu } from "../../redux/appSlice/slice";
 import { selectorIsLoggedIn } from "../../redux/auth/selectors";
+import { DeviceContext } from "../../components/DeviceProvider/DeviceProvider.jsx";
 import GuestMenu from "../GuestMenu/GuestMenu";
 import UserMenu from "../UserMenu/UserMenu";
 import Modal from "react-modal";
@@ -13,9 +15,12 @@ export default function ModalMenu() {
   const dispatch = useDispatch();
   const isOpenMenu = useSelector(selectorIsOpenMenu);
   const isAuthenticated = useSelector(selectorIsLoggedIn);
+  const { isDesktop } = useContext(DeviceContext);
 
   function closeModal() {
-    dispatch(setIsOpenMenu(false));
+    if (!isDesktop) {
+      dispatch(setIsOpenMenu(false));
+    }
   }
   return (
     isOpenMenu && (

@@ -1,5 +1,3 @@
 export default function VeterinarianListPage() {
-    return(
-        <div></div>
-    )
+  return <section>VeterinarianListPage</section>;
 }
