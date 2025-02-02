@@ -7,10 +7,17 @@ import Icon from "../Icon/Icon";
 import GoogleAuthorization from "../GoogleAuthorization/GoogleAuthorization";
 import css from "./RegistrForm.module.css";
 
+// import { useDispatch } from 'react-redux';
+// import { signUp } from '../../redux/auth/operations';
+// import { useNavigate } from 'react-router-dom';
+
 export default function RegistrForm({ onUserTypeChange }) {
   const [passwordVisible, setPasswordVisible] = useState(false);
   const [confirmPasswordVisible, setConfirmPasswordVisible] = useState(false);
   const [userType, setUserType] = useState("owner");
+
+  // const dispatch = useDispatch();
+  // const navigate = useNavigate();
 
   const handleUserTypeChange = type => {
     setUserType(type);
@@ -39,9 +46,16 @@ export default function RegistrForm({ onUserTypeChange }) {
     confirmPassword: "",
   };
 
-  const handleSubmit = values => {
-    console.log("Submitted values:", { ...values, userType });
-    // Виклик API для реєстрації
+  const handleSubmit = (values) => {
+    // // Добавление типа пользователя в данные
+    // const userData = { ...values, userType };
+    // dispatch(signUp(userData))
+    //   .then(() => {
+    //     navigate("/profile"); // Перенаправление на страницу профиля
+    //   })
+    //   .catch((error) => {
+    //     console.error("Ошибка регистрации: ", error);
+    //   });
   };
 
   const setPasswordVisibleToggler = () => {
