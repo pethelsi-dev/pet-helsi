@@ -3,11 +3,12 @@ import { lazy, Suspense, useContext } from "react";
 import { DeviceContext } from "./DeviceProvider/DeviceProvider.jsx";
 import { useSelector } from "react-redux";
 import { selectorIsLoggedIn } from "../redux/auth/selectors";
-import { Toaster } from "react-hot-toast";
+// import { Toaster } from "react-hot-toast";
 import { GoogleOAuthProvider } from "@react-oauth/google";
 import Layout from "../components/Layout/Layout.jsx";
 import PrivateRoute from "../components/PrivateRoute/PrivateRoute";
 import PublicRoute from "../components/PublicRoute/PublicRoute";
+import NotificationsWrapper from "../components/NotificationsWrapper/NotificationsWrapper.jsx";
 import Loader from "./Loader/Loader.jsx";
 import style from "./App.module.css";
 const HomePage = lazy(() => import("../pages/HomePage/HomePage"));
@@ -45,7 +46,8 @@ export default function App() {
   return (
     <div className={style.appContainer}>
       <GoogleOAuthProvider>
-        <Toaster position="top-right" />
+        {/* <Toaster position="top-right" /> */}
+        <NotificationsWrapper />
         <Layout>
           <Suspense fallback={<Loader />}>
             <Routes>

@@ -1,0 +1,62 @@
+.notificationContainer {
+  padding: 24px 16px 16px 16px;
+  background-color: var(--bg-color-list);
+  border: 1px solid var(--border-color-light-blue);
+  border-radius: 6px;
+}
+.notificationHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.notificationStatus {
+  padding: 4px 12px;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 16.8px;
+  text-align: left;
+  color: var(--bg-color);
+  background-color: var(--accent-color-light);
+  border-radius: 6px;
+}
+
+.notificationStatusText {
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 16.8px;
+  text-align: left;
+  color: var(--text-color-gray);
+  margin-bottom: 16px;
+}
+
+.notificationDate {
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 16.8px;
+  text-align: right;
+  color: var(--color-light-gray);
+}
+
+.notificationInfo {
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 16.8px;
+  text-align: left;
+  color: var(--color-medium-gray);
+}
+
+.notificationInfo:not(:last-child) {
+  margin-bottom: 8px;
+}
+.notificationData {
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 16.8px;
+  text-align: left;
+  color: var(--text-color-dark);
+  margin-left: 6px;
+}
+@media screen and (min-width: 1440px) {
+}
