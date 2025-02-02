@@ -58,11 +58,13 @@
   align-items: center;
   gap: 8px;
 }
+
 .iconLogOut {
   width: 20px;
   height: 20px;
   stroke: var(--text-color-dark);
 }
+
 .exit {
   font-size: 14px;
   font-weight: 500;
@@ -70,6 +72,7 @@
   text-align: left;
   color: var(--text-color-dark);
 }
+
 .userModalPhotoButton {
   border: none;
   width: 64px;
@@ -87,6 +90,7 @@
   margin: 0 auto;
   margin-bottom: 12px;
 }
+
 .userModalName {
   font-size: 18px;
   font-weight: 600;
@@ -103,49 +107,4 @@
   text-align: center;
   color: var(--text-color-dark);
   margin-bottom: 24px;
-}
-
-.userModalList {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
-.userModalLink {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.userModalLinkText {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-.userModalArrowLink {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.userModalLinkIcon {
-  width: 20px;
-  height: 20px;
-  stroke: var(--text-color-dark);
-  fill: var(--bg-color);
-}
-
-.userModalArrow {
-  width: 24px;
-  height: 24px;
-  stroke: var(--text-color-dark);
-  fill: var(--text-color-white);
-}
-
-.userModalTextPath {
-  font-size: 14px;
-  font-weight: 500;
-  line-height: 19.6px;
-  text-align: left;
-  color: var(--text-color-dark);
 }

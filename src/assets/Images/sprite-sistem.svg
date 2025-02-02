@@ -441,5 +441,9 @@
 <symbol id="icon-dash" viewBox="0 0 32 32">
 <path fill="none" stroke="#1e88e5" style="stroke: var(--color1, #1e88e5)" stroke-linejoin="miter" stroke-linecap="round" stroke-miterlimit="4" stroke-width="1.3333" d="M24 16h-16"></path>
 </symbol>
+<symbol id="icon-Folder_del_light" viewBox="0 0 18 18">
+<path fill="none" stroke="#c9e2f8" style="stroke: var(--color1, #c9e2f8)" stroke-linejoin="miter" stroke-linecap="butt" stroke-miterlimit="4" stroke-width="0.4219" d="M12.75 15.75l3.75-3.75M16.5 15.75l-3.75-3.75"></path>
+<path fill="none" stroke="#c9e2f8" style="stroke: var(--color1, #c9e2f8)" stroke-linejoin="miter" stroke-linecap="butt" stroke-miterlimit="4" stroke-width="0.4219" d="M14.625 10.5v-2.437c0-0.795 0-1.193-0.247-1.44s-0.645-0.247-1.44-0.247h-2.864c-0.345 0-0.517 0-0.672-0.064s-0.277-0.186-0.521-0.43l-1.261-1.261c-0.244-0.244-0.366-0.366-0.521-0.43s-0.327-0.064-0.672-0.064h-2.114c-0.795 0-1.193 0-1.44 0.247s-0.247 0.645-0.247 1.44v6.375c0 0.795 0 1.193 0.247 1.44s0.645 0.247 1.44 0.247h6.937"></path>
+</symbol>
 </defs>
 </svg>
