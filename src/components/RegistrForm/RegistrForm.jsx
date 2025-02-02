@@ -68,13 +68,13 @@ export default function RegistrForm({ onUserTypeChange }) {
 
   return (
     <div className={css.registrFormContainer}>
-      <h1 className={css.title}>
+      <h1 className={css.registrTitle}>
         Реєстрація в <span className={css.span}>PetHelsi</span>
       </h1>
       <div className={css.formContainer}>
-        <div className={css.buttonContainer}>
+        <div className={css.selectUserTypeButtonContainer}>
           <button
-            className={`${css.switchButton} ${
+            className={`${css.switchUserTypeButton} ${
               userType === "owner" ? css.activeButton : ""
             }`}
             type="button"
@@ -82,7 +82,7 @@ export default function RegistrForm({ onUserTypeChange }) {
             Я - власник тварини
           </button>
           <button
-            className={`${css.switchButton} ${
+            className={`${css.switchUserTypeButton} ${
               userType === "doctor" ? css.activeButton : ""
             }`}
             type="button"
@@ -97,13 +97,13 @@ export default function RegistrForm({ onUserTypeChange }) {
           validateOnBlur={true}>
           {({ isSubmitting, errors, touched }) => (
             <Form className={css.form}>
-              <div className={css.fields}>
-                <div className={css.fieldContainer}>
+              <div className={css.registerFormFields}>
+                <div className={css.registerFormFieldContainer}>
                   <label className={css.label} htmlFor="email">
                     E-mail
                   </label>
                   <Field
-                    className={`${css.input} ${
+                    className={`${css.registerInput} ${
                       errors.email && touched.email ? css.inputError : ""
                     }`}
                     type="email"
@@ -121,7 +121,7 @@ export default function RegistrForm({ onUserTypeChange }) {
                     Пароль
                   </label>
                   <Field
-                    className={`${css.input} ${
+                    className={`${css.registerInput} ${
                       errors.password && touched.password ? css.inputError : ""
                     }`}
                     type={passwordVisible ? "text" : "password"}
@@ -139,7 +139,7 @@ export default function RegistrForm({ onUserTypeChange }) {
                       }`}
                       width="20px"
                       height="20px"
-                      className={css.icon}
+                      className={css.passwordVisibleIcon}
                     />
                   </button>
                 </div>
@@ -154,7 +154,7 @@ export default function RegistrForm({ onUserTypeChange }) {
                     Повторіть пароль
                   </label>
                   <Field
-                    className={`${css.input} ${
+                    className={`${css.registerInput} ${
                       errors.confirmPassword && touched.confirmPassword
                         ? css.inputError
                         : ""
@@ -176,7 +176,7 @@ export default function RegistrForm({ onUserTypeChange }) {
                       }`}
                       width="20px"
                       height="20px"
-                      className={css.icon}
+                      className={css.passwordVisibleIcon}
                     />
                   </button>
                 </div>

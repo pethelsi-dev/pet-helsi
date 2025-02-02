@@ -39,14 +39,14 @@ export default function LoginForm({ onUserTypeChange }) {
   };
 
   return (
-    <div className={css.container}>
-      <h1 className={css.title}>
+    <div className={css.loginContainer}>
+      <h1 className={css.loginTitle}>
         Вхід в <span className={css.span}>PetHelsi</span>
       </h1>
       <div className={css.formContainer}>
         <div className={css.buttonContainer}>
           <button
-            className={`${css.switchButton} ${
+            className={`${css.switchUserTypeButton} ${
               userType === "owner" ? css.activeButton : ""
             }`}
             type="button"
@@ -55,7 +55,7 @@ export default function LoginForm({ onUserTypeChange }) {
             Я - власник тварини
           </button>
           <button
-            className={`${css.switchButton} ${
+            className={`${css.switchUserTypeButton} ${
               userType === "doctor" ? css.activeButton : ""
             }`}
             type="button"
@@ -71,14 +71,14 @@ export default function LoginForm({ onUserTypeChange }) {
           validateOnBlur={true}
         >
           {({ isSubmitting, errors, touched }) => (
-            <Form className={css.form}>
-              <div className={css.fields}>
-                <div className={css.fieldContainer}>
+            <Form className={css.loginForm}>
+              <div className={css.loginFormFields}>
+                <div className={css.loginFieldContainer}>
                   <label className={css.label} htmlFor="email">
                     E-mail
                   </label>
                   <Field
-                    className={`${css.input} ${
+                    className={`${css.loginInput} ${
                       errors.email && touched.email ? css.inputError : ""
                     }`}
                     type="email"
@@ -91,13 +91,13 @@ export default function LoginForm({ onUserTypeChange }) {
                     className={css.emailError}
                   />
                 </div>
-                <div className={css.fieldContainer}>
+                <div className={css.loginFieldContainer}>
                   <label className={css.label} htmlFor="password">
                     Пароль
                   </label>
-                  <div className={css.inputWrapper}>
+                  <div className={css.passwordInputWrapper}>
                     <Field
-                      className={`${css.input} ${
+                      className={`${css.loginInput} ${
                         errors.password && touched.password
                           ? css.inputError
                           : ""
@@ -118,7 +118,7 @@ export default function LoginForm({ onUserTypeChange }) {
                         }`}
                         width="20px"
                         height="20px"
-                        className={css.icon}
+                        className={css.passwordVisibleIcon}
                       />
                     </button>
                   </div>
@@ -147,7 +147,7 @@ export default function LoginForm({ onUserTypeChange }) {
               </div>
               <div className={css.loginButtonContainer}>
                 <button
-                  className={css.button}
+                  className={css.loginButton}
                   type="submit"
                   disabled={isSubmitting}
                 >
