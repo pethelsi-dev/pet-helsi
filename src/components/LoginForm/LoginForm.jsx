@@ -128,7 +128,8 @@ export default function LoginForm({ onUserTypeChange }) {
                     className={css.passwordError}
                   />
                 </div>
-                <div className={css.checkBoxContainer}>
+              </div>
+              <div className={css.checkBoxContainer}>
                   <div className={css.rememberMeContainer}>
                     <Field type="checkbox" name="rememberMe" id="rememberMe" />
                     <label htmlFor="rememberMe" className={css.rememberMeLabel}>
@@ -144,7 +145,6 @@ export default function LoginForm({ onUserTypeChange }) {
                     </Link>
                   </div>
                 </div>
-              </div>
               <div className={css.loginButtonContainer}>
                 <button
                   className={css.loginButton}

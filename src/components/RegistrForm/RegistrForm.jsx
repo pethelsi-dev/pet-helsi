@@ -71,155 +71,148 @@ export default function RegistrForm({ onUserTypeChange }) {
       <h1 className={css.registrTitle}>
         Реєстрація в <span className={css.span}>PetHelsi</span>
       </h1>
-      <div className={css.formContainer}>
-        <div className={css.selectUserTypeButtonContainer}>
-          <button
-            className={`${css.switchUserTypeButton} ${
-              userType === "owner" ? css.activeButton : ""
-            }`}
-            type="button"
-            onClick={() => handleUserTypeChange("owner")}
-          >
-            Я - власник тварини
-          </button>
-          <button
-            className={`${css.switchUserTypeButton} ${
-              userType === "doctor" ? css.activeButton : ""
-            }`}
-            type="button"
-            onClick={() => handleUserTypeChange("doctor")}
-          >
-            Я - ветеринар
-          </button>
-        </div>
-        <Formik
-          initialValues={initialValues}
-          validationSchema={validationSchema}
-          onSubmit={handleSubmit}
-          validateOnBlur={true}
+      <div className={css.selectUserTypeButtonContainer}>
+        <button
+          className={`${css.switchUserTypeButton} ${
+            userType === "owner" ? css.activeButton : ""
+          }`}
+          type="button"
+          onClick={() => handleUserTypeChange("owner")}
         >
-          {({ isSubmitting, errors, touched }) => (
-            <Form className={css.form}>
-              <div className={css.registerFormFields}>
-                <div className={css.registerFormFieldContainer}>
-                  <label className={css.label} htmlFor="email">
-                    E-mail
-                  </label>
+          Я - власник тварини
+        </button>
+        <button
+          className={`${css.switchUserTypeButton} ${
+            userType === "doctor" ? css.activeButton : ""
+          }`}
+          type="button"
+          onClick={() => handleUserTypeChange("doctor")}
+        >
+          Я - ветеринар
+        </button>
+      </div>
+      <Formik
+        initialValues={initialValues}
+        validationSchema={validationSchema}
+        onSubmit={handleSubmit}
+        validateOnBlur={true}
+      >
+        {({ isSubmitting, errors, touched }) => (
+          <Form className={css.form}>
+            <div className={css.registerFormFields}>
+              <div className={css.registerFormFieldContainer}>
+                <label className={css.label} htmlFor="email">
+                  E-mail
+                </label>
+                <Field
+                  className={`${css.registerInput} ${
+                    errors.email && touched.email ? css.inputError : ""
+                  }`}
+                  type="email"
+                  name="email"
+                  placeholder="Введіть E-mail"
+                />
+                <ErrorMessage
+                  name="email"
+                  component="span"
+                  className={css.emailError}
+                />
+              </div>
+              <div className={css.registerFormFieldContainer}>
+                <label className={css.label} htmlFor="password">
+                  Пароль
+                </label>
+                <div className={css.registerFormInputWrapper}>
                   <Field
                     className={`${css.registerInput} ${
-                      errors.email && touched.email ? css.inputError : ""
+                      errors.password && touched.password ? css.inputError : ""
                     }`}
-                    type="email"
-                    name="email"
-                    placeholder="Введіть E-mail"
-                  />
-                  <ErrorMessage
-                    name="email"
-                    component="span"
-                    className={css.emailError}
-                  />
-                </div>
-                <div className={css.registerFormFieldContainer}>
-                  <label className={css.label} htmlFor="password">
-                    Пароль
-                  </label>
-                  <div className={css.registerFormInputWrapper}>
-                    <Field
-                      className={`${css.registerInput} ${
-                        errors.password && touched.password
-                          ? css.inputError
-                          : ""
-                      }`}
-                      type={passwordVisible ? "text" : "password"}
-                      name="password"
-                      placeholder="Введіть пароль"
-                    />
-                    <button
-                      type="button"
-                      className={css.toggleButton}
-                      onClick={setPasswordVisibleToggler}
-                    >
-                      <Icon
-                        sprite={sprateSistem}
-                        id={`${
-                          passwordVisible ? "icon-eye_open" : "icon-view_hide"
-                        }`}
-                        width="20px"
-                        height="20px"
-                        className={css.passwordVisibleIcon}
-                      />
-                    </button>
-                  </div>
-                  <ErrorMessage
+                    type={passwordVisible ? "text" : "password"}
                     name="password"
-                    component="span"
-                    className={css.passwordError}
+                    placeholder="Введіть пароль"
                   />
-                </div>
-                <div className={css.registerFormFieldContainer}>
-                  <label className={css.label} htmlFor="confirmPassword">
-                    Повторіть пароль
-                  </label>
-                  <div className={css.registerFormInputWrapper}>
-                    <Field
-                      className={`${css.registerInput} ${
-                        errors.confirmPassword && touched.confirmPassword
-                          ? css.inputError
-                          : ""
+                  <button
+                    type="button"
+                    className={css.toggleButton}
+                    onClick={setPasswordVisibleToggler}
+                  >
+                    <Icon
+                      sprite={sprateSistem}
+                      id={`${
+                        passwordVisible ? "icon-eye_open" : "icon-view_hide"
                       }`}
-                      type={confirmPasswordVisible ? "text" : "password"}
-                      name="confirmPassword"
-                      placeholder="Повторіть пароль"
+                      width="20px"
+                      height="20px"
+                      className={css.passwordVisibleIcon}
                     />
-                    <button
-                      type="button"
-                      className={css.toggleButton}
-                      onClick={setConfirmPasswordVisibleToggler}
-                    >
-                      <Icon
-                        sprite={sprateSistem}
-                        id={`${
-                          confirmPasswordVisible
-                            ? "icon-eye_open"
-                            : "icon-view_hide"
-                        }`}
-                        width="20px"
-                        height="20px"
-                        className={css.passwordVisibleIcon}
-                      />
-                    </button>
-                  </div>
-                  <ErrorMessage
+                  </button>
+                </div>
+                <ErrorMessage
+                  name="password"
+                  component="span"
+                  className={css.passwordError}
+                />
+              </div>
+              <div className={css.registerFormFieldContainer}>
+                <label className={css.label} htmlFor="confirmPassword">
+                  Повторіть пароль
+                </label>
+                <div className={css.registerFormInputWrapper}>
+                  <Field
+                    className={`${css.registerInput} ${
+                      errors.confirmPassword && touched.confirmPassword
+                        ? css.inputError
+                        : ""
+                    }`}
+                    type={confirmPasswordVisible ? "text" : "password"}
                     name="confirmPassword"
-                    component="span"
-                    className={css.confirmPasswordError}
+                    placeholder="Повторіть пароль"
                   />
+                  <button
+                    type="button"
+                    className={css.toggleButton}
+                    onClick={setConfirmPasswordVisibleToggler}
+                  >
+                    <Icon
+                      sprite={sprateSistem}
+                      id={`${
+                        confirmPasswordVisible
+                          ? "icon-eye_open"
+                          : "icon-view_hide"
+                      }`}
+                      width="20px"
+                      height="20px"
+                      className={css.passwordVisibleIcon}
+                    />
+                  </button>
                 </div>
+                <ErrorMessage
+                  name="confirmPassword"
+                  component="span"
+                  className={css.confirmPasswordError}
+                />
               </div>
-              <div className={css.registrButton}>
-                <button
-                  className={css.button}
-                  type="submit"
-                  disabled={isSubmitting}
-                >
-                  Зареєструватися
-                </button>
-                <div className={css.privacyPolicy}>
-                  <p>
-                    Реєструючись, ви приймаєте умови{" "}
-                    <Link to="/policy" className={css.link}>
-                      політики конфіденційності
-                    </Link>
-                  </p>
-                </div>
-              </div>
-            </Form>
-          )}
-        </Formik>
-        <div className={css.googleLoginContainer}>
-          <p className={css.text}>або увійти за допомогою</p>
-          <GoogleAuthorization />
-        </div>
+            </div>
+            <button
+              className={css.button}
+              type="submit"
+              disabled={isSubmitting}
+            >
+              Зареєструватися
+            </button>
+            <p className={css.privacyPolicy}>
+              {" "}
+              Реєструючись, ви приймаєте умови{" "}
+              <Link to="/policy" className={css.link}>
+                політики конфіденційності
+              </Link>
+            </p>
+          </Form>
+        )}
+      </Formik>
+      <div className={css.googleLoginContainer}>
+        <p className={css.enterNowText}>або увійти за допомогою</p>
+        <GoogleAuthorization />
       </div>
       <p className={css.enterNow}>
         Вже зареєстровані?{" "}
