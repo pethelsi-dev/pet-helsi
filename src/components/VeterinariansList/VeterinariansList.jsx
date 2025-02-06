@@ -1,8 +1,10 @@
+import { DeviceContext } from "../DeviceProvider/DeviceProvider";
 import { Link } from "react-router-dom";
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useContext } from "react";
 import { nanoid } from "nanoid";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, A11y } from "swiper/modules";
+import veterinar from "../../assets/Images/State=Default, Adaptive=Descktop.png";
 import allVeterinarians from "../../../allVeterinarians.json";
 import Icon from "../Icon/Icon";
 import sprateSistem from "../../assets/Images/sprite-sistem.svg";
@@ -10,7 +12,8 @@ import "swiper/css";
 import "swiper/css/pagination";
 import style from "./VeterinariansList.module.css";
 
-export default function VeterinariansList({ isDesktop }) {
+export default function VeterinariansList() {
+  const { isDesktop } = useContext(DeviceContext);
   const [isBeginning, setIsBeginning] = useState(true);
   const [isEnd, setIsEnd] = useState(false);
   const swiperRef = useRef(null);
@@ -70,7 +73,8 @@ export default function VeterinariansList({ isDesktop }) {
           {allVeterinarians.map(elem => (
             <SwiperSlide key={nanoid()} className={style.veterinariansListitem}>
               <img
-                src={elem.photo_url}
+                // src={elem.photo_url}
+                src={veterinar}
                 alt=""
                 className={style.imageVeterinarian}
               />

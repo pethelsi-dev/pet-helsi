@@ -1,4 +1,6 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
+import { useContext, useEffect } from "react";
+import { DeviceContext } from "../DeviceProvider/DeviceProvider";
 import { useSelector, useDispatch } from "react-redux";
 import { selectorIsLoggedIn } from "../../redux/auth/selectors";
 import { setIsOpenMenu } from "../../redux/appSlice/slice";
@@ -13,13 +15,30 @@ export default function Header() {
   const dispatch = useDispatch();
   const isAuthenticated = useSelector(selectorIsLoggedIn);
   const isOpenMenu = useSelector(selectorIsOpenMenu);
+  const navigate = useNavigate();
+  const location = useLocation();
+  const { isDesktop } = useContext(DeviceContext);
+
+  useEffect(() => {
+    if (!isDesktop && !isOpenMenu && location.pathname === "/user-panel") {
+      dispatch(setIsOpenMenu(true));
+    }
+  }, [location]);
 
   function openModal() {
-    dispatch(setIsOpenMenu(true));
+    if (!isDesktop) {
+      dispatch(setIsOpenMenu(true));
+    } else {
+      navigate("/user-panel");
+    }
   }
 
   const closeModal = () => {
-    setIsOpenMenu(false);
+    dispatch(setIsOpenMenu(false));
+  };
+
+  const switchToMain = () => {
+    navigate("/");
   };
 
   return (
@@ -40,17 +59,26 @@ export default function Header() {
         <nav className={style.headerNavContainer}>
           <ul className={style.navigationList}>
             <li>
-              <a href="#features" className={style.navListItem}>
+              <a
+                href="#features"
+                onClick={switchToMain}
+                className={style.navListItem}>
                 Про нас
               </a>
             </li>
             <li>
-              <a href="#veterinarians" className={style.navListItem}>
+              <a
+                href="#veterinarians"
+                onClick={switchToMain}
+                className={style.navListItem}>
                 База лікарів
               </a>
             </li>
             <li>
-              <a href="#faq" className={style.navListItem}>
+              <a
+                href="#faq"
+                onClick={switchToMain}
+                className={style.navListItem}>
                 FAQ
               </a>
             </li>
@@ -69,12 +97,13 @@ export default function Header() {
               />
             </button>
 
-            <button
+            <Link
+              to={"/user-panel"}
               type="button"
               className={style.headerUserPhotoButton}
               onClick={openModal}>
               K
-            </button>
+            </Link>
           </div>
         )}
 

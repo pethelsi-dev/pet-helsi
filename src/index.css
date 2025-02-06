@@ -20,6 +20,9 @@
   --logo-hover: #4fa2eb;
   --link-active: #0666ba;
   --user-background-gray: #b8bdc8;
+  --border-color-light-blue: #e1eaff;
+  --color-light-gray: #a2a8b6;
+  --color-medium-gray: #8b93a5;
 
   background-color: var(--bg-color);
   scroll-behavior: smooth;
