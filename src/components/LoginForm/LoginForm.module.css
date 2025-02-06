@@ -1,33 +1,23 @@
-.loginContainer {
+.loginFormContainer {
+  margin: 16px 16px 14px 16px;
   width: 343px;
-  height: 588px;
   background-color: var(--bg-color);
-  margin-left: 16px;
-  margin-right: 16px;
-  margin-top: 16px;
-  margin-bottom: 14px;
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
 }
 
-.formContainer {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-.loginTitle {
+.loginFormTitle {
   font-size: 28px;
   font-weight: 500;
   line-height: 140%;
   text-align: center;
+  margin-bottom: 24px;
 }
 
-.span {
+.loginFormTitleSpan {
   color: var(--accent-color-dark);
 }
 
-.buttonContainer {
+.selectUserTypeButtonContainer {
+  margin-bottom: 20px;
   display: flex;
   gap: 4px;
 }
@@ -36,10 +26,7 @@
   width: 169.5px;
   height: 36px;
   border-radius: 6px;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-right: 12px;
-  padding-left: 12px;
+  padding: 8px 12px;
   font-size: 14px;
   font-weight: 400;
   line-height: 140%;
@@ -54,22 +41,17 @@
   color: var(--accent-color-dark);
 }
 
-.loginForm {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
-
 .loginFormFields {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 12px;
+  margin-bottom: 16px;
 }
 
 .loginFieldContainer {
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 8px;
 }
 
 .label {
@@ -86,12 +68,13 @@
 }
 
 .loginInput {
-  width: 100%;
+  width: 343px;
   height: 44px;
   padding-left: 12px;
   border-radius: 8px;
   outline: none;
   border: 1px solid var(--input-def);
+  box-sizing: border-box;
 }
 
 .loginInput::placeholder {
@@ -145,6 +128,7 @@
   gap: 10px;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: 16px;
 }
 
 .rememberMeContainer {
@@ -224,6 +208,7 @@
   outline: none;
   border: none;
   border-radius: 8px;
+  margin-bottom: 20px;
 }
 
 .rememberMeLabel {
@@ -247,7 +232,7 @@
   color: var(--link-active);
 }
 
-.text {
+.enterWithGoogleText {
   font-size: 14px;
   font-weight: 400;
   line-height: 140%;
@@ -258,7 +243,8 @@
 .googleLoginContainer {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 4px;
+  margin-bottom: 24px;
 }
 
 .registerNow {
@@ -272,25 +258,19 @@
 }
 
 @media screen and (min-width: 1440px) {
-  .loginContainer {
+  .loginFormContainer {
     width: 437px;
-    height: 657px;
     border-radius: 18px;
-    margin-top: 85px;
-    margin-bottom: 83px;
-    margin-left: 0;
-    margin-right: 0;
-    padding-top: 40px;
-    padding-bottom: 0px;
-    gap: 40px;
+    padding: 40px 64px 32px 64px;
+    margin: 0;
+    box-sizing: border-box;
   }
 
-  .loginTitle {
+  .loginFormTitle {
     width: 309px;
     font-size: 32px;
     line-height: 150%;
-    margin-left: auto;
-    margin-right: auto;
+    margin-bottom: 40px;
   }
 
   .formContainer {
@@ -302,8 +282,9 @@
     gap: 24px;
   }
 
-  .buttonContainer {
+  .selectUserTypeButtonContainer {
     height: 36px;
+    margin-bottom: 24px;
   }
 
   .switchUserTypeButton {
@@ -312,22 +293,17 @@
     padding-left: 0;
   }
 
-  .loginForm {
-    gap: 24px;
-  }
-
   .loginFormFields {
     gap: 16px;
+    margin-bottom: 24px;
   }
 
   .loginFieldContainer {
     width: 304px;
-    gap: 8px;
   }
 
   .loginInput {
-    position: relative;
-    width: 289px;
+    width: 304px;
     height: 44px;
   }
 
@@ -338,6 +314,12 @@
 
   .loginButton {
     width: 304px;
+    margin-bottom: 24px;
+  }
+
+  .googleLoginContainer {
+    gap: 24px;
+    margin-bottom: 40px;
   }
 
   .enterNow {

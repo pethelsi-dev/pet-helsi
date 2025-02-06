@@ -1,6 +1,6 @@
 import { useState } from "react";
 import SvgIcon from "../Icon/Icon";
-import sprite from "../../assets/Images/sprite-sistem.svg";
+import spriteSistem from "../../assets/Images/sprite-sistem.svg";
 import { Link } from "react-router-dom";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
@@ -39,12 +39,11 @@ export default function LoginForm({ onUserTypeChange }) {
   };
 
   return (
-    <div className={css.loginContainer}>
-      <h1 className={css.loginTitle}>
-        Вхід в <span className={css.span}>PetHelsi</span>
+    <div className={css.loginFormContainer}>
+      <h1 className={css.loginFormTitle}>
+        Вхід в <span className={css.loginFormTitleSpan}>PetHelsi</span>
       </h1>
-      <div className={css.formContainer}>
-        <div className={css.buttonContainer}>
+        <div className={css.selectUserTypeButtonContainer}>
           <button
             className={`${css.switchUserTypeButton} ${
               userType === "owner" ? css.activeButton : ""
@@ -71,7 +70,7 @@ export default function LoginForm({ onUserTypeChange }) {
           validateOnBlur={true}
         >
           {({ isSubmitting, errors, touched }) => (
-            <Form className={css.loginForm}>
+            <Form >
               <div className={css.loginFormFields}>
                 <div className={css.loginFieldContainer}>
                   <label className={css.label} htmlFor="email">
@@ -112,8 +111,8 @@ export default function LoginForm({ onUserTypeChange }) {
                       onClick={setPasswordVisibleToggler}
                     >
                       <SvgIcon
-                        sprite={sprite}
-                        iconName={`${
+                        sprite={spriteSistem}
+                        id={`${
                           passwordVisible ? "icon-eye_open" : "icon-view_hide"
                         }`}
                         width="20px"
@@ -158,10 +157,9 @@ export default function LoginForm({ onUserTypeChange }) {
           )}
         </Formik>
         <div className={css.googleLoginContainer}>
-          <p className={css.text}>або увійти за допомогою</p>
+          <p className={css.enterWithGoogleText}>або увійти за допомогою</p>
           <GoogleAuthorization />
         </div>
-      </div>
       <p className={css.registerNow}>
         Немає аккаунта?{" "}
         <Link to="/register" className={css.link}>

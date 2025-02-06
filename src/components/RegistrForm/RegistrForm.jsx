@@ -2,7 +2,7 @@ import * as Yup from "yup";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Formik, Form, Field, ErrorMessage } from "formik";
-import sprateSistem from "../../assets/Images/sprite-sistem.svg";
+import spriteSistem from "../../assets/Images/sprite-sistem.svg";
 import Icon from "../Icon/Icon";
 import GoogleAuthorization from "../GoogleAuthorization/GoogleAuthorization";
 import css from "./RegistrForm.module.css";
@@ -98,7 +98,7 @@ export default function RegistrForm({ onUserTypeChange }) {
         validateOnBlur={true}
       >
         {({ isSubmitting, errors, touched }) => (
-          <Form className={css.form}>
+          <Form >
             <div className={css.registerFormFields}>
               <div className={css.registerFormFieldContainer}>
                 <label className={css.label} htmlFor="email">
@@ -137,7 +137,7 @@ export default function RegistrForm({ onUserTypeChange }) {
                     onClick={setPasswordVisibleToggler}
                   >
                     <Icon
-                      sprite={sprateSistem}
+                      sprite={spriteSistem}
                       id={`${
                         passwordVisible ? "icon-eye_open" : "icon-view_hide"
                       }`}
@@ -174,7 +174,7 @@ export default function RegistrForm({ onUserTypeChange }) {
                     onClick={setConfirmPasswordVisibleToggler}
                   >
                     <Icon
-                      sprite={sprateSistem}
+                      sprite={spriteSistem}
                       id={`${
                         confirmPasswordVisible
                           ? "icon-eye_open"
@@ -211,7 +211,7 @@ export default function RegistrForm({ onUserTypeChange }) {
         )}
       </Formik>
       <div className={css.googleLoginContainer}>
-        <p className={css.enterNowText}>або увійти за допомогою</p>
+        <p className={css.enterWithGoogleText}>або увійти за допомогою</p>
         <GoogleAuthorization />
       </div>
       <p className={css.enterNow}>

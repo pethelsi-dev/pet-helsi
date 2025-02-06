@@ -1,5 +1,5 @@
 .registrFormContainer {
-  padding: 16px;
+  margin: 16px 16px 14px 16px;
   width: 343px;
   background-color: var(--bg-color);
 }
@@ -137,13 +137,20 @@
   margin-bottom: 20px;
 }
 
-.link {
-  color: var(--accent-color-dark);
+.privacyPolicy:hover,
+.privacyPolicy:focus {
+  color: var(--button-hover);
 }
+
+.privacyPolicy:active {
+  color: var(--link-active);
+}
+
 .googleLoginContainer {
   margin-bottom: 24px;
 }
-.enterNowText {
+
+.enterWithGoogleText {
   font-size: 14px;
   font-weight: 400;
   line-height: 140%;
@@ -160,6 +167,7 @@
 }
 
 .link {
+  color: var(--accent-color-dark);
   text-decoration: underline;
 }
 
@@ -216,7 +224,7 @@
     margin-bottom: 24px;
   }
 
-  .enterNowText {
+  .enterWithGoogleText {
     margin-bottom: 24px;
   }
 
