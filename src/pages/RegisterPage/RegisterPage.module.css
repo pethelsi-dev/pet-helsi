@@ -1,11 +1,9 @@
 @media screen and (min-width: 1440px) {
-  .container {
+  .registerPageContainer {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    /* width: 1441px;
-    height: 825px; */
-    position: relative;
+    height: 100vh;
     padding-top: 41px;
     padding-right: 110px;
     padding-bottom: 39px;
@@ -33,9 +31,4 @@
       url("../../assets/Images/doctor-background@2x.png") 2x
     );
   }
-
-  /* .form {
-    position: absolute;
-    right: 110px;
-  } */
 }

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import SvgIcon from "../Icon/Icon";
-import sprite from "../../assets/Images/sprite-sistem.svg";
+import spriteSistem from "../../assets/Images/sprite-sistem.svg";
 import { Link } from "react-router-dom";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
@@ -39,14 +39,13 @@ export default function LoginForm({ onUserTypeChange }) {
   };
 
   return (
-    <div className={css.container}>
-      <h1 className={css.title}>
-        Вхід в <span className={css.span}>PetHelsi</span>
+    <div className={css.loginFormContainer}>
+      <h1 className={css.loginFormTitle}>
+        Вхід в <span className={css.loginFormTitleSpan}>PetHelsi</span>
       </h1>
-      <div className={css.formContainer}>
-        <div className={css.buttonContainer}>
+        <div className={css.selectUserTypeButtonContainer}>
           <button
-            className={`${css.switchButton} ${
+            className={`${css.switchUserTypeButton} ${
               userType === "owner" ? css.activeButton : ""
             }`}
             type="button"
@@ -55,7 +54,7 @@ export default function LoginForm({ onUserTypeChange }) {
             Я - власник тварини
           </button>
           <button
-            className={`${css.switchButton} ${
+            className={`${css.switchUserTypeButton} ${
               userType === "doctor" ? css.activeButton : ""
             }`}
             type="button"
@@ -71,14 +70,14 @@ export default function LoginForm({ onUserTypeChange }) {
           validateOnBlur={true}
         >
           {({ isSubmitting, errors, touched }) => (
-            <Form className={css.form}>
-              <div className={css.fields}>
-                <div className={css.fieldContainer}>
+            <Form >
+              <div className={css.loginFormFields}>
+                <div className={css.loginFieldContainer}>
                   <label className={css.label} htmlFor="email">
                     E-mail
                   </label>
                   <Field
-                    className={`${css.input} ${
+                    className={`${css.loginInput} ${
                       errors.email && touched.email ? css.inputError : ""
                     }`}
                     type="email"
@@ -91,13 +90,13 @@ export default function LoginForm({ onUserTypeChange }) {
                     className={css.emailError}
                   />
                 </div>
-                <div className={css.fieldContainer}>
+                <div className={css.loginFieldContainer}>
                   <label className={css.label} htmlFor="password">
                     Пароль
                   </label>
-                  <div className={css.inputWrapper}>
+                  <div className={css.passwordInputWrapper}>
                     <Field
-                      className={`${css.input} ${
+                      className={`${css.loginInput} ${
                         errors.password && touched.password
                           ? css.inputError
                           : ""
@@ -112,13 +111,13 @@ export default function LoginForm({ onUserTypeChange }) {
                       onClick={setPasswordVisibleToggler}
                     >
                       <SvgIcon
-                        sprite={sprite}
-                        iconName={`${
+                        sprite={spriteSistem}
+                        id={`${
                           passwordVisible ? "icon-eye_open" : "icon-view_hide"
                         }`}
                         width="20px"
                         height="20px"
-                        className={css.icon}
+                        className={css.passwordVisibleIcon}
                       />
                     </button>
                   </div>
@@ -128,7 +127,8 @@ export default function LoginForm({ onUserTypeChange }) {
                     className={css.passwordError}
                   />
                 </div>
-                <div className={css.checkBoxContainer}>
+              </div>
+              <div className={css.checkBoxContainer}>
                   <div className={css.rememberMeContainer}>
                     <Field type="checkbox" name="rememberMe" id="rememberMe" />
                     <label htmlFor="rememberMe" className={css.rememberMeLabel}>
@@ -144,10 +144,9 @@ export default function LoginForm({ onUserTypeChange }) {
                     </Link>
                   </div>
                 </div>
-              </div>
               <div className={css.loginButtonContainer}>
                 <button
-                  className={css.button}
+                  className={css.loginButton}
                   type="submit"
                   disabled={isSubmitting}
                 >
@@ -158,10 +157,9 @@ export default function LoginForm({ onUserTypeChange }) {
           )}
         </Formik>
         <div className={css.googleLoginContainer}>
-          <p className={css.text}>або увійти за допомогою</p>
+          <p className={css.enterWithGoogleText}>або увійти за допомогою</p>
           <GoogleAuthorization />
         </div>
-      </div>
       <p className={css.registerNow}>
         Немає аккаунта?{" "}
         <Link to="/register" className={css.link}>

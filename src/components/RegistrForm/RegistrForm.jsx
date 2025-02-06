@@ -2,7 +2,7 @@ import * as Yup from "yup";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Formik, Form, Field, ErrorMessage } from "formik";
-import sprateSistem from "../../assets/Images/sprite-sistem.svg";
+import spriteSistem from "../../assets/Images/sprite-sistem.svg";
 import Icon from "../Icon/Icon";
 import GoogleAuthorization from "../GoogleAuthorization/GoogleAuthorization";
 import css from "./RegistrForm.module.css";
@@ -19,7 +19,7 @@ export default function RegistrForm({ onUserTypeChange }) {
   // const dispatch = useDispatch();
   // const navigate = useNavigate();
 
-  const handleUserTypeChange = type => {
+  const handleUserTypeChange = (type) => {
     setUserType(type);
     onUserTypeChange(type); // Оновлюємо стан у батьківському компоненті
   };
@@ -68,60 +68,63 @@ export default function RegistrForm({ onUserTypeChange }) {
 
   return (
     <div className={css.registrFormContainer}>
-      <h1 className={css.title}>
+      <h1 className={css.registrTitle}>
         Реєстрація в <span className={css.span}>PetHelsi</span>
       </h1>
-      <div className={css.formContainer}>
-        <div className={css.buttonContainer}>
-          <button
-            className={`${css.switchButton} ${
-              userType === "owner" ? css.activeButton : ""
-            }`}
-            type="button"
-            onClick={() => handleUserTypeChange("owner")}>
-            Я - власник тварини
-          </button>
-          <button
-            className={`${css.switchButton} ${
-              userType === "doctor" ? css.activeButton : ""
-            }`}
-            type="button"
-            onClick={() => handleUserTypeChange("doctor")}>
-            Я - ветеринар
-          </button>
-        </div>
-        <Formik
-          initialValues={initialValues}
-          validationSchema={validationSchema}
-          onSubmit={handleSubmit}
-          validateOnBlur={true}>
-          {({ isSubmitting, errors, touched }) => (
-            <Form className={css.form}>
-              <div className={css.fields}>
-                <div className={css.fieldContainer}>
-                  <label className={css.label} htmlFor="email">
-                    E-mail
-                  </label>
+      <div className={css.selectUserTypeButtonContainer}>
+        <button
+          className={`${css.switchUserTypeButton} ${
+            userType === "owner" ? css.activeButton : ""
+          }`}
+          type="button"
+          onClick={() => handleUserTypeChange("owner")}
+        >
+          Я - власник тварини
+        </button>
+        <button
+          className={`${css.switchUserTypeButton} ${
+            userType === "doctor" ? css.activeButton : ""
+          }`}
+          type="button"
+          onClick={() => handleUserTypeChange("doctor")}
+        >
+          Я - ветеринар
+        </button>
+      </div>
+      <Formik
+        initialValues={initialValues}
+        validationSchema={validationSchema}
+        onSubmit={handleSubmit}
+        validateOnBlur={true}
+      >
+        {({ isSubmitting, errors, touched }) => (
+          <Form >
+            <div className={css.registerFormFields}>
+              <div className={css.registerFormFieldContainer}>
+                <label className={css.label} htmlFor="email">
+                  E-mail
+                </label>
+                <Field
+                  className={`${css.registerInput} ${
+                    errors.email && touched.email ? css.inputError : ""
+                  }`}
+                  type="email"
+                  name="email"
+                  placeholder="Введіть E-mail"
+                />
+                <ErrorMessage
+                  name="email"
+                  component="span"
+                  className={css.emailError}
+                />
+              </div>
+              <div className={css.registerFormFieldContainer}>
+                <label className={css.label} htmlFor="password">
+                  Пароль
+                </label>
+                <div className={css.registerFormInputWrapper}>
                   <Field
-                    className={`${css.input} ${
-                      errors.email && touched.email ? css.inputError : ""
-                    }`}
-                    type="email"
-                    name="email"
-                    placeholder="Введіть E-mail"
-                  />
-                  <ErrorMessage
-                    name="email"
-                    component="span"
-                    className={css.emailError}
-                  />
-                </div>
-                <div className={css.fieldContainer}>
-                  <label className={css.label} htmlFor="password">
-                    Пароль
-                  </label>
-                  <Field
-                    className={`${css.input} ${
+                    className={`${css.registerInput} ${
                       errors.password && touched.password ? css.inputError : ""
                     }`}
                     type={passwordVisible ? "text" : "password"}
@@ -131,15 +134,16 @@ export default function RegistrForm({ onUserTypeChange }) {
                   <button
                     type="button"
                     className={css.toggleButton}
-                    onClick={setPasswordVisibleToggler}>
+                    onClick={setPasswordVisibleToggler}
+                  >
                     <Icon
-                      sprite={sprateSistem}
+                      sprite={spriteSistem}
                       id={`${
                         passwordVisible ? "icon-eye_open" : "icon-view_hide"
                       }`}
                       width="20px"
                       height="20px"
-                      className={css.icon}
+                      className={css.passwordVisibleIcon}
                     />
                   </button>
                 </div>
@@ -148,13 +152,14 @@ export default function RegistrForm({ onUserTypeChange }) {
                   component="span"
                   className={css.passwordError}
                 />
-
-                <div className={css.fieldContainer}>
-                  <label className={css.label} htmlFor="confirmPassword">
-                    Повторіть пароль
-                  </label>
+              </div>
+              <div className={css.registerFormFieldContainer}>
+                <label className={css.label} htmlFor="confirmPassword">
+                  Повторіть пароль
+                </label>
+                <div className={css.registerFormInputWrapper}>
                   <Field
-                    className={`${css.input} ${
+                    className={`${css.registerInput} ${
                       errors.confirmPassword && touched.confirmPassword
                         ? css.inputError
                         : ""
@@ -166,9 +171,10 @@ export default function RegistrForm({ onUserTypeChange }) {
                   <button
                     type="button"
                     className={css.toggleButton}
-                    onClick={setConfirmPasswordVisibleToggler}>
+                    onClick={setConfirmPasswordVisibleToggler}
+                  >
                     <Icon
-                      sprite={sprateSistem}
+                      sprite={spriteSistem}
                       id={`${
                         confirmPasswordVisible
                           ? "icon-eye_open"
@@ -176,7 +182,7 @@ export default function RegistrForm({ onUserTypeChange }) {
                       }`}
                       width="20px"
                       height="20px"
-                      className={css.icon}
+                      className={css.passwordVisibleIcon}
                     />
                   </button>
                 </div>
@@ -186,29 +192,27 @@ export default function RegistrForm({ onUserTypeChange }) {
                   className={css.confirmPasswordError}
                 />
               </div>
-              <div className={css.registrButton}>
-                <button
-                  className={css.button}
-                  type="submit"
-                  disabled={isSubmitting}>
-                  Зареєструватися
-                </button>
-                <div className={css.privacyPolicy}>
-                  <p>
-                    Реєструючись, ви приймаєте умови{" "}
-                    <Link to="/policy" className={css.link}>
-                      політики конфіденційності
-                    </Link>
-                  </p>
-                </div>
-              </div>
-            </Form>
-          )}
-        </Formik>
-        <div className={css.googleLoginContainer}>
-          <p className={css.text}>або увійти за допомогою</p>
-          <GoogleAuthorization />
-        </div>
+            </div>
+            <button
+              className={css.button}
+              type="submit"
+              disabled={isSubmitting}
+            >
+              Зареєструватися
+            </button>
+            <p className={css.privacyPolicy}>
+              {" "}
+              Реєструючись, ви приймаєте умови{" "}
+              <Link to="/policy" className={css.link}>
+                політики конфіденційності
+              </Link>
+            </p>
+          </Form>
+        )}
+      </Formik>
+      <div className={css.googleLoginContainer}>
+        <p className={css.enterWithGoogleText}>або увійти за допомогою</p>
+        <GoogleAuthorization />
       </div>
       <p className={css.enterNow}>
         Вже зареєстровані?{" "}

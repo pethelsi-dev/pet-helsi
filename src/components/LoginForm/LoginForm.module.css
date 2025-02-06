@@ -1,346 +1,328 @@
-.container {
-    width: 343px;
-    height: 588px;
-    background-color: var(--bg-color);
-    margin-left: 16px;
-    margin-right: 16px;
-    margin-top: 16px;
-    margin-bottom: 14px;
-    display: flex;
-    flex-direction: column;
-    gap: 24px;
+.loginFormContainer {
+  margin: 16px 16px 14px 16px;
+  width: 343px;
+  background-color: var(--bg-color);
 }
 
-.formContainer {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-.title {    
-    font-size: 28px;
-    font-weight: 500;
-    line-height: 140%;
-    text-align: center;
+.loginFormTitle {
+  font-size: 28px;
+  font-weight: 500;
+  line-height: 140%;
+  text-align: center;
+  margin-bottom: 24px;
 }
 
-.span {
-    color: var(--accent-color-dark);
+.loginFormTitleSpan {
+  color: var(--accent-color-dark);
 }
 
-.buttonContainer {
-    display: flex;
-    gap: 4px;
+.selectUserTypeButtonContainer {
+  margin-bottom: 20px;
+  display: flex;
+  gap: 4px;
 }
 
-.switchButton {
-    width: 169.5px;
-    height: 36px;
-    border-radius: 6px;
-    padding-top: 8px;
-    padding-bottom: 8px;
-    padding-right: 12px;
-    padding-left: 12px;
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 140%;
-    outline: none;
-    border: none;
-    background-color: var(--bg-color);
-    color: var(--text-color-dark);
+.switchUserTypeButton {
+  width: 169.5px;
+  height: 36px;
+  border-radius: 6px;
+  padding: 8px 12px;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 140%;
+  outline: none;
+  border: none;
+  background-color: var(--bg-color);
+  color: var(--text-color-dark);
 }
 
 .activeButton {
-    border: 1px solid var(--accent-color-dark);
-    color: var(--accent-color-dark);
-    
+  border: 1px solid var(--accent-color-dark);
+  color: var(--accent-color-dark);
 }
 
-.form {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
+.loginFormFields {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 16px;
 }
 
-.fields {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-}
-
-.fieldContainer {
-    /* position: relative; */
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
+.loginFieldContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
 
 .label {
-    font-size: 12px;
-    font-weight: 500;
-    line-height: 140%;
-    color: var(--text-color-gray);
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 140%;
+  color: var(--text-color-gray);
 }
 
-.inputWrapper {
-    position: relative;
-    display: flex;
-    align-items: center;
+.passwordInputWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
 }
 
-.input {
-    width: 100%;
-    height: 44px;
-    padding-left: 12px;
-    border-radius: 8px;
-    outline: none;
-    border: 1px solid var(--input-def);
+.loginInput {
+  width: 343px;
+  height: 44px;
+  padding-left: 12px;
+  border-radius: 8px;
+  outline: none;
+  border: 1px solid var(--input-def);
+  box-sizing: border-box;
 }
 
-.input::placeholder {
-    color: var(--text-default);
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 140%;
+.loginInput::placeholder {
+  color: var(--text-default);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 140%;
 }
 
 .inputError {
-    border: 1px solid var(--error-color);
-    outline: none;
+  border: 1px solid var(--error-color);
+  outline: none;
 }
 
 .toggleButton {
-    position: absolute;
-    top: 50%;
-    right: 12px;
-    transform: translateY(-50%);
-    width: 20px;
-    height: 20px;
-    display: block;
-    background-color: transparent;
-    outline: none;
-    border: none;
-  }
-
-.icon {
-    stroke: var(--text-default);
-    stroke-width: 1px;
+  position: absolute;
+  top: 50%;
+  right: 12px;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  display: block;
+  background-color: transparent;
+  outline: none;
+  border: none;
 }
 
-.emailError {
-    font-size: 12px;
-    font-weight: 400;
-    line-height: 120%;
-    color: var(--error-color);
-
+.passwordVisibleIcon {
+  stroke: var(--text-default);
+  stroke-width: 1px;
 }
 
+.emailError,
 .passwordError {
-    font-size: 12px;
-    font-weight: 400;
-    line-height: 120%;
-    color: var(--text-color-dark);
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 120%;
+  color: var(--error-color);
 }
 
-.confirmPasswordError {
-    font-size: 12px;
-    font-weight: 400;
-    line-height: 120%;
-    color: var(--error-color);
-
-}
 .rememberMeLabel,
 .forgotPassword .forgotPasswordLink {
-    display: inline-flex;
-    align-items: center; 
-    font-size: 12px;
-    line-height: 1; 
+  display: inline-flex;
+  align-items: center;
+  font-size: 12px;
+  line-height: 1;
 }
 
 .checkBoxContainer {
-    display: flex;
-    gap: 10px;
-    justify-content: space-between;
-    align-items: center;
+  display: flex;
+  gap: 10px;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
 }
 
 .rememberMeContainer {
-    display: flex;
-    align-items: center;
-    gap: 4px;
-
+  display: flex;
+  align-items: center;
+  gap: 4px;
 }
 
 .rememberMeContainer input[type="checkbox"] {
-    display: none;
+  display: none;
 }
 
 .rememberMeContainer label {
-    cursor: pointer;
-    display: flex;
-    position: relative;
-    padding-left: 30px; 
+  cursor: pointer;
+  display: flex;
+  position: relative;
+  padding-left: 30px;
 }
 
 .rememberMeContainer label::before {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 16px;
-    height: 16px;
-    border: 1px solid var(--accent-color-dark);
-    border-radius: 3px;
-    background-color: #fff;
-    transition: background-color 0.3s, border-color 0.3s;
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 16px;
+  height: 16px;
+  border: 1px solid var(--accent-color-dark);
+  border-radius: 3px;
+  background-color: #fff;
+  transition: background-color 0.3s, border-color 0.3s;
 }
 
 .rememberMeContainer input[type="checkbox"]:checked + label::before {
-    background-color: var(--accent-color-dark);
-    border-color: var(--accent-color-dark);
+  background-color: var(--accent-color-dark);
+  border-color: var(--accent-color-dark);
 }
 
 .rememberMeContainer input[type="checkbox"]:checked + label::after {
-    content: "🗸";
-    position: absolute;
-    left: 5px;
-    top: 50%;
-    transform: translateY(-50%);
-    color: #fff;
-    font-size: 12px;
-  }
-  
+  content: "🗸";
+  position: absolute;
+  left: 5px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #fff;
+  font-size: 12px;
+}
+
 .forgotPassword {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .forgotPasswordLink {
-    color: var(--accent-color-dark);
-    font-size: 12px;
-    text-decoration: underline;
+  color: var(--accent-color-dark);
+  font-size: 12px;
+  text-decoration: underline;
 }
-.button {
-    width: 343px;
-    height: 48px;
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 140%;
-    color: var(--bg-color);
-    background-color: var(--accent-color-dark);
-    outline: none;
-    border: none;
-    border-radius: 8px;
+
+.forgotPasswordLink:hover,
+.forgotPasswordLink:focus {
+  color: var(--button-hover);
+}
+
+.forgotPasswordLink:active {
+  color: var(--link-active);
+}
+
+.loginButton {
+  width: 343px;
+  height: 48px;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 140%;
+  color: var(--bg-color);
+  background-color: var(--accent-color-dark);
+  outline: none;
+  border: none;
+  border-radius: 8px;
+  margin-bottom: 20px;
 }
 
 .rememberMeLabel {
-    font-size: 12px;
-    font-weight: 500;
-    line-height: 140%;
-    color: var(--text-color-dark);
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 140%;
+  color: var(--text-color-dark);
 }
 .link {
-    color: var(--accent-color-dark);
-    font-size: 14px;
-    text-decoration: underline;
+  color: var(--accent-color-dark);
+  font-size: 14px;
+  text-decoration: underline;
 }
 
-.text {
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 140%;
-    text-align: center;
-    color: var(--text-color-dark);
+.link:hover,
+.link:focus {
+  color: var(--button-hover);
+}
+
+.link:active {
+  color: var(--link-active);
+}
+
+.enterWithGoogleText {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 140%;
+  text-align: center;
+  color: var(--text-color-dark);
 }
 
 .googleLoginContainer {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-bottom: 24px;
 }
 
 .registerNow {
-    display: flex;
-    justify-content: center;
-    gap: 4px;
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 140%;
-    text-align: center;
+  display: flex;
+  justify-content: center;
+  gap: 4px;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 140%;
+  text-align: center;
 }
 
-
 @media screen and (min-width: 1440px) {
-    .container {
-        width: 437px;
-        height: 657px;
-        border-radius: 18px;
-        margin-top: 85px;
-        margin-bottom: 83px;
-        margin-left: 0;
-        margin-right: 0;
-        padding-top: 40px;
-        padding-bottom: 0px;
-        gap: 40px;
-    }
+  .loginFormContainer {
+    width: 437px;
+    border-radius: 18px;
+    padding: 40px 64px 32px 64px;
+    margin: 0;
+    box-sizing: border-box;
+  }
 
-    .title {    
-        width: 309px;
-        font-size: 32px;
-        line-height: 150%;
-        margin-left: auto;
-        margin-right: auto;
-    }
+  .loginFormTitle {
+    width: 309px;
+    font-size: 32px;
+    line-height: 150%;
+    margin-bottom: 40px;
+  }
 
-    .formContainer {
-        display: flex;
-        flex-direction: column;
-        width: 304px;
-        /* height: 585px; */
-        margin-left: auto;
-        margin-right: auto;
-        gap: 24px;
-    }
+  .formContainer {
+    display: flex;
+    flex-direction: column;
+    width: 304px;
+    margin-left: auto;
+    margin-right: auto;
+    gap: 24px;
+  }
 
-    .buttonContainer {
-       height: 36px;
-    }
+  .selectUserTypeButtonContainer {
+    height: 36px;
+    margin-bottom: 24px;
+  }
 
-    .switchButton {
-        width: 150px;
-        padding-right: 0;
-        padding-left: 0;
-    }
+  .switchUserTypeButton {
+    width: 150px;
+    padding-right: 0;
+    padding-left: 0;
+  }
 
-    .form {
-        gap: 24px;
-    }
+  .loginFormFields {
+    gap: 16px;
+    margin-bottom: 24px;
+  }
 
-    .fields {
-        gap: 16px;
-    }
-    
-    .fieldContainer {
-        width: 304px;
-    }
-    
-    .input {
-        position: relative;
-        width: 289px;
-        height: 44px;
-    }
-    
-    .toggleButton {
-        width: 24px;
-        height: 24px;
-      }
+  .loginFieldContainer {
+    width: 304px;
+  }
 
-      .button {
-        width: 304px;
-    }
+  .loginInput {
+    width: 304px;
+    height: 44px;
+  }
 
-    .enterNow {
-        margin-bottom: 32px;
-    }
-    
+  .toggleButton {
+    width: 24px;
+    height: 24px;
+  }
+
+  .loginButton {
+    width: 304px;
+    margin-bottom: 24px;
+  }
+
+  .googleLoginContainer {
+    gap: 24px;
+    margin-bottom: 40px;
+  }
+
+  .enterNow {
+    margin-bottom: 32px;
+  }
 }
