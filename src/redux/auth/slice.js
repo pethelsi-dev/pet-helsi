@@ -12,6 +12,13 @@ const initialState={
   isLoading: false,
   isError: false,
   userType: 'owner', // умолчанию
+  modal: {
+    isOpen: false,
+    type: null, // Тип модалки, например, "registration", "forgot-password", "confirm-code"
+    email: "", // Например, для модалки восстановления пароля
+    code: "", // Код подтверждения
+    error: null, // Ошибка, если есть
+  },
 };
 
 const authSlice = createSlice({
@@ -23,6 +30,26 @@ const authSlice = createSlice({
     },
     setToken(state, action) {
       state.token = action.payload;
+    },
+    openModal(state, action) {
+      state.modal.isOpen = true;
+      state.modal.type = action.payload.type;
+      state.modal.email = action.payload.email || '';
+      state.modal.code = action.payload.code || '';
+      state.modal.error = null;
+    },
+    closeModal(state) {
+      state.modal.isOpen = false;
+      state.modal.type = null;
+      state.modal.email = '';
+      state.modal.code = '';
+      state.modal.error = null;
+    },
+    setModalError(state, action) {
+      state.modal.error = action.payload;
+    },
+    setCode(state, action) {
+      state.modal.code = action.payload;
     },
   },
   extraReducers: (builder) => {
@@ -82,6 +109,6 @@ const authSlice = createSlice({
   },
 });
 
-export const { setUserType, setToken } = authSlice.actions;
+export const { setUserType, setToken, openModal, closeModal, setModalError, setCode } = authSlice.actions;
 const authReducer = authSlice.reducer;
 export default authReducer;

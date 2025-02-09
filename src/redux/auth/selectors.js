@@ -5,3 +5,8 @@ export const selectUserType = (state) => state.auth.userType;
 export const selectIsLoading = (state) => state.auth.isLoading;
 export const selectIsRefreshing = (state) => state.auth.isRefreshing;
 export const selectIsError = (state) => state.auth.isError;
+export const selectModalState = (state) => state.auth.modal;
+export const selectModalError = (state) => state.auth.modal.error;
+export const selectModalEmail = (state) => state.auth.modal.email;
+export const selectModalCode = (state) => state.auth.modal.code;
+export const selectIsModalOpen = (state) => state.auth.modal.isOpen;

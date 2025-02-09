@@ -47,7 +47,7 @@ export default function App() {
     <div className={style.appContainer}>
       <GoogleOAuthProvider>
         {/* <Toaster position="top-right" /> */}
-        <NotificationsWrapper />
+        <NotificationsWrapper /> 
         <Layout>
           <Suspense fallback={<Loader />}>
             <Routes>
