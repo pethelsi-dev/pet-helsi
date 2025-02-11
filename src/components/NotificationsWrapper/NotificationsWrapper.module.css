@@ -2,6 +2,7 @@
   width: 343px;
   padding: 0 16px 16px 16px;
   position: fixed;
+  /* position: absolute; */
   margin-top: 69.5px;
   min-height: min-content;
   max-height: calc(100vh - 69.5px);

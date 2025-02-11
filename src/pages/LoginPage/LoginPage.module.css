@@ -1,34 +1,55 @@
+.loginPageContainer {
+  margin: 16px 16px 14px 16px;
+  background-color: var(--bg-color);
+}
+
 @media screen and (min-width: 1440px) {
   .loginPageContainer {
+    background-attachment: fixed;
     background-size: cover;
-    background-position: center;
     background-repeat: no-repeat;
     height: 100vh;
+    min-height: 100%;
     padding-top: 85px;
     padding-right: 110px;
     padding-bottom: 83px;
     padding-left: 893px;
+    box-sizing: border-box;
+    overflow-y: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    margin: 0;
+  }
+
+  .loginPageContainer::-webkit-scrollbar {
+    display: none;
   }
 
   .ownerBackground {
-    background-image: -webkit-image-set(
-      url("../../assets/Images/owner-background@1x.png") 1x,
-      url("../../assets/Images/owner-background@2x.png") 2x
-    );
-    background-image: image-set(
-      url("../../assets/Images/owner-background@1x.png") 1x,
-      url("../../assets/Images/owner-background@2x.png") 2x
-    );
+    background-image: linear-gradient(
+        rgba(136, 37, 48, 0.1),
+        rgba(250, 152, 152, 0.1)
+      ),
+      url("../../assets/Images/owner-background@1x.png");
   }
 
   .doctorBackground {
-    background-image: -webkit-image-set(
-      url("../../assets/Images/doctor-background@1x.png") 1x,
-      url("../../assets/Images/doctor-background@2x.png") 2x
-    );
-    background-image: image-set(
-      url("../../assets/Images/doctor-background@1x.png") 1x,
-      url("../../assets/Images/doctor-background@2x.png") 2x
-    );
+    background-image: linear-gradient(
+        rgba(33, 78, 86, 0.1),
+        rgba(83, 171, 237, 0.1)
+      ),
+      url("../../assets/Images/doctor-background@1x.png");
+  }
+
+  @media screen and (min-resolution: 192dpi) and (min-width: 1440px),
+    screen and (min-resolution: 2dppx) and (min-width: 1440px),
+    screen and (min-device-pixel-ratio: 2) {
+    .ownerBackground {
+      background-image: url("../../assets/Images/owner-background@2x.png");
+    }
+
+    .doctorBackground {
+      background-image: url("../../assets/Images/doctor-background@2x.png");
+    }
   }
 }
