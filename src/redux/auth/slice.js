@@ -1,17 +1,17 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { signUp, signIn, signOut, refreshUser } from "./operations";
 
-const initialState={
+const initialState = {
   user: {
     name: null,
-    email: null
+    email: null,
   },
   token: null,
   isLoggedIn: false,
   isRefreshing: false,
   isLoading: false,
   isError: false,
-  userType: 'owner', // умолчанию
+  userType: "owner", // умолчанию
   modal: {
     isOpen: false,
     type: null, // Тип модалки, например, "registration", "forgot-password", "confirm-code"
@@ -34,15 +34,15 @@ const authSlice = createSlice({
     openModal(state, action) {
       state.modal.isOpen = true;
       state.modal.type = action.payload.type;
-      state.modal.email = action.payload.email || '';
-      state.modal.code = action.payload.code || '';
+      state.modal.email = action.payload.email || "";
+      state.modal.code = action.payload.code || "";
       state.modal.error = null;
     },
     closeModal(state) {
       state.modal.isOpen = false;
       state.modal.type = null;
-      state.modal.email = '';
-      state.modal.code = '';
+      state.modal.email = "";
+      state.modal.code = "";
       state.modal.error = null;
     },
     setModalError(state, action) {
@@ -51,6 +51,9 @@ const authSlice = createSlice({
     setCode(state, action) {
       state.modal.code = action.payload;
     },
+    setModalEmail(state, action) {
+      state.modal.email = action.payload;
+    },
   },
   extraReducers: (builder) => {
     builder
@@ -58,7 +61,7 @@ const authSlice = createSlice({
         state.isLoading = true;
         state.isError = false;
       })
-      .addCase(signUp.fulfilled, (state, action) => { 
+      .addCase(signUp.fulfilled, (state, action) => {
         state.user = action.payload.user;
         state.token = action.payload.token;
         state.isLoggedIn = true;
@@ -84,22 +87,22 @@ const authSlice = createSlice({
         state.isLoading = false;
         state.isError = action.payload || true;
       })
-       .addCase(signOut.fulfilled, (state) => {
+      .addCase(signOut.fulfilled, (state) => {
         state.user = { name: null, email: null };
         state.token = null;
         state.isLoggedIn = false;
-        state.userType = "owner"; 
-       })
-       .addCase(refreshUser.pending, (state) => {
-         state.isRefreshing = true;
-         state.isError = false;
+        state.userType = "owner";
+      })
+      .addCase(refreshUser.pending, (state) => {
+        state.isRefreshing = true;
+        state.isError = false;
       })
       .addCase(refreshUser.fulfilled, (state, action) => {
-        state.token = action.payload.accessToken;  // 🟢 Записываем accessToken???проверить док-ю апи
+        state.token = action.payload.accessToken; // 🟢 Записываем accessToken???проверить док-ю апи
         state.user = action.payload.user;
         state.isLoggedIn = true;
         state.isRefreshing = false;
-        state.userType = action.payload.userType; 
+        state.userType = action.payload.userType;
       })
       .addCase(refreshUser.rejected, (state, action) => {
         state.isRefreshing = false;
@@ -109,6 +112,14 @@ const authSlice = createSlice({
   },
 });
 
-export const { setUserType, setToken, openModal, closeModal, setModalError, setCode } = authSlice.actions;
+export const {
+  setUserType,
+  setToken,
+  openModal,
+  closeModal,
+  setModalError,
+  setCode,
+  setModalEmail
+} = authSlice.actions;
 const authReducer = authSlice.reducer;
 export default authReducer;

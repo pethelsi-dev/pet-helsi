@@ -1,7 +1,9 @@
 import { useState } from "react";
+import { useDispatch } from 'react-redux';
 import { Link } from "react-router-dom";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
+import { openModal, closeModal } from '../../redux/auth/slice';
 import spriteSistem from "../../assets/Images/sprite-sistem.svg";
 import SvgIcon from "../Icon/Icon";
 import GoogleAuthorization from "../GoogleAuthorization/GoogleAuthorization";
@@ -11,18 +13,21 @@ import CustomModalAuth from "../CustomModalAuth/CustomModalAuth";
 export default function LoginForm({ onUserTypeChange }) {
   const [passwordVisible, setPasswordVisible] = useState(false);
   const [userType, setUserType] = useState("owner");
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const [modalType, setModalType] = useState("");
-  const [email, setEmail] = useState("");
 
-  const openModal = (type) => {
-    setModalType(type);
-    setIsModalOpen(true);
-  };
+  const dispatch = useDispatch();
+
+  // const openModal = (type, email) => {
+  //   dispatch(openModal({ type, email }));
+  // };
   
-  const closeModal = () => {
-    setIsModalOpen(false);
+  // const closeModal = () => {
+  //   dispatch(closeModal());
+  // };
+  const handleForgotPassword = () => {
+  console.log("Открываем модалку...");
+  dispatch(openModal({ type: "forgot-password" }));
   };
+
   const handleUserTypeChange = (type) => {
     setUserType(type);
     onUserTypeChange(type);
@@ -95,8 +100,8 @@ export default function LoginForm({ onUserTypeChange }) {
                   type="email"
                   name="email"
                   placeholder="Введіть E-mail"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
+                  // value={values.email}
+                  // onChange={(e) => setEmail(e.target.value)}
                 />
                 <ErrorMessage
                   name="email"
@@ -148,9 +153,8 @@ export default function LoginForm({ onUserTypeChange }) {
                 </label>
               </div>
               <div className={css.forgotPassword}>
-                <button type="button" onClick={() => openModal("forgot-password")}>
-                  Забули пароль?
-                </button>
+                <button type="button" onClick={handleForgotPassword}>Забули пароль?</button>
+
                 {/* <Link
                       to="/forgot-password"
                       className={css.forgotPasswordLink}
@@ -182,7 +186,7 @@ export default function LoginForm({ onUserTypeChange }) {
         </Link>
       </p>
 
-      <CustomModalAuth isOpen={isModalOpen} onClose={closeModal} type={modalType} email={email}/>
+      <CustomModalAuth/>
     </div>
   );
 }
