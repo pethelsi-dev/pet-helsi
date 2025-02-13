@@ -1,19 +1,27 @@
 .notificationWrapperСontainer {
   width: 343px;
   padding: 0 16px 16px 16px;
-  position: fixed;
-  /* position: absolute; */
-  margin-top: 69.5px;
+  margin-top: 69.3px;
   min-height: min-content;
   max-height: calc(100vh - 69.5px);
-  top: 0;
   z-index: 999;
   background-color: var(--bg-color);
   scroll-behavior: smooth;
+  animation: fadeIn 0.3s ease;
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .notificationWrapperTopBox {
-  padding: 20px 5px 20px 8px;
+  padding: 20px 0;
   display: flex;
   align-items: center;
   justify-content: space-between;

@@ -5,6 +5,7 @@
   overflow: hidden;
 }
 
+
 @media screen and (min-width: 1440px) {
   .appContainer {
     width: 1440px;

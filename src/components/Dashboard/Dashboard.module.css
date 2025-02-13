@@ -1,5 +1,9 @@
 .dashboardContainer {
   padding: 0;
+  height: calc(100vh - 277.4px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .dashboardList {
@@ -75,9 +79,6 @@
     height: calc(92vh - 85.4px);
     padding: 40px 0 32px 0;
     border-right: 1px solid var(--button-hover-background);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
   }
 
   .dashboardList {

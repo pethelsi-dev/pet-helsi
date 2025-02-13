@@ -1,3 +1,21 @@
+.guestMenuContainer {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 345px;
+  padding: 32px 16px;
+  height: calc(100vh - 127px);
+  background-color: var(--bg-color);
+  z-index: 998;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 16px;
+  animation: fadeInRight 0.6s forwards;
+  margin-top: 63.5px;
+}
+
 .modalMenuLogo {
   display: flex;
   align-items: center;
@@ -31,6 +49,7 @@
   color: var(--text-color-dark);
   font-weight: 600;
   line-height: 22.4px;
+  letter-spacing: 0.01em;
   cursor: pointer;
   transition: color 0.3s ease;
 }
@@ -57,7 +76,8 @@
   border: 1px solid var(--accent-color-dark);
   transition: color 0.3s ease, background-color 0.3s ease, border 0.3s ease;
 }
-.linkAuthRegister {
+.linkAuth:hover,
+.linkAuth:focus {
   background-color: var(--accent-color-dark);
   color: var(--bg-color);
 }
@@ -69,15 +89,7 @@
   padding-left: 109px;
   padding-right: 109px;
 }
-.linkAuth:hover {
-  border: 1px solid var(--button-hover);
-  background-color: var(--button-hover-background);
-}
-.linkAuth:focus {
-  color: var(--bg-color);
-  border: 1px solid transparent;
-  background-color: var(--button-hover);
-}
+
 .linkAllVeterinarians:hover {
   border: 1px solid var(--button-hover);
   background-color: var(--button-hover-background);

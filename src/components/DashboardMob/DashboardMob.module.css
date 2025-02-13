@@ -1,3 +1,17 @@
+.mainContentDesktop {
+  width: 343px;
+  padding: 16px 16px 32px 16px;
+  height: calc(100vh - 69.5px);
+  background-color: var(--bg-color);
+  z-index: 998;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 16px;
+  animation: fadeInRight 0.6s forwards;
+  margin-top: 69px;
+}
+
 .modalMenuLogo {
   padding-bottom: 16px;
   display: flex;
@@ -10,21 +24,6 @@
   fill: var(--accent-color-dark);
   stroke: var(--accent-color-dark);
   margin-right: 151px;
-}
-.buttonClose {
-  border: none;
-  background-color: transparent;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.iconClose {
-  stroke: var(--text-color-dark);
-  transition: stroke 0.3s ease;
-}
-.buttonClose:hover .iconClose {
-  stroke: var(--accent-color-light);
 }
 
 .userMenuButtons {
@@ -107,4 +106,6 @@
   text-align: center;
   color: var(--text-color-dark);
   margin-bottom: 24px;
+}
+@media screen and (min-width: 1440px) {
 }

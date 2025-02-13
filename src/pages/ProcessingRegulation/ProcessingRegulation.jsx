@@ -1,5 +1,5 @@
 export default function ProcessingRegulation() {
     return(
-        <div></div>
+        <div>ProcessingRegulation</div>
     )
 }

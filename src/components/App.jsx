@@ -3,12 +3,10 @@ import { lazy, Suspense, useContext } from "react";
 import { DeviceContext } from "./DeviceProvider/DeviceProvider.jsx";
 import { useSelector } from "react-redux";
 import { selectorIsLoggedIn } from "../redux/auth/selectors";
-// import { Toaster } from "react-hot-toast";
 import { GoogleOAuthProvider } from "@react-oauth/google";
 import Layout from "../components/Layout/Layout.jsx";
 import PrivateRoute from "../components/PrivateRoute/PrivateRoute";
 import PublicRoute from "../components/PublicRoute/PublicRoute";
-import NotificationsWrapper from "../components/NotificationsWrapper/NotificationsWrapper.jsx";
 import Loader from "./Loader/Loader.jsx";
 import style from "./App.module.css";
 const HomePage = lazy(() => import("../pages/HomePage/HomePage"));
@@ -46,19 +44,17 @@ export default function App() {
   return (
     <div className={style.appContainer}>
       <GoogleOAuthProvider>
-        {/* <Toaster position="top-right" /> */}
-        {/* <NotificationsWrapper /> */}
-        <Layout>
-          <Suspense fallback={<Loader />}>
-            <Routes>
-              <Route path="/login" element={<LoginPage />} />
-              <Route path="/register" element={<RegisterPage />} />
-              <Route path="/policy" element={<PrivacyPolicy />} />
-              <Route
-                path="/processing-regulation"
-                element={<ProcessingRegulation />}
-              />
+        <Suspense fallback={<Loader />}>
+          <Routes>
+            <Route path="/login" element={<LoginPage />} />
+            <Route path="/register" element={<RegisterPage />} />
+            <Route path="/policy" element={<PrivacyPolicy />} />
+            <Route
+              path="/processing-regulation"
+              element={<ProcessingRegulation />}
+            />
 
+            <Route element={<Layout />}>
               <Route
                 element={<PublicRoute isAuthenticated={isAuthenticated} />}>
                 <Route path="/" element={<HomePage />} />
@@ -71,23 +67,26 @@ export default function App() {
               <Route
                 element={<PrivateRoute isAuthenticated={isAuthenticated} />}>
                 <Route path="/user-panel" element={<UserPanelPage />}>
-                  {isDesktop && (
-                    <Route index element={<Navigate to="history" replace />} />
-                  )}
+                  {isDesktop ? (
+                    <Route
+                      index
+                      element={<Navigate to="/user-panel/history" replace />}
+                    />
+                  ) : null}
                   <Route path="history" element={<ConsultationHistory />} />
                   <Route path="chats" element={<ChatsPage />} />
                   <Route path="my-animals" element={<OwnersAnimals />} />
+                  <Route path="profile" element={<OwnerProfile />} />
+                  <Route path="settings" element={<Settings />} />
                   <Route
                     path="veterinarians"
                     element={<VeterinarianListPage />}
                   />
-                  <Route path="profile" element={<OwnerProfile />} />
-                  <Route path="settings" element={<Settings />} />
                 </Route>
               </Route>
-            </Routes>
-          </Suspense>
-        </Layout>
+            </Route>
+          </Routes>
+        </Suspense>
       </GoogleOAuthProvider>
     </div>
   );
