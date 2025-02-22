@@ -1,13 +1,13 @@
 .notificationWrapperСontainer {
+  position: fixed;
   width: 343px;
   padding: 0 16px 16px 16px;
-  margin-top: 69.3px;
+  margin-top: -1.5px;
   min-height: min-content;
   max-height: calc(100vh - 69.5px);
   z-index: 999;
   background-color: var(--bg-color);
   scroll-behavior: smooth;
-  animation: fadeIn 0.3s ease;
 }
 @keyframes fadeIn {
   from {
@@ -56,10 +56,10 @@
 @media screen and (min-width: 1440px) {
   .notificationWrapperСontainer {
     width: 370px;
-    right: 72px;
-    padding: 0 8px 16px 8px;
-    margin-top: 85.4px;
-    max-height: 557px;
+    right: 50%;
+    transform: translateX(649px);
+    padding: 8px 8px 16px 8px;
+    max-height: calc(100vh - 85.4px);
     border-radius: 0 0 8px 8px;
   }
 

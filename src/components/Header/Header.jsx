@@ -3,10 +3,8 @@ import { useContext } from "react";
 import { DeviceContext } from "../DeviceProvider/DeviceProvider";
 import { useSelector, useDispatch } from "react-redux";
 import { selectorIsLoggedIn } from "../../redux/auth/selectors";
-import { setIsOpenMenu } from "../../redux/appSlice/slice";
+import { setIsOpenMenu, setShowNotification } from "../../redux/appSlice/slice";
 import { selectorIsOpenMenu } from "../../redux/appSlice/selectors";
-import { toast } from "react-hot-toast";
-import NotificationsWrapper from "../NotificationsWrapper/NotificationsWrapper";
 import sprateSistem from "../../assets/Images/sprite-sistem.svg";
 import Icon from "../Icon/Icon";
 import style from "./Header.module.css";
@@ -32,18 +30,6 @@ export default function Header({ closeModal }) {
     } else {
       closeModal();
     }
-  };
-
-  const showNotificationToast = () => {
-    toast.custom(
-      tostItem => (
-        <NotificationsWrapper
-          tostItemID={tostItem.id}
-          tostItem={tostItem.visible}
-        />
-      ),
-      { position: "top-right", duration: Infinity }
-    );
   };
 
   return (
@@ -107,7 +93,7 @@ export default function Header({ closeModal }) {
               <button
                 type="button"
                 className={style.headerUserButton}
-                onClick={showNotificationToast}>
+                onClick={() => dispatch(setShowNotification(true))}>
                 <Icon
                   sprite={sprateSistem}
                   id={"icon-bell"}
