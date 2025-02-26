@@ -4,7 +4,8 @@ import { useState, useEffect, useRef, useContext } from "react";
 import { nanoid } from "nanoid";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, A11y } from "swiper/modules";
-import veterinar from "../../assets/Images/State=Default, Adaptive=Descktop.png";
+import VetCard from '../VetCard/VetCard'
+// import veterinar from "../../assets/Images/State=Default, Adaptive=Descktop.png";
 import allVeterinarians from "../../../allVeterinarians.json";
 import Icon from "../Icon/Icon";
 import sprateSistem from "../../assets/Images/sprite-sistem.svg";
@@ -72,34 +73,7 @@ export default function VeterinariansList() {
           className={style.veterinariansList}>
           {allVeterinarians.map(elem => (
             <SwiperSlide key={nanoid()} className={style.veterinariansListitem}>
-              <img
-                // src={elem.photo_url}
-                src={veterinar}
-                alt=""
-                className={style.imageVeterinarian}
-              />
-              <div className={style.veterinariansDescrWrapper}>
-                <p className={style.name}>{elem.last_name}</p>
-                <p className={style.name}>
-                  {elem.first_name} {elem.middle_name}
-                </p>
-                <p className={style.veterinariansExperience}>
-                  Стаж: {elem.experience} років
-                </p>
-                <div className={style.reviewsWrapper}>
-                  <Icon
-                    sprite={sprateSistem}
-                    id={"icon-star_fill"}
-                    width="16px"
-                    height="16px"
-                    className={style.iconStar}
-                  />
-                  {elem.rating}{" "}
-                  <span className={style.reviewsCount}>
-                    ({elem.reviews_count} відгуки)
-                  </span>
-                </div>
-              </div>
+           <VetCard vetValue={elem}/>
             </SwiperSlide>
           ))}
         </Swiper>
