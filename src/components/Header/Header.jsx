@@ -59,7 +59,7 @@ export default function Header({ closeModal }) {
               href="#veterinarians"
               onClick={closeModalOrRedirect}
               className={style.navListItem}>
-              База лікарів
+              Ветеринари
             </a>
           </li>
           <li>

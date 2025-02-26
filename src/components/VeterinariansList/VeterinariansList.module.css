@@ -39,7 +39,7 @@
   height: 468px;
   border-radius: 16px;
 }
-.imageVeterinarian {
+/* .imageVeterinarian {
   display: block;
   width: 272px;
   height: 468px;
@@ -95,7 +95,7 @@
   line-height: 19.6px;
   text-align: left;
   color: var(--text-color-ligth-gray);
-}
+} */
 .buttonsNav {
   display: none;
 }
@@ -150,7 +150,7 @@
     border-radius: 24px;
     overflow: hidden;
   }
-  .imageVeterinarian {
+  /* .imageVeterinarian {
     width: 344px;
     height: 528px;
     border-radius: 24px;
@@ -213,7 +213,7 @@
   .linkAllVeterinarians:hover .iconArrowleft {
     fill: var(--accent-color-light);
     cursor: pointer;
-  }
+  } */
   .buttonsNav {
     display: flex;
     margin-left: 520px;
