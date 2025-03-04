@@ -1,0 +1,89 @@
+.filterVet {
+  width: min-content;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 4px;
+}
+.filterVetsValue {
+  appearance: none;
+  width: max-content;
+  order: 1;
+  text-align: right;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 19.6px;
+  color: var(--text-color-dark);
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background-color: var(--bg-color);
+}
+.filterVetsOptionList {
+  background-color: var(--bg-color);
+  padding: 8px 4px;
+  position: absolute;
+  bottom: -127px;
+  right: 0;
+  border-radius: 8px;
+  box-shadow: 3px 10px 15px 10px rgba(16, 24, 40, 0.04),
+    0px -3px 8px -2px rgba(16, 24, 40, 0.04);
+}
+.filterVetsOption {
+  width: 146px;
+  position: relative;
+  appearance: none;
+  text-align: left;
+  padding: 4px 34px 4px 12px;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 19.6px;
+  color: var(--text-color-dark);
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background-color: var(--bg-color);
+}
+.filterVetsOption:hover,
+.filterVetsOption:focus {
+  background-color: var(--bg-color-list);
+  color: var(--accent-color-dark);
+}
+.filterVetsOption:hover::after,
+.filterVetsOption.selected::after {
+  content: "✔";
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  color: var(--accent-color-dark);
+  font-size: 14px;
+}
+.iconArrowFilterVet {
+  order: 2;
+  stroke: var(--text-color-gray);
+  fill: none;
+  width: 24px;
+  height: 24px;
+}
+
+@media screen and (min-width: 1440px) {
+  .filterVetsValue {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 16.8px;
+    color: var(--text-color-dark);
+  }
+  .filterVetsOptionList {
+    bottom: -165px;
+  }
+  .filterVetsOption {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 19.6px;
+    color: var(--text-color-dark);
+    padding: 8px 34px 8px 16px;
+  }
+}

@@ -1,0 +1,116 @@
+.veterinarianListPageContainer {
+  padding: 20px 16px 80px 16px;
+  background-color: var(--bg-color);
+}
+.veterinarianListNav {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 19.6px;
+  color: var(--text-color-gray);
+  margin-bottom: 36px;
+}
+.iconArrow {
+  stroke: var(--text-color-gray);
+  width: 24px;
+  height: 24px;
+}
+.veterinarianListSearchWrapper {
+  margin: 0;
+}
+.veterinarianListSearch {
+  padding: 11px 50px;
+  width: 100%;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22.4px;
+  color: var(--text-color-white);
+  background-color: var(--accent-color-dark);
+  border: none;
+  border-radius: 8px;
+  margin-bottom: 40px;
+}
+.veterinarianListSortWrapper {
+  display: flex;
+  align-items: center;
+}
+.veterinarianListGroup {
+  margin-bottom: 16px;
+}
+.veterinarianListTitle {
+  display: block;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 28px;
+  color: var(--color-black);
+  margin-bottom: 16px;
+}
+.veterinarianListSortTitle {
+  display: none;
+}
+.veterinarianListFilterMob {
+  width: 343px;
+  display: flex;
+  justify-content: flex-end;
+}
+.veterinarianPageList {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+@media screen and (min-width: 1440px) {
+  .veterinarianListPageContainer {
+    padding: 32px 72px 32px 72px;
+  }
+  .veterinarianListNav {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 16.8px;
+  }
+  .iconArrowDesk {
+    stroke: var(--text-color-gray);
+    width: 20px;
+    height: 20px;
+  }
+  .veterinarianListSearchWrapper {
+    margin-bottom: 48px;
+  }
+  .veterinarianListSortWrapper {
+    width: 312px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 12px;
+  }
+  .veterinarianListGroup {
+    display: flex;
+    justify-content: space-between;
+  }
+  .veterinarianListTitle {
+    margin-bottom: 0;
+  }
+  .veterinarianListSortTitle {
+    display: inline-block;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 16.8px;
+    color: var(--text-color-ligth-gray);
+  }
+  .veterinarianPageList {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+  .veterinariansListitem {
+    width: calc((100% - 16px * 3) / 4);
+    transition: all 0.3s ease-in-out;
+  }
+  .veterinariansListitemUserPanel {
+    width: calc((100% - 16px * 2) / 3); /* 32px — это два отступа по 16px */
+    transition: all 0.3s ease-in-out;
+  }
+}

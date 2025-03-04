@@ -1,5 +1,5 @@
 import decor from "../../assets/Images/vector.png";
-import dog from "../../assets/Images/dog.gif"
+import dog from "../../assets/Images/dog.gif";
 import VeterinarianSearchForm from "../VeterinarianSearchForm/VeterinarianSearchForm";
 import style from "./Hero.module.css";
 
@@ -20,15 +20,14 @@ export default function Hero() {
           </div>
 
           <div className={style.imageContainer}>
-            <img
-              src={dog}
-              alt="Logo"
-              className={style.heroDog}
-            />
+            <img src={dog} alt="Logo" className={style.heroDog} />
             <img src={decor} alt="" className={style.heroDecor} />
           </div>
         </div>
-        <VeterinarianSearchForm />
+
+        <div className={style.heroFormWrapper}>
+          <VeterinarianSearchForm />
+        </div>
       </div>
     </div>
   );

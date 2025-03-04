@@ -44,6 +44,11 @@
   text-align: left;
   color: var(--text-color-white);
 }
+.heroFormWrapper {
+  border-radius: 12px;
+  padding: 16px 12px;
+  background-color: #fff;
+}
 .heroDog {
   display: none;
 }
@@ -64,7 +69,6 @@
     align-items: flex-end;
     gap: 46px;
   }
-
   .heroBox {
     padding: 0;
     margin: 0;
@@ -138,5 +142,8 @@
     position: absolute;
     top: -16px;
     left: 28px;
+  }
+  .heroFormWrapper {
+    padding: 16px 24px;
   }
 }

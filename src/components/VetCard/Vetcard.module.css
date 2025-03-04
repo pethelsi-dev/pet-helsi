@@ -1,124 +1,115 @@
+.VetCardContainer {
+  padding: 24px;
+  background-color: var(--bg-color);
+  border: 1px solid var(--border-color-light-blue);
+  border-radius: 12px;
+  z-index: 1;
+  overflow: hidden;
+}
 .imageVeterinarian {
-    display: block;
-    width: 272px;
-    height: 468px;
-    object-fit: cover;
-    border-radius: 16px;
-  }
+  display: block;
+  width: 104px;
+  height: 104px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 16px;
+  object-position: top;
+}
+.name {
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 28px;
+  text-align: left;
+  color: var(--text-color-dark);
+}
+.name:not(:first-child) {
+  margin-bottom: 8px;
+}
+.vetCardExperience {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 22.4px;
+  text-align: left;
+  color: var(--text-color-ligth-gray);
+  margin-bottom: 16px;
+}
+.vetCardData {
+  color: var(--text-color-dark);
+}
+.vetCardReviews {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 19.6px;
+  text-align: left;
+  color: var(--text-color-dark);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.iconStar {
+  width: 20px;
+  height: 20px;
+  fill: var(--accent-color-dark);
+}
+
+@media screen and (min-width: 1440px) {
   .veterinariansDescrWrapper {
-    width: 224px;
-    position: absolute;
-    left: 8px;
-    bottom: 8px;
-    padding: 16px;
-    border-radius: 12px;
-    background-color: var(--bg-color);
-    cursor: pointer;
+    width: 271px;
+    padding: 24px 33px 24px 24px;
+    border-radius: 20px;
   }
   .name {
-    font-size: 18px;
-    font-weight: 600;
-    line-height: 25.2px;
-    text-align: left;
-    color: var(--text-color-dark);
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 36px;
   }
   .name:not(:first-child) {
-    margin-bottom: 6px;
+    margin-bottom: 8px;
   }
   .veterinariansExperience {
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 19.6px;
-    text-align: left;
-    color: var(--text-color-ligth-gray);
-    margin-bottom: 12px;
+    font-size: 16px;
+    line-height: 22.4px;
+    margin-bottom: 16px;
   }
   .reviewsWrapper {
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 19.6px;
-    text-align: left;
-    color: var(--text-color-dark);
-    display: flex;
-    align-items: center;
+    font-size: 16px;
+    line-height: 22.4px;
+    align-items: start;
     gap: 4px;
   }
   .iconStar {
-    width: 16px;
-    height: 16px;
-    fill: var(--accent-color-dark);
+    width: 20px;
+    height: 20px;
   }
   .reviewsCount {
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 19.6px;
-    text-align: left;
-    color: var(--text-color-ligth-gray);
+    font-size: 16px;
+    line-height: 22.4px;
   }
-
-  @media screen and (min-width: 1440px) {
-    .imageVeterinarian {
-        width: 344px;
-        height: 528px;
-        border-radius: 24px;
-      }
-      .veterinariansDescrWrapper {
-        width: 271px;
-        padding: 24px 33px 24px 24px;
-        border-radius: 20px;
-      }
-      .name {
-        font-size: 24px;
-        font-weight: 500;
-        line-height: 36px;
-      }
-      .name:not(:first-child) {
-        margin-bottom: 8px;
-      }
-      .veterinariansExperience {
-        font-size: 16px;
-        line-height: 22.4px;
-        margin-bottom: 16px;
-      }
-      .reviewsWrapper {
-        font-size: 16px;
-        line-height: 22.4px;
-        align-items: start;
-        gap: 4px;
-      }
-      .iconStar {
-        width: 20px;
-        height: 20px;
-      }
-      .reviewsCount {
-        font-size: 16px;
-        line-height: 22.4px;
-      }
-      .iconStar {
-        width: 20px;
-        height: 20px;
-      }
-      .iconArrowleft {
-        display: inline-block;
-        width: 24px;
-        height: 24px;
-        fill: var(--accent-color-dark);
-        transition: fill 0.3s ease;
-      }
-      .iconArrow {
-        width: 24px;
-        height: 24px;
-        fill: var(--accent-color-dark);
-        transition: fill 0.3s ease;
-      }
-      .linkAllVeterinarians:hover,
-      .linkAllVeterinarians:active {
-        text-decoration: underline;
-        color: var(--accent-color-light);
-        cursor: pointer;
-      }
-      .linkAllVeterinarians:hover .iconArrowleft {
-        fill: var(--accent-color-light);
-        cursor: pointer;
-      }
+  .iconStar {
+    width: 20px;
+    height: 20px;
   }
+  .iconArrowleft {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    fill: var(--accent-color-dark);
+    transition: fill 0.3s ease;
+  }
+  .iconArrow {
+    width: 24px;
+    height: 24px;
+    fill: var(--accent-color-dark);
+    transition: fill 0.3s ease;
+  }
+  .linkAllVeterinarians:hover,
+  .linkAllVeterinarians:active {
+    text-decoration: underline;
+    color: var(--accent-color-light);
+    cursor: pointer;
+  }
+  .linkAllVeterinarians:hover .iconArrowleft {
+    fill: var(--accent-color-light);
+    cursor: pointer;
+  }
+}

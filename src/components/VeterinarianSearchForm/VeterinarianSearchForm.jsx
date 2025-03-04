@@ -66,7 +66,7 @@ export default function VeterinarianSearchForm() {
   const [isOpenAnimals, setIsOpenAnimals] = useState(false);
   const [isOpenProblems, setIsOpenProblems] = useState(false);
   const [selectedDate, setSelectedDate] = useState(new Date());
-
+  
   const toggleSelectAnimals = () => setIsOpenAnimals(!isOpenAnimals);
   const toggleSelectProblems = () => setIsOpenProblems(!isOpenProblems);
 
@@ -85,7 +85,7 @@ export default function VeterinarianSearchForm() {
       problem: isValueProblems,
       date: selectedDate,
     };
-    console.log(values);
+    // console.log(values);
   };
 
   return (
@@ -209,10 +209,11 @@ export default function VeterinarianSearchForm() {
           height="24px"
           className={style.icon}
         />
+
         <DatePicker
           selected={selectedDate}
           onChange={date => setSelectedDate(date)}
-          dateFormat="dd/MM/yyyy"
+          dateFormat="E, d MMMM"
           className={style.optionDate}
           placeholderText="Виберіть дату"
           locale="uk"

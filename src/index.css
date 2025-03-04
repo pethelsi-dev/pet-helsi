@@ -23,6 +23,8 @@
   --border-color-light-blue: #e1eaff;
   --color-light-gray: #a2a8b6;
   --color-medium-gray: #8b93a5;
+  --color-black: #000000;
+  --color-gray-form: #49546f;
 
   background-color: var(--bg-color);
   scroll-behavior: smooth;

@@ -25,11 +25,7 @@ export default function GuestMenu({ closeModal }) {
           </li>
 
           <li>
-            <a
-              href="#"
-              // href="#faq"
-              onClick={closeModal}
-              className={style.navListItem}>
+            <a href="#" onClick={closeModal} className={style.navListItem}>
               Ветеринарам
             </a>
           </li>

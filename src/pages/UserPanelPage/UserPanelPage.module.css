@@ -4,6 +4,9 @@
 
 @media screen and (min-width: 1440px) {
   .userPanelContainer {
+    overflow-y: scroll;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
     position: relative;
     display: grid;
     grid-template-columns: 280px 1fr;
@@ -13,6 +16,5 @@
   .mainContent {
     position: relative;
     grid-column: 2;
-    padding: 32px;
   }
 }

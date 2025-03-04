@@ -2,19 +2,17 @@
   display: flex;
   flex-direction: column;
   position: relative;
-  padding-top: 68px;   
+  padding-top: 68px;
 }
-
- .noHeader {
-  padding-top: 0; 
-} 
+.noHeader {
+  padding-top: 0;
+}
 
 @media screen and (min-width: 1440px) {
   .layoutContainer {
-    padding-top: 86px; 
+    padding-top: 86px;
   }
   .noHeader {
-    padding-top: 0; 
-  } 
- 
+    padding-top: 0;
+  }
 }

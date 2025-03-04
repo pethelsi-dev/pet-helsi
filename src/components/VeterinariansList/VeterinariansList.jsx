@@ -1,11 +1,10 @@
 import { DeviceContext } from "../DeviceProvider/DeviceProvider";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { useState, useEffect, useRef, useContext } from "react";
-import { nanoid } from "nanoid";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, A11y } from "swiper/modules";
-import VetCard from '../VetCard/VetCard'
-// import veterinar from "../../assets/Images/State=Default, Adaptive=Descktop.png";
+import VetCard from "../VetCard/VetCard";
+import veterinar from "../../assets/Images/588f8e49768020da958bb009d913c575.png";
 import allVeterinarians from "../../../allVeterinarians.json";
 import Icon from "../Icon/Icon";
 import sprateSistem from "../../assets/Images/sprite-sistem.svg";
@@ -17,7 +16,9 @@ export default function VeterinariansList() {
   const { isDesktop } = useContext(DeviceContext);
   const [isBeginning, setIsBeginning] = useState(true);
   const [isEnd, setIsEnd] = useState(false);
+  const [visibleIndex, setVisibleIndex] = useState(null);
   const swiperRef = useRef(null);
+  const location = useLocation();
 
   useEffect(() => {
     if (swiperRef.current) {
@@ -71,9 +72,25 @@ export default function VeterinariansList() {
           onResize={swiper => swiper.update()}
           onSlideChange={handleSlideChange}
           className={style.veterinariansList}>
-          {allVeterinarians.map(elem => (
-            <SwiperSlide key={nanoid()} className={style.veterinariansListitem}>
-           <VetCard vetValue={elem}/>
+          {allVeterinarians.map((elem, index) => (
+            <SwiperSlide
+              key={elem.id || index}
+              className={style.veterinariansListitem}
+              onMouseEnter={() => setVisibleIndex(index)}
+              onMouseLeave={() => setVisibleIndex(null)}>
+              <img
+                src={veterinar}
+                alt=""
+                className={style.veterinariansListItemPhoto}
+              />
+              <div className={style.veterinariansListVetInfo}>
+                <VetCard
+                  vetValue={elem}
+                  isVisible={
+                    location.pathname !== "/" || visibleIndex === index
+                  }
+                />
+              </div>
             </SwiperSlide>
           ))}
         </Swiper>

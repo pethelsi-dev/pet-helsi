@@ -5,7 +5,7 @@ import Discount from "../../components/Discount/Discount";
 import VeterinariansList from "../../components/VeterinariansList/VeterinariansList";
 import AppointmentProcess from "../../components/AppointmentProcess/AppointmentProcess";
 import Faq from "../../components/Faq/Faq";
-import Footer from "../../components/Footer/Footer";
+// import Footer from "../../components/Footer/Footer";
 
 export default function HomePage() {
   return (
@@ -17,7 +17,7 @@ export default function HomePage() {
       <VeterinariansList />
       <Discount />
       <Faq />
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 }
