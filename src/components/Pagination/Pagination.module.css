@@ -1,0 +1,55 @@
+@media screen and (min-width: 1440px) {
+  .paginationContainer {
+    padding-top: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--bg-color);
+  }
+  .paginationPagesGroup {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+  }
+  .paginationButton {
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--bg-color);
+    border: none;
+  }
+  .paginationInfo {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 22.4px;
+    color: var(--text-dark-gray);
+  }
+  .paginationPage {
+    width: 32px;
+    height: 32px;
+    padding: 7.5px 10px;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 16.8px;
+    color: var(--text-color-dark);
+    background-color: var(--bg-color);
+    border: 1px solid var(--input-def);
+    border-radius: 8px;
+  }
+  .paginationPageOther {
+    width: 32px;
+    height: 32px;
+    text-align: center;
+    background-color: var(--bg-color);
+    border: 1px solid var(--input-def);
+    border-radius: 8px;
+  }
+
+  .iconPagination {
+    stroke: var(--accent-color-dark);
+    width: 20px;
+    height: 20px;
+  }
+}
