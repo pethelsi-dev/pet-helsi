@@ -104,6 +104,7 @@
     flex-direction: row;
     flex-wrap: wrap;
     gap: 16px;
+    margin-bottom: 24px;
   }
   .veterinariansListitem {
     width: calc((100% - 16px * 3) / 4);

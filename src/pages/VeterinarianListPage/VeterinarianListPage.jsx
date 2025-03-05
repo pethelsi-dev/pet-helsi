@@ -3,6 +3,7 @@ import { nanoid } from "nanoid";
 import { useContext, useEffect, useState } from "react";
 import { DeviceContext } from "../../components/DeviceProvider/DeviceProvider";
 import VetCard from "../../components/VetCard/VetCard";
+import Pagination from "../../components/Pagination/Pagination";
 import VeterinarianSearchForm from "../../components/VeterinarianSearchForm/VeterinarianSearchForm";
 import sprateSistem from "../../assets/Images/sprite-sistem.svg";
 import Icon from "../../components/Icon/Icon";
@@ -90,6 +91,8 @@ export default function VeterinarianListPage() {
           </li>
         ))}
       </ul>
+
+      {isDesktop && <Pagination />}
     </section>
   );
 }

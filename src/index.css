@@ -25,6 +25,7 @@
   --color-medium-gray: #8b93a5;
   --color-black: #000000;
   --color-gray-form: #49546f;
+  --text-dark-gray: #344054;
 
   background-color: var(--bg-color);
   scroll-behavior: smooth;
