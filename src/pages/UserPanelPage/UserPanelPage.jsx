@@ -18,6 +18,7 @@ export default function UserPanelPage() {
       ) : (
         location.pathname === "/user-panel" && <DashboardMob />
       )}
+
       <div className={style.mainContent}>
         <Outlet />
       </div>

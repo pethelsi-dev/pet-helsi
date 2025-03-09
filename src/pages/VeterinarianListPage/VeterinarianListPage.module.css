@@ -3,6 +3,7 @@
   background-color: var(--bg-color);
 }
 .veterinarianListNav {
+  width: min-content;
   display: flex;
   align-items: center;
   gap: 4px;
@@ -63,7 +64,10 @@
 
 @media screen and (min-width: 1440px) {
   .veterinarianListPageContainer {
-    padding: 32px 72px 32px 72px;
+    padding: 32px 72px 72px 72px;
+  }
+  .forUserPanelPadding {
+    padding: 24px;
   }
   .veterinarianListNav {
     font-weight: 500;
@@ -103,7 +107,6 @@
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    gap: 16px;
     margin-bottom: 24px;
   }
   .veterinariansListitem {
@@ -111,7 +114,8 @@
     transition: all 0.3s ease-in-out;
   }
   .veterinariansListitemUserPanel {
-    width: calc((100% - 16px * 2) / 3); /* 32px — это два отступа по 16px */
+    width: calc((100% - 20px * 2) / 3);
+
     transition: all 0.3s ease-in-out;
   }
 }

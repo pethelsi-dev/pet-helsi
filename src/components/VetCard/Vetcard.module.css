@@ -1,4 +1,5 @@
 .VetCardContainer {
+  /* width: 295px; */
   padding: 24px;
   background-color: var(--bg-color);
   border: 1px solid var(--border-color-light-blue);
@@ -53,10 +54,8 @@
 }
 
 @media screen and (min-width: 1440px) {
-  .veterinariansDescrWrapper {
-    width: 271px;
-    padding: 24px 33px 24px 24px;
-    border-radius: 20px;
+  .VetCardContainer {
+    max-width: 264px;
   }
   .name {
     font-size: 24px;

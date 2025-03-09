@@ -1,6 +1,11 @@
+.consultationHistoryContainer {
+  padding: 16px;
+}
+
 @media screen and (min-width: 1440px) {
   .consultationHistoryContainer {
     position: relative;
+    padding: 0;
   }
 
   .folder {
@@ -14,7 +19,7 @@
 
   .consultationHistoryBox {
     position: fixed;
-    top:50%;
+    top: 50%;
     left: 50%;
     transform: translate(calc(-50% + 140px), -50%);
     width: 441px;

@@ -1,5 +1,5 @@
 import { Link, useLocation } from "react-router-dom";
-import { nanoid } from "nanoid";
+// import { nanoid } from "nanoid";
 import { useContext, useEffect, useState } from "react";
 import { DeviceContext } from "../../components/DeviceProvider/DeviceProvider";
 import VetCard from "../../components/VetCard/VetCard";
@@ -9,6 +9,7 @@ import sprateSistem from "../../assets/Images/sprite-sistem.svg";
 import Icon from "../../components/Icon/Icon";
 import FilterVets from "../../components/FilterVets/FilterVets";
 import allVeterinarians from "../../../allVeterinarians.json";
+import clsx from "clsx";
 import style from "./VeterinarianListPage.module.css";
 
 export default function VeterinarianListPage() {
@@ -28,7 +29,12 @@ export default function VeterinarianListPage() {
   }, [location.pathname, isDesktop]);
 
   return (
-    <section className={style.veterinarianListPageContainer}>
+    <section
+      className={clsx(
+        style.veterinarianListPageContainer,
+        location.pathname === "/user-panel/veterinarians" &&
+          style.forUserPanelPadding
+      )}>
       <Link to="/" className={style.veterinarianListNav}>
         {!isDesktop && (
           <Icon
@@ -36,18 +42,21 @@ export default function VeterinarianListPage() {
             id={"arrow-left"}
             width="20px"
             height="20px"
-            className={style.iconArrowDesk}
+            className={style.iconArrow}
           />
         )}
         Головна
         {isDesktop && (
-          <Icon
-            sprite={sprateSistem}
-            id={"arrow-rigth"}
-            width="24px"
-            height="24px"
-            className={style.iconArrow}
-          />
+          <>
+            <Icon
+              sprite={sprateSistem}
+              id={"arrow-rigth"}
+              width="24px"
+              height="24px"
+              className={style.iconArrowDesk}
+            />
+            <span>Ветеринари</span>
+          </>
         )}
       </Link>
 
@@ -81,7 +90,7 @@ export default function VeterinarianListPage() {
       <ul className={style.veterinarianPageList}>
         {allVeterinarians.map(elem => (
           <li
-            key={nanoid()}
+            key={elem.id}
             className={
               columns === 3
                 ? style.veterinariansListitemUserPanel
