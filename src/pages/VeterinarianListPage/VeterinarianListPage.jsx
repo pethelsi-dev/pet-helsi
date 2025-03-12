@@ -88,9 +88,9 @@ export default function VeterinarianListPage() {
       </div>
 
       <ul className={style.veterinarianPageList}>
-        {allVeterinarians.map(elem => (
-          <li
-            key={elem.id}
+        {allVeterinarians.map((elem,index) => (
+          <li key={index}
+            // key={elem.id}
             className={
               columns === 3
                 ? style.veterinariansListitemUserPanel
