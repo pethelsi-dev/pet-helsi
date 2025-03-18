@@ -1,6 +1,6 @@
 .dashboardContainer {
   padding: 0;
-  height: calc(100vh - 277.4px);
+  height: calc(100vh - 249px);
   display: flex;
   flex-direction: column;
   justify-content: space-between;

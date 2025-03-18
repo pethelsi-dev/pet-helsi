@@ -7,6 +7,9 @@ import Icon from "../Icon/Icon";
 import animalsSprite from "../../assets/Images/sprite-animals.svg";
 import problemsSprite from "../../assets/Images/sprite-problems.svg";
 import sistemSprite from "../../assets/Images/sprite-sistem.svg";
+import { useContext } from "react";
+import { DeviceContext } from "../DeviceProvider/DeviceProvider";
+import clsx from "clsx";
 import style from "./VeterinarianSearchForm.module.css";
 
 registerLocale("uk", uk);
@@ -66,7 +69,8 @@ export default function VeterinarianSearchForm() {
   const [isOpenAnimals, setIsOpenAnimals] = useState(false);
   const [isOpenProblems, setIsOpenProblems] = useState(false);
   const [selectedDate, setSelectedDate] = useState(new Date());
-  
+  const { isDesktop } = useContext(DeviceContext);
+
   const toggleSelectAnimals = () => setIsOpenAnimals(!isOpenAnimals);
   const toggleSelectProblems = () => setIsOpenProblems(!isOpenProblems);
 
@@ -85,13 +89,19 @@ export default function VeterinarianSearchForm() {
       problem: isValueProblems,
       date: selectedDate,
     };
-    // console.log(values);
   };
 
   return (
     <div className={style.formContainer}>
       <div className={style.customSelect}>
-        <div className={style.selectedOption} onClick={toggleSelectAnimals}>
+        <div
+          className={clsx(style.selectedOption, {
+            [style.selectedOptionUserPanel]:
+              location.pathname === "/user-panel/veterinarians" && isDesktop,
+            [style.selectedOptionVeterinars]:
+              location.pathname === "/veterinarians" && isDesktop,
+          })}
+          onClick={toggleSelectAnimals}>
           <Icon
             sprite={animalsSprite}
             id={
@@ -116,6 +126,7 @@ export default function VeterinarianSearchForm() {
             className={style.iconArrow}
           />
         </div>
+
         {isOpenAnimals && (
           <div className={style.options}>
             {optionsAnimals.map(option => (
@@ -146,7 +157,10 @@ export default function VeterinarianSearchForm() {
 
       <div className={style.customSelect}>
         <div
-          className={style.selectedOptionProblems}
+          className={clsx(style.selectedOptionProblems, {
+            [style.selectedOptionVeterinars]:
+              location.pathname === "/veterinarians" && isDesktop,
+          })}
           onClick={toggleSelectProblems}>
           <Icon
             sprite={problemsSprite}

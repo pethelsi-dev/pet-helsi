@@ -2,12 +2,16 @@ import { useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import VetSchedule from "../VetSchedule/VetSchedule";
 import Icon from "../Icon/Icon";
+import { useContext } from "react";
+import { DeviceContext } from "../DeviceProvider/DeviceProvider";
 import sprateSistem from "../../assets/Images/sprite-sistem.svg";
 import veterinar from "../../assets/Images/588f8e49768020da958bb009d913c575.png";
+import clsx from "clsx";
 import style from "./Vetcard.module.css";
 
 export default function VetCard({ vetValue, isVisible }) {
   const location = useLocation();
+  const { isDesktop } = useContext(DeviceContext);
   const {
     experience,
     first_name,
@@ -19,7 +23,13 @@ export default function VetCard({ vetValue, isVisible }) {
   } = vetValue;
 
   return (
-    <article className={style.VetCardContainer}>
+    <article
+      className={style.VetCardContainer}
+      style={
+        location.pathname.includes("/user-panel/veterinarians") && isDesktop
+          ? { width: "288px" }
+          : {}
+      }>
       {location.pathname !== "/" && (
         <img
           src={

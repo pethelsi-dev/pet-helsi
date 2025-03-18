@@ -67,7 +67,8 @@
     padding: 32px 72px 72px 72px;
   }
   .forUserPanelPadding {
-    padding: 24px;
+    padding: 40px 72px 40px 40px;
+    width: 1048px;
   }
   .veterinarianListNav {
     font-weight: 500;
@@ -114,8 +115,7 @@
     transition: all 0.3s ease-in-out;
   }
   .veterinariansListitemUserPanel {
-    width: calc((100% - 20px * 2) / 3);
-
+    width: calc((100% - 16px * 2) / 3);
     transition: all 0.3s ease-in-out;
   }
 }

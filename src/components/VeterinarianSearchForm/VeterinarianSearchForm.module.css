@@ -191,7 +191,7 @@
     width: 271px;
   }
   .selectedOptionProblems {
-    width: 271px;
+    width: 270px;
   }
   .datePickerContainer {
     width: 222px;
@@ -202,5 +202,12 @@
   .buttonSearch {
     padding: 11px 20px;
     width: 190px;
+  }
+
+  .selectedOptionUserPanel {
+    width: 240px;
+  }
+  .selectedOptionVeterinars {
+    width: 317px;
   }
 }

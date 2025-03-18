@@ -1,3 +1,4 @@
+import { HiOutlineUserCircle } from "react-icons/hi";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import { useContext } from "react";
 import { DeviceContext } from "../DeviceProvider/DeviceProvider";
@@ -106,7 +107,7 @@ export default function Header({ closeModal }) {
                 to={"/user-panel"}
                 type="button"
                 className={style.headerUserPhotoButton}>
-                K
+                <HiOutlineUserCircle className={style.headerUserPhotoIcon} />
               </Link>
             </>
           )

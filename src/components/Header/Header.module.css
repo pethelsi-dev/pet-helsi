@@ -75,17 +75,23 @@
 }
 .headerUserPhotoButton {
   border: none;
-  width: 32px;
-  height: 32px;
-  font-size: 18px;
-  font-weight: 500;
-  line-height: 20px;
-  color: var(--bg-color);
+  /* width: 32px;
+  height: 32px; */
+  /* font-size: 18px;
+  font-weight: 500; */
+  /* line-height: 20px; */
+  /* color: var(--bg-color);  */
   display: flex;
   align-items: center;
   justify-content: center;
   border-radius: 50%;
-  background-color: var(--user-background-gray);
+  /* background-color: var(--user-background-gray); */
+}
+.headerUserPhotoIcon {
+  stroke: var(--text-color-dark);
+  stroke-width: 1px;
+  width: 32px;
+  height: 32px;
 }
 
 .headerIconUser {

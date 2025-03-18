@@ -5,21 +5,11 @@ import sprateAnimals from "../../assets/Images/sprite-animals.svg";
 import style from "./Dashboard.module.css";
 
 export default function Dashboard({ closeModal }) {
-  // const replaceToPage = path => {
-  //   if (!isDesktop) {
-  //     navigate(`/user-panel/history`);
-  //   }
-  // };
-
   return (
     <div className={style.dashboardContainer}>
       <ul className={style.dashboardList}>
         <li className={style.dashboardListItem}>
-          <Link
-            to="history"
-            className={style.dashboardLink}
-            // onClick={() => replaceToPage("history")}
-          >
+          <Link to="history" className={style.dashboardLink}>
             <div className={style.dashboardLinkWrapper}>
               <Icon
                 sprite={sprateSistem}
@@ -40,11 +30,7 @@ export default function Dashboard({ closeModal }) {
           </Link>
         </li>
         <li className={style.dashboardListItem}>
-          <Link
-            to="chats"
-            className={style.dashboardLink}
-            // onClick={() => replaceToPage("chats")}
-          >
+          <Link to="chats" className={style.dashboardLink}>
             <div className={style.dashboardLinkWrapper}>
               <Icon
                 sprite={sprateSistem}
@@ -67,11 +53,7 @@ export default function Dashboard({ closeModal }) {
           </Link>
         </li>
         <li className={style.dashboardListItem}>
-          <Link
-            to="my-animals"
-            className={style.dashboardLink}
-            // onClick={() => replaceToPage("my-animals")}
-          >
+          <Link to="my-animals" className={style.dashboardLink}>
             <div className={style.dashboardLinkWrapper}>
               <Icon
                 sprite={sprateAnimals}
@@ -92,11 +74,7 @@ export default function Dashboard({ closeModal }) {
           </Link>
         </li>
         <li className={style.dashboardListItem}>
-          <Link
-            to="veterinarians"
-            className={style.dashboardLink}
-            // onClick={() => replaceToPage("veterinarians")}
-          >
+          <Link to="veterinarians" className={style.dashboardLink}>
             <div className={style.dashboardLinkWrapper}>
               <Icon
                 sprite={sprateSistem}
@@ -117,11 +95,7 @@ export default function Dashboard({ closeModal }) {
           </Link>
         </li>
         <li className={style.dashboardListItem}>
-          <Link
-            to="profile"
-            className={style.dashboardLink}
-            // onClick={() => replaceToPage("profile")}
-          >
+          <Link to="profile" className={style.dashboardLink}>
             <div className={style.dashboardLinkWrapper}>
               <Icon
                 sprite={sprateSistem}
@@ -142,11 +116,7 @@ export default function Dashboard({ closeModal }) {
           </Link>
         </li>
         <li className={style.dashboardListItem}>
-          <Link
-            to="settings"
-            className={style.dashboardLink}
-            // onClick={() => replaceToPage("settings")}
-          >
+          <Link to="settings" className={style.dashboardLink}>
             <div className={style.dashboardLinkWrapper}>
               <Icon
                 sprite={sprateSistem}
@@ -168,11 +138,7 @@ export default function Dashboard({ closeModal }) {
         </li>
       </ul>
 
-      <Link
-        className={style.linkLogOut}
-        to={"/login"}
-        //  onClick={closeModal}
-      >
+      <Link className={style.linkLogOut} to={"/login"}>
         <Icon
           sprite={sprateSistem}
           id={"icon-logOut-mob-menu"}
