@@ -1,0 +1,71 @@
+.modalSearchVetContainer {
+  position: fixed;
+  width: 343px;
+  padding: 16px;
+  height: calc(100vh - 32px);
+  margin-top: -68px;
+  background-color: var(--bg-color);
+  z-index: 10;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 40px;
+}
+.modalSearchVetTitleWrapper {
+  padding: 16px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+.iconClose {
+  width: 24px;
+  height: 24px;
+  stroke: var(--text-color-dark);
+}
+.modalSearchVetTitle {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 140%;
+  color: var(#333f5d);
+}
+.modalSearchVetButWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.modalSearchVetButSearch {
+  padding: 11px 24px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 140%;
+  letter-spacing: 0%;
+  border-radius: 8px;
+  text-align: center;
+  color: var(--text-color-white);
+  background-color: var(--accent-color-dark);
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.modalSearchVetButSearch:hover {
+  background-color: var(--accent-color-light);
+}
+.modalSearchVetButReset {
+  padding: 10.5px 24px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 140%;
+  letter-spacing: 0%;
+  border-radius: 8px;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  color: var(--accent-color-dark);
+  background-color: var(--bg-color);
+  border: 1px solid var(--accent-color-dark);
+}
+.modalSearchVetButReset:hover {
+  background-color: var(--button-hover-background);
+}

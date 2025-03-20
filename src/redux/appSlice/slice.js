@@ -4,7 +4,8 @@ const appSlise = createSlice({
   name: "app",
   initialState: {
     isOpenMenu: false,
-    isShowNotification:false,
+    isShowNotification: false,
+    isOpenForm: false,
   },
   reducers: {
     setIsOpenMenu: (state, action) => {
@@ -13,8 +14,12 @@ const appSlise = createSlice({
     setShowNotification: (state, action) => {
       state.isShowNotification = action.payload;
     },
+    setIsOpenForm: (state, action) => {
+      state.isOpenForm = action.payload;
+    },
   },
 });
 
-export const { setIsOpenMenu,setShowNotification } = appSlise.actions;
+export const { setIsOpenMenu, setShowNotification, setIsOpenForm } =
+  appSlise.actions;
 export default appSlise.reducer;

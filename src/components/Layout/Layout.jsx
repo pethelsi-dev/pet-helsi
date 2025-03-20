@@ -4,9 +4,11 @@ import { useSelector, useDispatch } from "react-redux";
 import {
   selectorIsOpenMenu,
   selectorIsShowNotification,
+  selectorIsOpenForm,
 } from "../../redux/appSlice/selectors.js";
 import { DeviceContext } from "../DeviceProvider/DeviceProvider.jsx";
 import { setIsOpenMenu } from "../../redux/appSlice/slice";
+import ModalSearchVet from "../ModalSearchVet/ModalSearchVet.jsx";
 import NotificationsWrapper from "../NotificationsWrapper/NotificationsWrapper.jsx";
 import GuestMenu from "../GuestMenu/GuestMenu.jsx";
 import Header from "../Header/Header";
@@ -19,6 +21,7 @@ export default function Layout({ children }) {
   const { isDesktop } = useContext(DeviceContext);
   const isOpenMenu = useSelector(selectorIsOpenMenu);
   const isShowNotification = useSelector(selectorIsShowNotification);
+  const isOpenForm = useSelector(selectorIsOpenForm);
   const location = useLocation();
 
   const closeModal = () => {
@@ -27,9 +30,10 @@ export default function Layout({ children }) {
 
   return (
     <div className={clsx(style.layoutContainer)}>
-      <Header closeModal={closeModal} />
+      {!isOpenForm && <Header closeModal={closeModal} />}
       {isOpenMenu && !isDesktop && <GuestMenu closeModal={closeModal} />}
       {isShowNotification && <NotificationsWrapper />}
+      {isOpenForm && <ModalSearchVet />}
       <div className={style.layoutMainContent}>
         <Outlet />
       </div>

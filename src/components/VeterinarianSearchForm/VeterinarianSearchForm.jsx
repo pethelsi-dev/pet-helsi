@@ -1,4 +1,6 @@
+import { useLocation } from "react-router-dom";
 import { useState } from "react";
+import { useSelector } from "react-redux";
 import { registerLocale } from "react-datepicker";
 import DatePicker from "react-datepicker";
 import uk from "date-fns/locale/uk";
@@ -9,6 +11,7 @@ import problemsSprite from "../../assets/Images/sprite-problems.svg";
 import sistemSprite from "../../assets/Images/sprite-sistem.svg";
 import { useContext } from "react";
 import { DeviceContext } from "../DeviceProvider/DeviceProvider";
+import { selectorIsOpenForm } from "../../redux/appSlice/selectors";
 import clsx from "clsx";
 import style from "./VeterinarianSearchForm.module.css";
 
@@ -63,13 +66,20 @@ const optionsProblems = [
   { value: "Інше", label: "Інше", icon: "icon-allproblems" },
 ];
 
-export default function VeterinarianSearchForm() {
-  const [isValueAnimals, setIsValueAnimals] = useState("");
-  const [isValueProblems, setIsValueProblems] = useState("");
+export default function VeterinarianSearchForm({
+  isValueAnimals,
+  setIsValueAnimals,
+  isValueProblems,
+  setIsValueProblems,
+  selectedDate,
+  setSelectedDate,
+}) {
+
   const [isOpenAnimals, setIsOpenAnimals] = useState(false);
   const [isOpenProblems, setIsOpenProblems] = useState(false);
-  const [selectedDate, setSelectedDate] = useState(new Date());
+  const isOpenForm = useSelector(selectorIsOpenForm);
   const { isDesktop } = useContext(DeviceContext);
+  const location = useLocation();
 
   const toggleSelectAnimals = () => setIsOpenAnimals(!isOpenAnimals);
   const toggleSelectProblems = () => setIsOpenProblems(!isOpenProblems);
@@ -96,6 +106,8 @@ export default function VeterinarianSearchForm() {
       <div className={style.customSelect}>
         <div
           className={clsx(style.selectedOption, {
+            [style.selectedOptionUserPanelMob]:
+              location.pathname === "/user-panel/veterinarians" && !isDesktop,
             [style.selectedOptionUserPanel]:
               location.pathname === "/user-panel/veterinarians" && isDesktop,
             [style.selectedOptionVeterinars]:
@@ -117,7 +129,7 @@ export default function VeterinarianSearchForm() {
           {isValueAnimals
             ? optionsAnimals.find(option => option.value === isValueAnimals)
                 .label
-            : "Тварина"}{" "}
+            : "Тварина"}
           <Icon
             sprite={sistemSprite}
             id={isOpenAnimals ? "icon-arrow_down" : "icon-arrow_up"}
@@ -158,6 +170,8 @@ export default function VeterinarianSearchForm() {
       <div className={style.customSelect}>
         <div
           className={clsx(style.selectedOptionProblems, {
+            [style.selectedOptionUserPanelMob]:
+              location.pathname === "/user-panel/veterinarians" && !isDesktop,
             [style.selectedOptionVeterinars]:
               location.pathname === "/veterinarians" && isDesktop,
           })}
@@ -215,7 +229,11 @@ export default function VeterinarianSearchForm() {
         )}
       </div>
 
-      <div className={style.datePickerContainer}>
+      <div
+        className={clsx(style.datePickerContainer, {
+          [style.selectedOptionUserPanelMob]:
+            location.pathname === "/user-panel/veterinarians" && !isDesktop,
+        })}>
         <Icon
           sprite={sistemSprite}
           id={"icon-calendar"}
@@ -235,12 +253,14 @@ export default function VeterinarianSearchForm() {
         />
       </div>
 
-      <button
-        type="submit"
-        onClick={handleSubmit}
-        className={style.buttonSearch}>
-        Знайти ветеринара
-      </button>
+      {!isOpenForm && (
+        <button
+          type="submit"
+          onClick={handleSubmit}
+          className={style.buttonSearch}>
+          Знайти ветеринара
+        </button>
+      )}
     </div>
   );
 }

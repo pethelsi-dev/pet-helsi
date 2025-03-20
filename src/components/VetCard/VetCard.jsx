@@ -6,7 +6,6 @@ import { useContext } from "react";
 import { DeviceContext } from "../DeviceProvider/DeviceProvider";
 import sprateSistem from "../../assets/Images/sprite-sistem.svg";
 import veterinar from "../../assets/Images/588f8e49768020da958bb009d913c575.png";
-import clsx from "clsx";
 import style from "./Vetcard.module.css";
 
 export default function VetCard({ vetValue, isVisible }) {

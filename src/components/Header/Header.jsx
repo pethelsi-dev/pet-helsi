@@ -76,7 +76,7 @@ export default function Header({ closeModal }) {
 
       <div className={style.headerUserWrapper}>
         {isAuthenticated ? (
-          location.pathname.includes("/user-panel") && !isDesktop ? (
+          location.pathname === "/user-panel" && !isDesktop ? (
             <button
               type="button"
               onClick={closeModalOrRedirect}

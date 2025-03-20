@@ -32,6 +32,12 @@
   border: none;
   border-radius: 8px;
   margin-bottom: 40px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.veterinarianListSearch:hover {
+  background-color: var(--accent-color-light);
 }
 .veterinarianListSortWrapper {
   display: flex;

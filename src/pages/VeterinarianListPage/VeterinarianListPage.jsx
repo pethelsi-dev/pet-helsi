@@ -1,6 +1,7 @@
 import { Link, useLocation } from "react-router-dom";
-// import { nanoid } from "nanoid";
+import { setIsOpenForm } from "../../redux/appSlice/slice";
 import { useContext, useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
 import { DeviceContext } from "../../components/DeviceProvider/DeviceProvider";
 import VetCard from "../../components/VetCard/VetCard";
 import Pagination from "../../components/Pagination/Pagination";
@@ -16,6 +17,7 @@ export default function VeterinarianListPage() {
   const { isDesktop } = useContext(DeviceContext);
   const location = useLocation();
   const [columns, setColumns] = useState(4);
+  const dispatch = useDispatch();
 
   useEffect(() => {
     setTimeout(() => {
@@ -64,7 +66,9 @@ export default function VeterinarianListPage() {
         {isDesktop ? (
           <VeterinarianSearchForm />
         ) : (
-          <button className={style.veterinarianListSearch}>
+          <button
+            className={style.veterinarianListSearch}
+            onClick={() => dispatch(setIsOpenForm(true))}>
             Знайти ветеринара
           </button>
         )}
@@ -88,8 +92,9 @@ export default function VeterinarianListPage() {
       </div>
 
       <ul className={style.veterinarianPageList}>
-        {allVeterinarians.map((elem,index) => (
-          <li key={index}
+        {allVeterinarians.map((elem, index) => (
+          <li
+            key={index}
             // key={elem.id}
             className={
               columns === 3
