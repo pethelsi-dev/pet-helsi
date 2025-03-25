@@ -34,7 +34,7 @@ const OwnersAnimals = lazy(() =>
 const OwnerProfile = lazy(() =>
   import("../pages/OwnerProfile/OwnerProfile.jsx")
 );
-// const VetProfile = lazy(() => import("../pages/VetProfile/VetProfile.jsx"));
+const VetPage = lazy(() => import("../pages/VetPage/VetPage.jsx"));
 const Settings = lazy(() => import("../pages/Settings/Settings.jsx"));
 
 export default function App() {
@@ -62,6 +62,7 @@ export default function App() {
                   path="/veterinarians"
                   element={<VeterinarianListPage />}
                 />
+                <Route path="/vet/:id" element={<VetPage />} />
               </Route>
 
               <Route

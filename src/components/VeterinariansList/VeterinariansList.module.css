@@ -44,6 +44,7 @@
   width: 272px;
   height: 468px;
   object-fit: cover;
+  border-radius: 16px;
 }
 .veterinariansListVetInfo {
   position: absolute;

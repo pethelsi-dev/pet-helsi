@@ -2,6 +2,9 @@ import { useLocation } from "react-router-dom";
 import { useState } from "react";
 import { useSelector } from "react-redux";
 import { registerLocale } from "react-datepicker";
+import { useContext } from "react";
+import { DeviceContext } from "../DeviceProvider/DeviceProvider";
+import { selectorIsOpenForm } from "../../redux/appSlice/selectors";
 import DatePicker from "react-datepicker";
 import uk from "date-fns/locale/uk";
 import "react-datepicker/dist/react-datepicker.css";
@@ -9,9 +12,6 @@ import Icon from "../Icon/Icon";
 import animalsSprite from "../../assets/Images/sprite-animals.svg";
 import problemsSprite from "../../assets/Images/sprite-problems.svg";
 import sistemSprite from "../../assets/Images/sprite-sistem.svg";
-import { useContext } from "react";
-import { DeviceContext } from "../DeviceProvider/DeviceProvider";
-import { selectorIsOpenForm } from "../../redux/appSlice/selectors";
 import clsx from "clsx";
 import style from "./VeterinarianSearchForm.module.css";
 
@@ -66,14 +66,10 @@ const optionsProblems = [
   { value: "Інше", label: "Інше", icon: "icon-allproblems" },
 ];
 
-export default function VeterinarianSearchForm({
-  isValueAnimals,
-  setIsValueAnimals,
-  isValueProblems,
-  setIsValueProblems,
-  selectedDate,
-  setSelectedDate,
-}) {
+export default function VeterinarianSearchForm() {
+  const [isValueAnimals, setIsValueAnimals] = useState(null);
+  const [isValueProblems, setIsValueProblems] = useState(null);
+  const [selectedDate, setSelectedDate] = useState(null);
 
   const [isOpenAnimals, setIsOpenAnimals] = useState(false);
   const [isOpenProblems, setIsOpenProblems] = useState(false);
@@ -99,6 +95,7 @@ export default function VeterinarianSearchForm({
       problem: isValueProblems,
       date: selectedDate,
     };
+    console.log(values);
   };
 
   return (

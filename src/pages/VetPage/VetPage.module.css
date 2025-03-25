@@ -1,0 +1,10 @@
+.vetPageConteiner {
+  padding: 16px;
+  background-color: var(--bg-color);
+}
+
+@media screen and (min-width: 1440px) {
+  .vetPageConteiner {
+    padding: 32px 72px;
+  }
+}
