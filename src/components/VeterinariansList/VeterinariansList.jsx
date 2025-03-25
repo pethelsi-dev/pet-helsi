@@ -78,19 +78,21 @@ export default function VeterinariansList() {
               className={style.veterinariansListitem}
               onMouseEnter={() => setVisibleIndex(index)}
               onMouseLeave={() => setVisibleIndex(null)}>
-              <img
-                src={veterinar}
-                alt=""
-                className={style.veterinariansListItemPhoto}
-              />
-              <div className={style.veterinariansListVetInfo}>
-                <VetCard
-                  vetValue={elem}
-                  isVisible={
-                    location.pathname !== "/" || visibleIndex === index
-                  }
+              <Link to={`/vet/${elem.id}`}>
+                <img
+                  src={veterinar}
+                  alt=""
+                  className={style.veterinariansListItemPhoto}
                 />
-              </div>
+                <div className={style.veterinariansListVetInfo}>
+                  <VetCard
+                    vetValue={elem}
+                    isVisible={
+                      location.pathname !== "/" || visibleIndex === index
+                    }
+                  />
+                </div>
+              </Link>
             </SwiperSlide>
           ))}
         </Swiper>
