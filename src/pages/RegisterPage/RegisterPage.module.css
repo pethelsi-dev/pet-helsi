@@ -18,7 +18,7 @@
     overflow-y: auto;
     scrollbar-width: none;
     -ms-overflow-style: none;
-    margin: 0;
+    margin: 0;   
   }
 
   .registerPageContainer::-webkit-scrollbar {
