@@ -2,9 +2,46 @@
   padding: 16px;
   background-color: var(--bg-color);
 }
+.vetPageDeskr {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 32px;
+}
+.vetPageNav {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 140%;
+  color: var(--color-medium-gray);
+  margin-bottom: 20px;
+}
+.iconArrow {
+  stroke: var(--text-color-gray);
+  width: 24px;
+  height: 24px;
+}
 
 @media screen and (min-width: 1440px) {
   .vetPageConteiner {
     padding: 32px 72px;
+    display: flex;
+    gap: 147px;
+  }
+  .vetPageDeskr {
+    gap: 32px;
+  }
+  .vetPageNav {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 140%;
+    color: var(--color-medium-gray);
+    margin-bottom: 32px;
+  }
+  .iconArrowDesk {
+    stroke: var(--text-color-gray);
+    width: 20px;
+    height: 20px;
   }
 }

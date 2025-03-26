@@ -2,10 +2,8 @@ import { Link, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { useContext } from "react";
 import { DeviceContext } from "../DeviceProvider/DeviceProvider";
+import VetDescription from "../VetDescription/VetDescription";
 import VetSchedule from "../VetSchedule/VetSchedule";
-import Icon from "../Icon/Icon";
-import sprateSistem from "../../assets/Images/sprite-sistem.svg";
-import veterinar from "../../assets/Images/588f8e49768020da958bb009d913c575.png";
 import style from "./Vetcard.module.css";
 
 export default function VetCard({ vetValue, isVisible }) {
@@ -31,37 +29,7 @@ export default function VetCard({ vetValue, isVisible }) {
             ? { width: "288px" }
             : {}
         }>
-        {location.pathname !== "/" && (
-          <img
-            src={
-              // photo_url ||
-              veterinar
-            }
-            alt=""
-            className={style.imageVeterinarian}
-          />
-        )}
-
-        <div className={style.vetCardDescription}>
-          <p className={style.name}>{last_name}</p>
-          <p className={style.name}>
-            {first_name} {middle_name}
-          </p>
-          <p className={style.vetCardExperience}>
-            Стаж: <span className={style.vetCardData}>{experience} років</span>
-          </p>
-          <div className={style.vetCardReviews}>
-            <Icon
-              sprite={sprateSistem}
-              id="icon-star_fill"
-              width="20px"
-              height="20px"
-              className={style.iconStar}
-            />
-            <span className={style.vetCardData}>{rating}</span>
-            <span>({reviews_count} відгуки)</span>
-          </div>
-        </div>
+        <VetDescription vetValue={vetValue} />
 
         <AnimatePresence>
           {(location.pathname !== "/" || isVisible) && (
