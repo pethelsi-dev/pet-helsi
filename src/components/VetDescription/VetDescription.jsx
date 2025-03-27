@@ -11,6 +11,7 @@ export default function VetDescription({ vetValue }) {
   const { id } = useParams();
   const { isDesktop } = useContext(DeviceContext);
   const location = useLocation();
+  const path = location.pathname.includes(`/vet/${id}`);
 
   const {
     experience,
@@ -31,37 +32,30 @@ export default function VetDescription({ vetValue }) {
           }
           alt=""
           className={clsx(style.imageVeterinarian, {
-            [style.imageVeterinarianDesk]:
-              location.pathname === `/vet/${id}` && isDesktop,
+            [style.imageVeterinarianDesk]: path && isDesktop,
           })}
         />
       )}
       <div className={style.vetCardDescription}>
         <p
           className={clsx(style.name, {
-            [style.nameVetPageMob]:
-              location.pathname === `/vet/${id}` && !isDesktop,
-            [style.nameVetPageDesk]:
-              location.pathname === `/vet/${id}` && isDesktop,
+            [style.nameVetPageMob]: path && !isDesktop,
+            [style.nameVetPageDesk]: path && isDesktop,
           })}>
           {last_name}
         </p>
         <p
           className={clsx(style.name, {
-            [style.nameVetPageMob]:
-              location.pathname === `/vet/${id}` && !isDesktop,
-            [style.nameVetPageDesk]:
-              location.pathname === `/vet/${id}` && isDesktop,
+            [style.nameVetPageMob]: path && !isDesktop,
+            [style.nameVetPageDesk]: path && isDesktop,
           })}>
           {first_name} {middle_name}
         </p>
 
         <p
           className={clsx(style.vetCardExperience, {
-            [style.vetCardExperienceMob]:
-              location.pathname === `/vet/${id}` && !isDesktop,
-            [style.vetCardExperienceDesk]:
-              location.pathname === `/vet/${id}` && isDesktop,
+            [style.vetCardExperienceMob]: path && !isDesktop,
+            [style.vetCardExperienceDesk]: path && isDesktop,
           })}>
           Стаж: <span className={style.vetCardData}>{experience} років</span>
         </p>
@@ -76,7 +70,7 @@ export default function VetDescription({ vetValue }) {
           />
           <span
             className={clsx(style.vetCardData, {
-              [style.vetCardDataBlue]: location.pathname === `/vet/${id}`,
+              [style.vetCardDataBlue]: path,
             })}>
             {rating}
           </span>

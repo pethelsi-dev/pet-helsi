@@ -37,6 +37,12 @@ const OwnerProfile = lazy(() =>
 const VetPage = lazy(() => import("../pages/VetPage/VetPage.jsx"));
 const Settings = lazy(() => import("../pages/Settings/Settings.jsx"));
 
+const AboutVet = lazy(() => import("../components/AboutVet/AboutVet.jsx"));
+const EducationVet = lazy(() =>
+  import("../components/EducationVet/EducationVet.jsx")
+);
+const WorkPlace = lazy(() => import("../components/WorkPlace/WorkPlace.jsx"));
+
 export default function App() {
   const isAuthenticated = useSelector(selectorIsLoggedIn);
   const { isDesktop } = useContext(DeviceContext);
@@ -62,7 +68,12 @@ export default function App() {
                   path="/veterinarians"
                   element={<VeterinarianListPage />}
                 />
-                <Route path="/vet/:id" element={<VetPage />} />
+                <Route path="/vet/:id" element={<VetPage />}>
+                  <Route index element={<AboutVet />} />{" "}
+                  <Route path="about" element={<AboutVet />} />
+                  <Route path="education" element={<EducationVet />} />
+                  <Route path="work-experience" element={<WorkPlace />} />
+                </Route>
               </Route>
 
               <Route
