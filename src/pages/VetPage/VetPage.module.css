@@ -22,6 +22,40 @@
   width: 24px;
   height: 24px;
 }
+.vetPageLinksWrapper {
+  margin-bottom: 16px;
+  border-bottom: 1px solid var(--button-hover-background);
+}
+.vetPageLinks {
+  display: flex;
+  width: 343px;
+  background-color: var(--bg-color);
+  border-bottom: 1px solid var(--border-color-light-blue);
+  margin-bottom: 24px;
+}
+.vetPageLink {
+  flex: 1;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 140%;
+  text-align: center;
+  color: var(--color-medium-gray);
+  background-color: var(--bg-color);
+}
+.active {
+  flex: 1;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 140%;
+  text-align: center;
+  color: var(--accent-color-dark);
+  border-bottom: 1px solid var(--accent-color-dark);
+  background-color: var(--bg-color-list);
+}
 
 @media screen and (min-width: 1440px) {
   .vetPageConteiner {
@@ -43,5 +77,18 @@
     stroke: var(--text-color-gray);
     width: 20px;
     height: 20px;
+  }
+  .vetPageLinksWrapper {
+    width: 684px;
+    margin-bottom: 32px;
+  }
+  .vetPageLinks {
+    width: 684px;
+  }
+  .vetPageLink {
+    font-size: 18px;
+  }
+  .active {
+    font-size: 18px;
   }
 }

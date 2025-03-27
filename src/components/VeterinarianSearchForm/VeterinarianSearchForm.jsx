@@ -17,7 +17,7 @@ import style from "./VeterinarianSearchForm.module.css";
 
 registerLocale("uk", uk);
 
-const optionsAnimals = [
+export const optionsAnimals = [
   { value: "Собака", label: "Собака", icon: "icon-dog" },
   { value: "Кіт", label: "Кіт", icon: "icon-cat" },
   { value: "Гризун", label: "Гризун", icon: "icon-rabbit" },
@@ -26,7 +26,7 @@ const optionsAnimals = [
   { value: "Інше", label: "Інше", icon: "icon-other" },
 ];
 
-const optionsProblems = [
+export const optionsProblems = [
   {
     value: "Харчовий розлад",
     label: "Харчовий розлад",

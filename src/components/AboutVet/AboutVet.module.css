@@ -1,0 +1,87 @@
+.aboutVetBioWrapper {
+  margin-bottom: 32px;
+}
+.aboutVetBio {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 140%;
+  color: var(--text-color-dark);
+}
+.aboutVetReadMore {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 140%;
+  color: var(--accent-color-dark);
+  background-color: var(--bg-color);
+  border: none;
+  cursor: pointer;
+  margin-left: 4px;
+}
+.aboutVetSpecializationGroup {
+  margin-bottom: 32px;
+}
+.aboutVetSpecialization {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 140%;
+  color: var(--text-color-dark);
+  margin-bottom: 16px;
+  text-align: left;
+}
+.icons {
+  width: 20px;
+  height: 20px;
+  stroke: var(--accent-color-dark);
+}
+.aboutVetSpecializationList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.aboutVetSpecializationItem {
+  width: max-content;
+  padding: 6px 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid var(--button-hover-background);
+  border-radius: 100px;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 140%;
+  color: var(--text-color-dark);
+}
+
+@media screen and (min-width: 1440px) {
+  .aboutVetTitle {
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 140%;
+    color: var(--text-color-dark);
+    margin-bottom: 16px;
+  }
+  .aboutVetBio {
+    font-size: 16px;
+  }
+  .aboutVetReadMore {
+    font-size: 16px;
+  }
+  .aboutVetSpecialization {
+    font-size: 18px;
+  }
+  .icons {
+    width: 24px;
+    height: 24px;
+  }
+  .aboutVetSpecializationList {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 48px;
+  }
+  .aboutVetSpecializationItem {
+    padding: 0;
+    order: 1;
+    border: none;
+    font-size: 16px;
+  }
+}
