@@ -20,9 +20,9 @@ export default function VetPage() {
 
   const {
     experience,
-    first_name,
-    last_name,
-    middle_name,
+    surname,
+    name,
+    patronymic,
     rating,
     reviews_count,
     description,
@@ -64,7 +64,7 @@ export default function VetPage() {
             />
             {isDesktop && (
               <p>
-                {last_name} {first_name} {middle_name}
+                {surname} {name} {patronymic}
               </p>
             )}
           </div>
@@ -89,7 +89,7 @@ export default function VetPage() {
                 className={({ isActive }) =>
                   isActive ? style.active : style.vetPageLink
                 }>
-                Місце роботи
+                Досвід роботи
               </NavLink>
               <NavLink
                 to="education"

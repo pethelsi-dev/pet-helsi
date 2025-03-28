@@ -13,14 +13,8 @@ export default function VetDescription({ vetValue }) {
   const location = useLocation();
   const path = location.pathname.includes(`/vet/${id}`);
 
-  const {
-    experience,
-    first_name,
-    last_name,
-    middle_name,
-    rating,
-    reviews_count,
-  } = vetValue;
+  const { experience, surname, name, patronymic, rating, reviews_count } =
+    vetValue;
 
   return (
     <>
@@ -42,14 +36,14 @@ export default function VetDescription({ vetValue }) {
             [style.nameVetPageMob]: path && !isDesktop,
             [style.nameVetPageDesk]: path && isDesktop,
           })}>
-          {last_name}
+          {surname}
         </p>
         <p
           className={clsx(style.name, {
             [style.nameVetPageMob]: path && !isDesktop,
             [style.nameVetPageDesk]: path && isDesktop,
           })}>
-          {first_name} {middle_name}
+          {name} {patronymic}
         </p>
 
         <p

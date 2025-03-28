@@ -1,0 +1,37 @@
+.workPlaceContainer {
+  padding: 0 0 32px 0;
+}
+.workPlaceTitle {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 140%;
+  color: var(--text-color-dark);
+  margin-bottom: 12px;
+}
+.workPlaceName {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 140%;
+  color: var(--text-color-dark);
+  margin-bottom: 6px;
+}
+.workPlaceCity {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 140%;
+  color: var(--color-medium-gray);
+}
+
+@media screen and (min-width: 1440px) {
+  .workPlaceTitle {
+    font-size: 18px;
+    margin-bottom: 16px;
+  }
+  .workPlaceName {
+    font-size: 16px;
+    margin-bottom: 4px;
+  }
+  .workPlaceCity {
+    font-size: 14px;
+  }
+}
