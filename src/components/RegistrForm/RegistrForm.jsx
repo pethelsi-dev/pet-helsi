@@ -47,6 +47,7 @@ export default function RegistrForm({ onUserTypeChange }) {
   };
 
   const handleSubmit = (values) => {
+    console.log(values)
     // // Добавление типа пользователя в данные
     // const userData = { ...values, userType };
     // dispatch(signUp(userData))

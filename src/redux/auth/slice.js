@@ -1,5 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { signUp, signIn, signOut, refreshUser } from "./operations";
+import { signUp,
+  //  signIn, signOut, refreshUser
+   } from "./operations";
 
 const initialState={
   user: {
@@ -7,7 +9,7 @@ const initialState={
     email: null
   },
   token: null,
-  isLoggedIn: true,
+  isLoggedIn: false,
   isRefreshing: false,
   isLoading: false,
   isError: false,
@@ -42,43 +44,43 @@ const authSlice = createSlice({
         state.isLoading = false;
         state.isError = action.payload || true;
       })
-      .addCase(signIn.pending, (state) => {
-        state.isLoading = true;
-        state.isError = false;
-      })
-      .addCase(signIn.fulfilled, (state, action) => {
-        state.user = action.payload.user;
-        state.token = action.payload.token;
-        state.isLoggedIn = true;
-        state.isLoading = false;
-        state.userType = action.payload.userType;
-      })
-      .addCase(signIn.rejected, (state, action) => {
-        state.isLoading = false;
-        state.isError = action.payload || true;
-      })
-       .addCase(signOut.fulfilled, (state) => {
-        state.user = { name: null, email: null };
-        state.token = null;
-        state.isLoggedIn = false;
-        state.userType = "owner"; 
-       })
-       .addCase(refreshUser.pending, (state) => {
-         state.isRefreshing = true;
-         state.isError = false;
-      })
-      .addCase(refreshUser.fulfilled, (state, action) => {
-        state.token = action.payload.accessToken;  // 🟢 Записываем accessToken???проверить док-ю апи
-        state.user = action.payload.user;
-        state.isLoggedIn = true;
-        state.isRefreshing = false;
-        state.userType = action.payload.userType; 
-      })
-      .addCase(refreshUser.rejected, (state, action) => {
-        state.isRefreshing = false;
-        state.isLoggedIn = false;
-        state.isError = action.payload || true;
-      });
+      // .addCase(signIn.pending, (state) => {
+      //   state.isLoading = true;
+      //   state.isError = false;
+      // })
+      // .addCase(signIn.fulfilled, (state, action) => {
+      //   state.user = action.payload.user;
+      //   state.token = action.payload.token;
+      //   state.isLoggedIn = true;
+      //   state.isLoading = false;
+      //   state.userType = action.payload.userType;
+      // })
+      // .addCase(signIn.rejected, (state, action) => {
+      //   state.isLoading = false;
+      //   state.isError = action.payload || true;
+      // })
+      //  .addCase(signOut.fulfilled, (state) => {
+      //   state.user = { name: null, email: null };
+      //   state.token = null;
+      //   state.isLoggedIn = false;
+      //   state.userType = "owner"; 
+      //  })
+      //  .addCase(refreshUser.pending, (state) => {
+      //    state.isRefreshing = true;
+      //    state.isError = false;
+      // })
+      // .addCase(refreshUser.fulfilled, (state, action) => {
+      //   state.token = action.payload.accessToken;  // 🟢 Записываем accessToken???проверить док-ю апи
+      //   state.user = action.payload.user;
+      //   state.isLoggedIn = true;
+      //   state.isRefreshing = false;
+      //   state.userType = action.payload.userType; 
+      // })
+      // .addCase(refreshUser.rejected, (state, action) => {
+      //   state.isRefreshing = false;
+      //   state.isLoggedIn = false;
+      //   state.isError = action.payload || true;
+      // });
   },
 });
 

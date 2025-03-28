@@ -1,47 +1,69 @@
-import { createAsyncThunk } from '@reduxjs/toolkit';
-import axios from 'axios';
-import { setToken, setUserType } from './slice';
-//удалить из проекта JSON Server
-// настройка axios
-const apiInstance = axios.create({
-    baseURL: 'http://localhost:5000',
-    headers: {
-        'Content-Type': 'application/json',
-    },
-});
+import axios from "axios";
+import { createAsyncThunk } from "@reduxjs/toolkit";
+import { setToken, setUserType } from "./slice";
 
-// export const signUp = createAsyncThunk(
-//   "auth/signup",
-//   async (newUser, thunkAPI) => {
-//     try {
-//       const response = await apiInstance.post("/users/register", newUser);
-//       setAuthHeader(response.data.data.accessToken);
-//       return response.data.data;
-//     } catch (error) {
-//       toast.error(`Something went wrong in Sign Up: ${error.message}`);
-//       thunkAPI.rejectWithValue(error.message);
-//     }
-//   }
-// );
-export const signUp = createAsyncThunk(
-    'auth/signUp',
-    async (newUser, thunkAPI) => {
-        try {
-            const response = await apiInstance.post('/users/register', newUser);
+axios.defaults.baseURL = "http://alb-1743355926.eu-north-1.elb.amazonaws.com/api";
+const setAuthHeader = token => {
+  axios.defaults.headers.common["Authorization"] = `Bearer ${token}`;
+};
 
-            // Сохранение полученного токена в хедеры для дальнейших запросов
-            const token = response.data.token;
-            setAuthHeader(token); // Сохраните токен в заголовки
+export const clearAuthHeader = () => {
+  axios.defaults.headers.common["Authorization"] = "";
+};
 
-            // Сохранение данных пользователя в Redux
-            thunkAPI.dispatch(setToken({ token }));
-            thunkAPI.dispatch(setUserType(response.data.userType));
-
-            return response.data;
-        } catch (error) {
-            return thunkAPI.rejectWithValue(error.message)
-        }
+export const fetchSignup = createAsyncThunk(
+  "auth/signup",
+  async (data, thunkAPI) => {
+    try {
+      const response = await axios.post("/v1/auth/register", data);
+      setAuthHeader(response.data.token);
+      return response.data;
+    } catch (error) {
+      if (error.response) {
+        return thunkAPI.rejectWithValue({
+          status: error.response.status,
+          message: error.response.data.message,
+        });
+      } else {
+        return thunkAPI.rejectWithValue({
+          status: 500,
+          message: "Network error",
+        });
+      }
     }
+  }
+);
+
+
+
+
+
+// const apiInstance = axios.create({
+//   baseURL: "http://alb-1743355926.eu-north-1.elb.amazonaws.com/api",
+//   headers: {
+//     "Content-Type": "application/json",
+//   },
+// });
+
+export const signUp = createAsyncThunk(
+  "auth/signUp",
+  async (newUser, thunkAPI) => {
+    try {
+      const response = await apiInstance.post("/v1/auth/register", newUser);
+
+      // Сохранение полученного токена в хедеры для дальнейших запросов
+      const token = response.data.token;
+      setAuthHeader(token); // Сохраните токен в заголовки
+
+      // Сохранение данных пользователя в Redux
+      thunkAPI.dispatch(setToken({ token }));
+      thunkAPI.dispatch(setUserType(response.data.userType));
+
+      return response.data;
+    } catch (error) {
+      return thunkAPI.rejectWithValue(error.message);
+    }
+  }
 );
 
 // export const signIn = createAsyncThunk(
@@ -57,19 +79,19 @@ export const signUp = createAsyncThunk(
 //     }
 //   }
 // );
-export const signIn = createAsyncThunk(
-  "auth/signIn",
-  async (credentials, thunkAPI) => {
-    try {
-      // Отправка POST-запроса на авторизацию пользователя
-      const response = await apiInstance.post("/users", credentials);
-      // Сохраняем token в store
-      return response.data;
-    } catch (error) {
-      return thunkAPI.rejectWithValue(error.message);
-    }
-  }
-);
+// export const signIn = createAsyncThunk(
+//   "auth/signIn",
+//   async (credentials, thunkAPI) => {
+//     try {
+//       // Отправка POST-запроса на авторизацию пользователя
+//       const response = await apiInstance.post("/users", credentials);
+//       // Сохраняем token в store
+//       return response.data;
+//     } catch (error) {
+//       return thunkAPI.rejectWithValue(error.message);
+//     }
+//   }
+// );
 
 // export const signOut = createAsyncThunk("auth/signout", async (_, thunkAPI) => {
 //   try {
@@ -81,18 +103,18 @@ export const signIn = createAsyncThunk(
 //     thunkAPI.rejectWithValue(error.message);
 //   }
 // });
-export const signOut = createAsyncThunk(
-  "auth/signOut",
-    async (_, thunkAPI) => {
-        try {
-            // Очистка данных авторизации (например, очистка token)
-            // Здесь может быть ваш запрос на сервер, если это необходимо
-            // Пока просто возвращаем пустой объект
-            return {};
-        } catch (error) {
-            return thunkAPI.rejectWithValue(error.message);
-        }
-});
+// export const signOut = createAsyncThunk(
+//   "auth/signOut",
+//     async (_, thunkAPI) => {
+//         try {
+//             // Очистка данных авторизации (например, очистка token)
+//             // Здесь может быть ваш запрос на сервер, если это необходимо
+//             // Пока просто возвращаем пустой объект
+//             return {};
+//         } catch (error) {
+//             return thunkAPI.rejectWithValue(error.message);
+//         }
+// });
 
 // export const refresh = createAsyncThunk(
 //   "auth/refresh",
@@ -116,15 +138,15 @@ export const signOut = createAsyncThunk(
 //     },
 //   }
 // );
-export const refreshUser = createAsyncThunk(
-  "auth/refreshUser",
-  async (_, thunkAPI) => {
-    try {
-      // Запрос на обновление данных пользователя
-      const response = await apiInstance.get("/users/1");  // Пример запроса (ID = 1)
-      return response.data;
-    } catch (error) {
-      return thunkAPI.rejectWithValue(error.message);
-    }
-  }
-);
+// export const refreshUser = createAsyncThunk(
+//   "auth/refreshUser",
+//   async (_, thunkAPI) => {
+//     try {
+//       // Запрос на обновление данных пользователя
+//       const response = await apiInstance.get("/users/1");  // Пример запроса (ID = 1)
+//       return response.data;
+//     } catch (error) {
+//       return thunkAPI.rejectWithValue(error.message);
+//     }
+//   }
+// );
