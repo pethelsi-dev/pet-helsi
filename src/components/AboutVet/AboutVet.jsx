@@ -43,36 +43,51 @@ export default function AboutVet() {
       <div className={style.aboutVetSpecializationGroup}>
         <p className={style.aboutVetSpecialization}>Тварини, з якими працюю:</p>
         <ul className={style.aboutVetSpecializationList}>
-          {optionsAnimals.map((elem, index) => (
-            <li key={index} className={style.aboutVetSpecializationItem}>
-              <Icon
-                sprite={animalsSprite}
-                id={elem.icon}
-                width="20px"
-                height="20px"
-                className={style.icons}
-              />
-              {elem.value}
-            </li>
-          ))}
+          {vet.petCategories.map((pet, index) => {
+            const matchedOption = optionsAnimals.find(
+              option => option.value === pet
+            );
+            return (
+              <li key={index} className={style.aboutVetSpecializationItem}>
+                {matchedOption && (
+                  <Icon
+                    sprite={animalsSprite}
+                    id={matchedOption.icon}
+                    width="20px"
+                    height="20px"
+                    className={style.icons}
+                  />
+                )}
+                {pet}
+              </li>
+            );
+          })}
         </ul>
       </div>
 
       <div className={style.aboutVetSpecializationGroup}>
         <p className={style.aboutVetSpecialization}>Які проблеми лікую:</p>
         <ul className={style.aboutVetSpecializationList}>
-          {optionsProblems.map((elem, index) => (
-            <li key={index} className={style.aboutVetSpecializationItem}>
-              <Icon
-                sprite={problemsSprite}
-                id={elem.icon}
-                width="20px"
-                height="20px"
-                className={style.icons}
-              />
-              {elem.value}
-            </li>
-          ))}
+          {vet.petProblems.map((problem, index) => {
+            const matchedOption = optionsProblems.find(
+              option => option.value === problem
+            );
+
+            return (
+              <li key={index} className={style.aboutVetSpecializationItem}>
+                {matchedOption && (
+                  <Icon
+                    sprite={problemsSprite}
+                    id={matchedOption.icon}
+                    width="20px"
+                    height="20px"
+                    className={style.icons}
+                  />
+                )}
+                {problem}
+              </li>
+            );
+          })}
         </ul>
       </div>
     </div>

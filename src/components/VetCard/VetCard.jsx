@@ -12,9 +12,9 @@ export default function VetCard({ vetValue, isVisible }) {
   const {
     id,
     experience,
-    first_name,
-    last_name,
-    middle_name,
+    name,
+    surname,
+    patronymic,
     photo_url,
     rating,
     reviews_count,
