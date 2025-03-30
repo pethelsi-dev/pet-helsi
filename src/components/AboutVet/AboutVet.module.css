@@ -16,6 +16,11 @@
   border: none;
   cursor: pointer;
   margin-left: 4px;
+  transition: color 0.3s ease, text-decoration 0.3s ease;
+}
+.aboutVetReadMore:hover {
+  color: var(--logo-hover);
+  text-decoration: underline;
 }
 .aboutVetSpecializationGroup {
   margin-bottom: 32px;
@@ -32,6 +37,7 @@
   width: 20px;
   height: 20px;
   stroke: var(--accent-color-dark);
+  fill: none;
 }
 .aboutVetSpecializationList {
   display: flex;

@@ -95,6 +95,15 @@
     cursor: pointer;
     transition: color 0.3s ease;
   }
+  .linkAllVeterinarians:hover {
+    color: var(--logo-hover);
+  }
+  .iconArrowleft {
+    transition: stroke 0.3s ease;
+  }
+  .linkAllVeterinarians:hover .iconArrowleft {
+    stroke: var(--logo-hover);
+  }
   .veterinariansList {
     width: 818px;
     margin-bottom: 40px;
