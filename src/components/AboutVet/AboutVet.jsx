@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { DeviceContext } from "../DeviceProvider/DeviceProvider";
 import { VetContext } from "../../pages/VetPage/VetPage";
 import { optionsAnimals } from "../VeterinarianSearchForm/VeterinarianSearchForm";
@@ -10,6 +10,7 @@ import style from "./AboutVet.module.css";
 
 export default function AboutVet() {
   const { isDesktop } = useContext(DeviceContext);
+  const [isVisibleAllDescr, setIsVisibleAllDescr] = useState(false);
   const vet = useContext(VetContext);
 
   return (
@@ -20,9 +21,14 @@ export default function AboutVet() {
         {!isDesktop ? (
           vet.description.length > 128 ? (
             <p className={style.aboutVetBio}>
-              {vet.description.slice(0, 128) + "..."}{" "}
-              <button type="button" className={style.aboutVetReadMore}>
-                читати більше
+              {isVisibleAllDescr
+                ? vet.description
+                : vet.description.slice(0, 128) + "..."}{" "}
+              <button
+                type="button"
+                className={style.aboutVetReadMore}
+                onClick={() => setIsVisibleAllDescr(prev => !prev)}>
+                {isVisibleAllDescr ? "згорнути" : "читати більше"}
               </button>
             </p>
           ) : (
@@ -30,9 +36,14 @@ export default function AboutVet() {
           )
         ) : vet.description.length > 160 ? (
           <p className={style.aboutVetBio}>
-            {vet.description.slice(0, 160) + "..."}{" "}
-            <button type="button" className={style.aboutVetReadMore}>
-              читати більше
+            {isVisibleAllDescr
+              ? vet.description
+              : vet.description.slice(0, 160) + "..."}{" "}
+            <button
+              type="button"
+              className={style.aboutVetReadMore}
+              onClick={() => setIsVisibleAllDescr(prev => !prev)}>
+              {isVisibleAllDescr ? "згорнути" : "читати більше"}
             </button>
           </p>
         ) : (

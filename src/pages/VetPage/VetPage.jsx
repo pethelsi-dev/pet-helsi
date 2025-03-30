@@ -25,6 +25,8 @@ export default function VetPage() {
     patronymic,
     rating,
     reviews_count,
+    education,
+    additionalEducation,
     description,
   } = vet;
 

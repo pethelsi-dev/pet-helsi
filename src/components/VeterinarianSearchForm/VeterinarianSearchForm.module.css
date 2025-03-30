@@ -12,7 +12,8 @@
 .icon {
   width: 24px;
   height: 24px;
-  fill: var(--accent-color-dark);
+  stroke: var(--accent-color-dark);
+  fill: none;
 }
 .option {
   position: relative;
@@ -137,7 +138,6 @@
 .icon {
   margin-right: 8px;
 }
-
 .datePickerContainer {
   width: 247px;
   display: flex;
@@ -208,7 +208,6 @@
     padding: 11px 20px;
     width: 190px;
   }
-
   .selectedOptionUserPanel {
     width: 240px;
   }

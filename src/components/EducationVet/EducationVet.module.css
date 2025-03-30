@@ -1,0 +1,84 @@
+.educationVetEdu {
+  margin-bottom: 32px;
+}
+.educationVetEduTitle {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 140%;
+  color: var(--text-color-dark);
+  margin-bottom: 12px;
+}
+.educationVetEduName {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 140%;
+  color: var(--text-color-dark);
+  margin-bottom: 6px;
+}
+.educationVetEduDate {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 140%;
+  color: var(--color-medium-gray);
+  margin-bottom: 12px;
+}
+.educationVetEduImg {
+  width: 64px;
+  height: 64px;
+  display: block;
+  border-radius: 3px;
+}
+.educationVetDiplomsList {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.educationVetCertificatesList {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+.educationVetButton {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 140%;
+  color: var(--accent-color-dark);
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  transition: color 0.3s ease, text-decoration 0.3s ease;
+  margin-bottom: 16px;
+}
+.educationVetButton:hover {
+  color: var(--logo-hover);
+  text-decoration: underline;
+}
+
+@media screen and (min-width: 1440px) {
+  .educationVetEduTitle {
+    font-size: 18px;
+    margin-bottom: 16px;
+  }
+  .educationVetEduName {
+    font-size: 16px;
+    margin-bottom: 4px;
+  }
+  .educationVetEduDate {
+    font-size: 14px;
+  }
+  .educationVetEduImg {
+    border-radius: 4px;
+  }
+  .educationVetDiplomsList {
+    gap: 12px;
+  }
+  .educationVetCertificatesList {
+    gap: 12px;
+    margin-bottom: 32px;
+  }
+  .educationVetButton {
+    font-size: 16px;
+    margin-bottom: 32px;
+  }
+}
