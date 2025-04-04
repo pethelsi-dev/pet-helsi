@@ -4,6 +4,7 @@ import { DeviceContext } from "../../components/DeviceProvider/DeviceProvider";
 import sprateSistem from "../../assets/Images/sprite-sistem.svg";
 import Icon from "../../components/Icon/Icon";
 import VetDescription from "../../components/VetDescription/VetDescription";
+import VetReviews from "../../components/VetReviews/VetReviews";
 import allVeterinarians from "../../../allVeterinarians.json";
 import style from "./VetPage.module.css";
 
@@ -103,6 +104,7 @@ export default function VetPage() {
             </div>
             <Outlet />
           </div>
+          <VetReviews vet={vet} />
         </div>
       </section>
     </VetContext.Provider>

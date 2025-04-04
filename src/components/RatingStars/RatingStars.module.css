@@ -1,0 +1,14 @@
+.vetReviewsStarsList {
+  display: flex;
+  align-items: center;
+}
+.iconsRating {
+  width: 24px;
+  height: 24px;
+  stroke: var(--accent-color-dark);
+  fill: none;
+}
+.blueStar {
+  fill: var(--accent-color-dark);
+  stroke: var(--accent-color-dark);
+}

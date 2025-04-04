@@ -12,14 +12,14 @@ export default function EducationVet() {
       <div className={style.educationVetEdu}>
         <p className={style.educationVetEduTitle}>Загальна освіта</p>
         <p className={style.educationVetEduName}>
-          {vet.education.eduInstitution}
+          {vet?.education?.eduInstitution}
         </p>
         <p className={style.educationVetEduDate}>
-          {vet.education.startDateStudy} - {vet.education.finishDateStudy}
+          {vet?.education?.startDateStudy} - {vet.education.finishDateStudy}
         </p>
 
         <ul className={style.educationVetDiplomsList}>
-          {vet.education.diplomaUrl.map((elem, index) => (
+          {vet?.education?.diplomaUrl.map((elem, index) => (
             <li key={index}>
               <img
                 src={diplom}
@@ -34,7 +34,7 @@ export default function EducationVet() {
       <div>
         <p className={style.educationVetEduTitle}>Додаткова освіта</p>
         <ul>
-          {vet.additionalEducation.map((elem, index) => (
+          {vet?.additionalEducation?.map((elem, index) => (
             <li key={index}>
               <p className={style.educationVetEduName}>{elem.learningCenter}</p>
               <p className={style.educationVetEduDate}>
@@ -46,7 +46,7 @@ export default function EducationVet() {
 
         {isOpenCertificate ? (
           <ul className={style.educationVetCertificatesList}>
-            {vet.additionalEducation.map((elem, index) => (
+            {vet?.additionalEducation?.map((elem, index) => (
               <li key={index}>
                 <img
                   src={

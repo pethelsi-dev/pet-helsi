@@ -1,5 +1,5 @@
 .vetPageConteiner {
-  padding: 16px;
+  padding: 16px 16px 24px 16px;
   background-color: var(--bg-color);
 }
 .vetPageDeskr {

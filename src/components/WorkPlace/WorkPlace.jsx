@@ -8,8 +8,10 @@ export default function WorkPlace() {
   return (
     <div className={style.workPlaceContainer}>
       <p className={style.workPlaceTitle}>Поточне місце роботи</p>
-      <p className={style.workPlaceName}>{vet.work_places.organization}</p>
-      <p className={style.workPlaceCity}>{vet.work_places.organizationCity}</p>
+      <p className={style.workPlaceName}>{vet?.work_places?.organization}</p>
+      <p className={style.workPlaceCity}>
+        {vet?.work_places?.organizationCity}
+      </p>
     </div>
   );
 }
