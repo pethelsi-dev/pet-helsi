@@ -1,0 +1,139 @@
+.vetReviewsTitle {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 140%;
+  color: var(--text-color-dark);
+  margin-bottom: 16px;
+}
+.vetReviewsAllRatingWrapper {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 32px;
+}
+.numberRating {
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 150%;
+  color: var(--text-color-dark);
+}
+.vetReviewsQuantity {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 140%;
+  color: var(--color-medium-gray);
+}
+.vetReviewsListItem:not(:last-child) {
+  margin-bottom: 32px;
+}
+.vetReviewsListItemInfo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+.vetReviewsListItemPhoto {
+  width: 36px;
+  height: 36px;
+  border-radius: 100px;
+  background-color: var(--user-background-gray);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 150%;
+  color: var(--text-color-white);
+}
+.vetReviewsFullName {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 140%;
+  color: var(--text-color-dark);
+  margin-bottom: 4px;
+}
+.vetReviewsDateReviews {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 140%;
+  color: var(--color-medium-gray);
+}
+.starsBox {
+  margin-bottom: 16px;
+}
+.vetReviewsComment {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 140%;
+  color: var(--text-color-dark);
+}
+.aboutVetReadMore {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 140%;
+  color: var(--accent-color-dark);
+  background-color: var(--bg-color);
+  border: none;
+  cursor: pointer;
+  margin-left: 4px;
+  transition: color 0.3s ease, text-decoration 0.3s ease;
+}
+.aboutVetReadMore:hover {
+  color: var(--logo-hover);
+  text-decoration: underline;
+}
+.vetReviewsShowAll {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 140%;
+  border: none;
+  background-color: transparent;
+  color: var(--accent-color-dark);
+  cursor: pointer;
+  transition: color 0.3s ease, text-decoration 0.3s ease;
+  margin-top: 16px;
+}
+.vetReviewsShowAll:hover {
+  color: var(--logo-hover);
+  text-decoration: underline;
+}
+@media screen and (min-width: 1440px) {
+  .vetReviewsContainer {
+    width: 684px;
+  }
+  .vetReviewsTitle {
+    font-weight: 600;
+    font-size: 18px;
+    margin-bottom: 24px;
+  }
+  .vetReviewsListItemInfoDesk {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .aboutVetReadMore {
+    font-size: 16px;
+  }
+  .vetReviewsListItemInfo {
+    gap: 16px;
+  }
+  .vetReviewsListItemPhoto {
+    width: 48px;
+    height: 48px;
+    font-size: 24px;
+  }
+  .vetReviewsFullName {
+    font-weight: 400;
+    font-size: 14px;
+  }
+  .vetReviewsComment {
+    font-size: 16px;
+  }
+  .aboutVetReadMore {
+    font-size: 16px;
+  }
+  .vetReviewsShowAll {
+    font-size: 16px;
+    margin-top: 24px;
+  }
+}
